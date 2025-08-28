@@ -1,120 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nexxintel - Intelligent Economies</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #0a0a0a;
-      color: white;
-      text-align: center;
-    }
-
-    header {
-      padding: 100px 20px;
-    }
-
-    h1 {
-      font-size: 3rem;
-      margin-bottom: 20px;
-    }
-
-    p {
-      font-size: 1.2rem;
-      margin-bottom: 40px;
-    }
-
-    button {
-      padding: 12px 25px;
-      font-size: 1rem;
-      border: none;
-      background-color: #0070f3;
-      color: white;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-
-    button:hover {
-      background-color: #0059c1;
-    }
-
-    section {
-      padding: 80px 20px;
-    }
-
-    .features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-
-    .feature-card {
-      background: #1a1a1a;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    }
-
-    .subscribe input {
-      padding: 12px;
-      width: 250px;
-      border-radius: 8px;
-      border: none;
-      margin-right: 10px;
-      font-size: 1rem;
-    }
-
-    .footer {
-      background: #111;
-      padding: 30px;
-      margin-top: 50px;
-      font-size: 0.9rem;
-      color: #aaa;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexxintel</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            color: white;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .container {
+            max-width: 600px;
+        }
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+        .btn {
+            padding: 10px 20px;
+            background-color: #1abc9c;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1em;
+            transition: background-color 0.3s;
+        }
+        .btn:hover {
+            background-color: #16a085;
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <h1>Nexxintel</h1>
-    <p>Building Intelligent Economies for the Future</p>
-    <button onclick="document.getElementById('features').scrollIntoView({behavior:'smooth'})">
-      Explore More
-    </button>
-  </header>
-
-  <section id="features">
-    <h2>Our Features</h2>
-    <div class="features">
-      <div class="feature-card">
-        <h3>AI Governance</h3>
-        <p>Smart governance infrastructure to empower decision-making.</p>
-      </div>
-      <div class="feature-card">
-        <h3>Digital Taxation</h3>
-        <p>Seamless AI-powered taxation with transparency and compliance.</p>
-      </div>
-      <div class="feature-card">
-        <h3>Smart Commerce</h3>
-        <p>Revolutionizing trade and payments with intelligent systems.</p>
-      </div>
+    <div class="container">
+        <h1>Welcome to Nexxintel</h1>
+        <p>Building AI-powered governance and digital infrastructure for the future.</p>
+        <a href="#" class="btn">Explore More</a>
     </div>
-  </section>
-
-  <section class="subscribe">
-    <h2>Stay Updated</h2>
-    <p>Join our mailing list for early insights.</p>
-    <input type="email" placeholder="Enter your email">
-    <button>Subscribe</button>
-  </section>
-
-  <div class="footer">
-    <p>© 2025 Nexxintel. All rights reserved.</p>
-  </div>
 </body>
 </html>
