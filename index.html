@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexxintel - Intelligent Infrastructure for Africa</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="https://placehold.co/32x32/06B6D4/FFFFFF?text=NXT" type="image/png">
+
+    <style>
+        /* Custom styles for the brand */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0F172A; /* Dark Slate */
+            color: #E2E8F0; /* Slate 200 */
+        }
+        /* Futuristic Palette */
+        .bg-primary-accent { background-color: #06B6D4; } /* Cyan 500 */
+        .text-primary-accent { color: #06B6D4; }
+        .border-primary-accent { border-color: #06B6D4; }
+        
+        .text-secondary-accent { color: #38BDF8; } /* Sky Blue 500 */
+        
+        .glow-effect {
+            box-shadow: 0 0 20px rgba(6, 182, 212, 0.4), 0 0 8px rgba(6, 182, 212, 0.3);
+        }
+        
+        /* Background Grid Pattern */
+        .bg-grid {
+            background-image:
+                linear-gradient(to right, rgba(22, 43, 78, 0.5) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(22, 43, 78, 0.5) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+
+        /* Canvas for background animation */
+        #hero-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            opacity: 0.6;
+        }
+
+        /* Animation for scroll transitions */
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Mobile menu transition */
+        #mobile-menu {
+            transition: transform 0.3s ease-in-out;
+            background-color: #1E293B; /* Slate 800 */
+        }
+
+        /* Interactive 3D Card Hover */
+        .interactive-card {
+            transform-style: preserve-3d;
+            transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+        .interactive-card:hover {
+            transform: perspective(1000px) rotateY(var(--rotateY)) rotateX(var(--rotateX)) scale3d(1.05, 1.05, 1.05);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header -->
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 bg-slate-900/80 backdrop-blur-md border-b border-slate-700/50">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <a href="#" class="text-2xl font-extrabold text-primary-accent">
+                    Nexxintel<span class="text-secondary-accent">.</span>
+                </a>
+                <!-- Desktop Navigation -->
+                <nav class="hidden lg:flex items-center space-x-8">
+                    <a href="#capabilities" class="text-slate-300 hover:text-primary-accent transition duration-300">Capabilities</a>
+                    <a href="#contact" class="bg-primary-accent text-white px-5 py-2 rounded-full hover:bg-opacity-90 transition duration-300 font-semibold glow-effect">Request Access</a>
+                </nav>
+                <!-- Mobile Menu Button -->
+                <div class="lg:hidden">
+                    <button id="mobile-menu-button" class="text-slate-200 focus:outline-none">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 M4 6h16M4 12h16m-7 6h7"></path></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="lg:hidden transform -translate-x-full fixed top-0 left-0 h-full w-64 z-50">
+             <div class="p-5">
+                <a href="#" class="block text-2xl font-extrabold text-primary-accent mb-8">Nexxintel<span class="text-secondary-accent">.</span></a>
+                <a href="#capabilities" class="block py-2 text-slate-300 hover:text-primary-accent mobile-link">Capabilities</a>
+                <a href="#contact" class="block mt-4 bg-primary-accent text-white px-5 py-2 rounded-full text-center mobile-link">Request Access</a>
+            </div>
+        </div>
+        <div id="mobile-menu-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden"></div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="relative h-screen flex items-center justify-center text-center overflow-hidden">
+            <canvas id="hero-canvas"></canvas>
+            <div class="relative z-10 px-6">
+                <h1 class="text-4xl md:text-6xl lg:text-7xl font-black text-slate-100 leading-tight">
+                    Open Infrastructure for <span class="text-primary-accent">Intelligent Economies</span>.
+                </h1>
+                <p class="mt-6 max-w-3xl mx-auto text-lg md:text-xl text-slate-300">
+                    AI Automation for Powering Municipality, Marketplace and Mobility
+                </p>
+                <div class="mt-10">
+                    <a href="#contact" class="bg-primary-accent text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-opacity-90 transition duration-300 shadow-lg glow-effect">Request Early Access</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- What Nexxintel Powers Section -->
+        <section id="capabilities" class="py-20 lg:py-32 bg-slate-900/70 bg-grid">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16 reveal">
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-100">What Nexxintel Powers</h2>
+                    <p class="mt-4 text-lg text-slate-400">A modular stack of AI-powered systems for core enterprise functions.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                    <!-- Card: AIREV -->
+                    <div class="interactive-card bg-slate-800 p-8 rounded-xl border-t-4 border-primary-accent reveal hover:shadow-2xl hover:shadow-cyan-500/20">
+                        <h3 class="text-2xl font-bold text-primary-accent">AIREV</h3>
+                        <p class="font-semibold text-slate-400 mb-2">Smart Revenue Engines</p>
+                        <p class="text-slate-300">AI-driven systems to automate tax collection, manage payments, and provide real-time financial oversight.</p>
+                    </div>
+                    <!-- Card: OpenMart -->
+                    <div class="interactive-card bg-slate-800 p-8 rounded-xl border-t-4 border-primary-accent reveal hover:shadow-2xl hover:shadow-cyan-500/20" style="transition-delay: 0.1s;">
+                        <h3 class="text-2xl font-bold text-primary-accent">OpenMart</h3>
+                        <p class="font-semibold text-slate-400 mb-2">AI Powered Marketplace</p>
+                        <p class="text-slate-300">Digital platforms that connect MSMEs to the formal economy, powered by AI for fair pricing and logistics.</p>
+                    </div>
+                     <!-- Card: Capitelia -->
+                    <div class="interactive-card bg-slate-800 p-8 rounded-xl border-t-4 border-primary-accent reveal hover:shadow-2xl hover:shadow-cyan-500/20" style="transition-delay: 0.2s;">
+                        <h3 class="text-2xl font-bold text-primary-accent">Capitelia</h3>
+                        <p class="font-semibold text-slate-400 mb-2">Capital Intelligence</p>
+                        <p class="text-slate-300">Platforms that provide data-backed insights for investment and micro-funding with AI managed returns and risk scoring.</p>
+                    </div>
+                    <!-- Card: Giddy -->
+                    <div class="interactive-card bg-slate-800 p-8 rounded-xl border-t-4 border-primary-accent reveal hover:shadow-2xl hover:shadow-cyan-500/20" style="transition-delay: 0.3s;">
+                        <h3 class="text-2xl font-bold text-primary-accent">Giddy</h3>
+                        <p class="font-semibold text-slate-400 mb-2">Messaging Infrastructure</p>
+                        <p class="text-slate-300">The communication layer for citizen engagement, service alerts, and feedback loops via WhatsApp and SMS.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Us Section -->
+        <section id="contact" class="py-20 lg:py-32">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16 reveal">
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-100">Get in Touch</h2>
+                    <p class="mt-4 text-lg text-slate-400">Request early access or learn more about our pilot programs.</p>
+                </div>
+                <div class="max-w-2xl mx-auto bg-slate-800/50 p-8 rounded-2xl border border-slate-700 reveal">
+                    <form>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="name" class="block text-sm font-bold mb-2 text-slate-300">Full Name</label>
+                                <input type="text" id="name" class="w-full bg-slate-900 border border-slate-700 rounded-md py-2 px-3 focus:outline-none focus:ring-2 focus:ring-primary-accent">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-bold mb-2 text-slate-300">Email Address</label>
+                                <input type="email" id="email" class="w-full bg-slate-900 border border-slate-700 rounded-md py-2 px-3 focus:outline-none focus:ring-2 focus:ring-primary-accent">
+                            </div>
+                        </div>
+                        <div class="mt-6">
+                            <label for="organization" class="block text-sm font-bold mb-2 text-slate-300">Organization</label>
+                            <input type="text" id="organization" class="w-full bg-slate-900 border border-slate-700 rounded-md py-2 px-3 focus:outline-none focus:ring-2 focus:ring-primary-accent">
+                        </div>
+                        <div class="mt-6">
+                            <label for="interest" class="block text-sm font-bold mb-2 text-slate-300">Area of Interest</label>
+                            <select id="interest" class="w-full bg-slate-900 border border-slate-700 rounded-md py-2 px-3 focus:outline-none focus:ring-2 focus:ring-primary-accent">
+                                <option>AIREV (Revenue)</option>
+                                <option>OpenMart (Marketplace)</option>
+                                <option>Capitelia (Investment)</option>
+                                <option>Giddy (Messaging)</option>
+                                <option>Partnership Inquiry</option>
+                                <option>General Question</option>
+                            </select>
+                        </div>
+                        <div class="mt-8 text-center">
+                            <button type="submit" class="bg-primary-accent text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-opacity-90 transition duration-300 shadow-lg glow-effect">Submit Request</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action Section -->
+        <section id="partner" class="py-20 lg:py-32 bg-slate-900/70 bg-grid">
+            <div class="container mx-auto px-6 text-center">
+                <div class="reveal">
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-100">Partner with Nexxintel</h2>
+                    <p class="mt-4 max-w-2xl mx-auto text-lg text-slate-300">We are seeking visionary partners to accelerate the future of governance in Africa. Let's build together.</p>
+                </div>
+                <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <a href="#" class="bg-slate-800 text-primary-accent font-bold py-6 px-4 rounded-lg border border-slate-700 hover:bg-primary-accent hover:text-white hover:border-primary-accent transition duration-300 reveal glow-on-hover" style="transition-delay: 0.1s;">Invite Us to Pilot</a>
+                    <a href="#" class="bg-slate-800 text-primary-accent font-bold py-6 px-4 rounded-lg border border-slate-700 hover:bg-primary-accent hover:text-white hover:border-primary-accent transition duration-300 reveal glow-on-hover" style="transition-delay: 0.2s;">Partner as Telco</a>
+                    <a href="#" class="bg-slate-800 text-primary-accent font-bold py-6 px-4 rounded-lg border border-slate-700 hover:bg-primary-accent hover:text-white hover:border-primary-accent transition duration-300 reveal glow-on-hover" style="transition-delay: 0.3s;">Sponsor a Pilot</a>
+                    <a href="#" class="bg-slate-800 text-primary-accent font-bold py-6 px-4 rounded-lg border border-slate-700 hover:bg-primary-accent hover:text-white hover:border-primary-accent transition duration-300 reveal glow-on-hover" style="transition-delay: 0.4s;">See Tech in Action</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900/50 border-t border-slate-800">
+        <div class="container mx-auto px-6 py-8 text-center text-slate-400">
+            <p class="text-sm">&copy; <span id="year"></span> Nexxintel. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Three.js for background animation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // --- Mobile Menu ---
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+            const mobileLinks = document.querySelectorAll('.mobile-link');
+
+            function toggleMenu() {
+                mobileMenu.classList.toggle('-translate-x-full');
+                mobileMenuOverlay.classList.toggle('hidden');
+            }
+
+            mobileMenuButton.addEventListener('click', toggleMenu);
+            mobileMenuOverlay.addEventListener('click', toggleMenu);
+            mobileLinks.forEach(link => link.addEventListener('click', toggleMenu));
+
+            // --- Scroll Animations ---
+            const revealElements = document.querySelectorAll('.reveal');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, { threshold: 0.1 });
+            revealElements.forEach(el => observer.observe(el));
+
+            // --- Footer Year ---
+            document.getElementById('year').textContent = new Date().getFullYear();
+            
+            // --- Interactive 3D Card Effect ---
+            const cards = document.querySelectorAll('.interactive-card');
+            cards.forEach(card => {
+                card.addEventListener('mousemove', (e) => {
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    const { width, height } = rect;
+                    const rotateX = (y / height - 0.5) * -20; // Max 10 deg rotation
+                    const rotateY = (x / width - 0.5) * 20;  // Max 10 deg rotation
+                    card.style.setProperty('--rotateX', `${rotateX}deg`);
+                    card.style.setProperty('--rotateY', `${rotateY}deg`);
+                });
+                card.addEventListener('mouseleave', () => {
+                    card.style.setProperty('--rotateX', '0deg');
+                    card.style.setProperty('--rotateY', '0deg');
+                });
+            });
+
+            // --- Three.js Background Animation ---
+            let scene, camera, renderer, dataSphere;
+            const canvas = document.getElementById('hero-canvas');
+            
+            function initThree() {
+                scene = new THREE.Scene();
+                camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+                camera.position.z = 2.5;
+                renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true });
+                renderer.setSize(window.innerWidth, window.innerHeight);
+                renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+                // Main sphere
+                const sphereGeometry = new THREE.IcosahedronGeometry(1, 4);
+                const sphereMaterial = new THREE.MeshStandardMaterial({
+                    color: 0x06B6D4,
+                    emissive: 0x06B6D4,
+                    emissiveIntensity: 0.3,
+                    metalness: 0.8,
+                    roughness: 0.4,
+                    wireframe: true,
+                });
+                dataSphere = new THREE.Mesh(sphereGeometry, sphereMaterial);
+                scene.add(dataSphere);
+
+                // Lighting
+                const light1 = new THREE.PointLight(0x38BDF8, 2, 10);
+                light1.position.set(5, 5, 5);
+                scene.add(light1);
+                
+                const light2 = new THREE.PointLight(0x06B6D4, 2, 10);
+                light2.position.set(-5, -5, -5);
+                scene.add(light2);
+
+                scene.add(new THREE.AmbientLight(0xffffff, 0.1));
+            }
+
+            let mouseX = 0;
+            let mouseY = 0;
+            document.addEventListener('mousemove', (event) => {
+                mouseX = (event.clientX / window.innerWidth) * 2 - 1;
+                mouseY = -(event.clientY / window.innerHeight) * 2 + 1;
+            });
+
+            const clock = new THREE.Clock();
+
+            function animate() {
+                requestAnimationFrame(animate);
+                const elapsedTime = clock.getElapsedTime();
+
+                // Animate sphere
+                dataSphere.rotation.y = elapsedTime * 0.1;
+                dataSphere.rotation.x = elapsedTime * 0.05;
+
+                // Mouse interaction
+                camera.position.x += (mouseX * 0.5 - camera.position.x) * 0.05;
+                camera.position.y += (mouseY * 0.5 - camera.position.y) * 0.05;
+                camera.lookAt(scene.position);
+
+                renderer.render(scene, camera);
+            }
+
+            function onWindowResize() {
+                camera.aspect = window.innerWidth / window.innerHeight;
+                camera.updateProjectionMatrix();
+                renderer.setSize(window.innerWidth, window.innerHeight);
+                renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+            }
+
+            window.addEventListener('resize', onWindowResize, false);
+
+            initThree();
+            animate();
+        });
+    </script>
+</body>
+</html>
