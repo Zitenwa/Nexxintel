@@ -1,142 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nexxintel | Intelligent Digital Infrastructure</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nexxintel - Intelligent Economies</title>
   <style>
-    /* Reset */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
-
-    /* Navbar */
-    nav {
-      position: sticky; top: 0; background: #0d1b2a; color: #fff;
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 1rem 2rem; z-index: 1000;
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #0a0a0a;
+      color: white;
+      text-align: center;
     }
-    nav .logo { font-size: 1.5rem; font-weight: bold; }
-    nav ul { display: flex; list-style: none; }
-    nav ul li { margin-left: 1.5rem; }
-    nav ul li a { color: #fff; text-decoration: none; transition: color 0.3s; }
-    nav ul li a:hover { color: #00c6ff; }
 
-    /* Hero */
-    .hero {
-      height: 100vh; display: flex; flex-direction: column;
-      justify-content: center; align-items: center; text-align: center;
-      background: linear-gradient(to right, #1e3c72, #2a5298);
-      color: #fff; padding: 0 2rem;
+    header {
+      padding: 100px 20px;
     }
-    .hero h1 { font-size: 3rem; margin-bottom: 1rem; }
-    .hero p { font-size: 1.2rem; margin-bottom: 2rem; }
-    .btn {
-      background: #00c6ff; color: #fff; padding: 0.8rem 1.5rem;
-      border: none; border-radius: 5px; cursor: pointer;
-      text-decoration: none; font-size: 1rem;
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
     }
-    .btn:hover { background: #009ecf; }
 
-    /* Sections */
-    section { padding: 4rem 2rem; max-width: 1000px; margin: auto; }
-    section h2 { text-align: center; margin-bottom: 2rem; font-size: 2rem; color: #0d1b2a; }
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 40px;
+    }
 
-    /* Features */
-    .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; }
+    button {
+      padding: 12px 25px;
+      font-size: 1rem;
+      border: none;
+      background-color: #0070f3;
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background-color: #0059c1;
+    }
+
+    section {
+      padding: 80px 20px;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
     .feature-card {
-      background: #f4f4f4; padding: 2rem; border-radius: 8px;
-      text-align: center; transition: transform 0.3s;
-    }
-    .feature-card:hover { transform: translateY(-5px); }
-
-    /* Contact */
-    .contact form { display: flex; flex-direction: column; gap: 1rem; max-width: 500px; margin: auto; }
-    .contact input, .contact textarea {
-      padding: 0.8rem; border: 1px solid #ccc; border-radius: 5px;
-    }
-    .contact button { align-self: flex-start; }
-
-    /* Footer */
-    footer {
-      text-align: center; padding: 1.5rem; background: #0d1b2a; color: #fff;
+      background: #1a1a1a;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
     }
 
-    html { scroll-behavior: smooth; }
+    .subscribe input {
+      padding: 12px;
+      width: 250px;
+      border-radius: 8px;
+      border: none;
+      margin-right: 10px;
+      font-size: 1rem;
+    }
+
+    .footer {
+      background: #111;
+      padding: 30px;
+      margin-top: 50px;
+      font-size: 0.9rem;
+      color: #aaa;
+    }
   </style>
 </head>
 <body>
-  <!-- Navbar -->
-  <nav>
-    <div class="logo">Nexxintel</div>
-    <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#features">Features</a></li>
-      <li><a href="#vision">Vision</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+  <header>
+    <h1>Nexxintel</h1>
+    <p>Building Intelligent Economies for the Future</p>
+    <button onclick="document.getElementById('features').scrollIntoView({behavior:'smooth'})">
+      Explore More
+    </button>
+  </header>
 
-  <!-- Hero -->
-  <section class="hero" id="home">
-    <h1>Welcome to Nexxintel</h1>
-    <p>Building the future of intelligent digital infrastructure.</p>
-    <a href="#about" class="btn">Explore More</a>
-  </section>
-
-  <!-- About -->
-  <section id="about">
-    <h2>About Nexxintel</h2>
-    <p>
-      Nexxintel is a forward-thinking hub for AI-powered governance and smart
-      digital infrastructure. We empower communities, businesses, and governments
-      with solutions that drive transparency, efficiency, and inclusive growth.
-    </p>
-  </section>
-
-  <!-- Features -->
   <section id="features">
-    <h2>Key Features</h2>
+    <h2>Our Features</h2>
     <div class="features">
       <div class="feature-card">
-        <h3>Smart Governance</h3>
-        <p>AI-driven frameworks that enhance decision-making and transparency.</p>
+        <h3>AI Governance</h3>
+        <p>Smart governance infrastructure to empower decision-making.</p>
       </div>
       <div class="feature-card">
-        <h3>Digital Infrastructure</h3>
-        <p>Scalable platforms designed for finance, commerce, and urban management.</p>
+        <h3>Digital Taxation</h3>
+        <p>Seamless AI-powered taxation with transparency and compliance.</p>
       </div>
       <div class="feature-card">
-        <h3>Cross-Platform Intelligence</h3>
-        <p>Seamless integration across fintech, taxation, and civic engagement systems.</p>
+        <h3>Smart Commerce</h3>
+        <p>Revolutionizing trade and payments with intelligent systems.</p>
       </div>
     </div>
   </section>
 
-  <!-- Vision -->
-  <section id="vision">
-    <h2>Our Vision</h2>
-    <p>
-      Nexxintel envisions a digitally connected Africa where intelligent systems
-      drive development, enable accountability, and unlock new opportunities for
-      communities and governments alike.
-    </p>
+  <section class="subscribe">
+    <h2>Stay Updated</h2>
+    <p>Join our mailing list for early insights.</p>
+    <input type="email" placeholder="Enter your email">
+    <button>Subscribe</button>
   </section>
 
-  <!-- Contact -->
-  <section id="contact" class="contact">
-    <h2>Contact Us</h2>
-    <form>
-      <input type="text" placeholder="Your Name" required />
-      <input type="email" placeholder="Your Email" required />
-      <textarea placeholder="Your Message" rows="5" required></textarea>
-      <button type="submit" class="btn">Send Message</button>
-    </form>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 Nexxintel. All rights reserved.</p>
-  </footer>
+  <div class="footer">
+    <p>© 2025 Nexxintel. All rights reserved.</p>
+  </div>
 </body>
 </html>
