@@ -3,46 +3,73 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nexxintel — Intelligent Infrastructure for Africa</title>
+  <title>Nexxintel - Intelligent Infrastructure for Africa</title>
 
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
 
   <!-- Google Fonts: Inter -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
 
   <!-- Favicon -->
-  <link rel="icon" href="https://placehold.co/32x32/06B6D4/FFFFFF?text=NXT" type="image/png">
+  <link rel="icon" href="https://placehold.co/32x32/06B6D4/FFFFFF?text=NXT" type="image/png" />
 
   <style>
-    body { font-family: 'Inter', sans-serif; background-color: #0F172A; color: #E2E8F0; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #0F172A;
+      color: #E2E8F0;
+    }
     .bg-primary-accent { background-color: #06B6D4; }
     .text-primary-accent { color: #06B6D4; }
     .border-primary-accent { border-color: #06B6D4; }
     .text-secondary-accent { color: #38BDF8; }
-    .glow-effect { box-shadow: 0 0 20px rgba(6, 182, 212, 0.35), 0 0 8px rgba(6, 182, 212, 0.25); }
+
+    .glow-effect {
+      box-shadow: 0 0 20px rgba(6, 182, 212, 0.4), 0 0 8px rgba(6, 182, 212, 0.3);
+    }
+
     .bg-grid {
       background-image:
         linear-gradient(to right, rgba(22, 43, 78, 0.5) 1px, transparent 1px),
         linear-gradient(to bottom, rgba(22, 43, 78, 0.5) 1px, transparent 1px);
       background-size: 40px 40px;
     }
-    #hero-canvas { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; opacity: 0.6; }
-    .reveal { opacity: 0; transform: translateY(50px); transition: opacity 1s ease-out, transform 1s ease-out; }
-    .reveal.active { opacity: 1; transform: translateY(0); }
-    #mobile-menu { transition: transform 0.3s ease-in-out; background-color: #1E293B; }
-    .interactive-card { transform-style: preserve-3d; transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1); }
-    .interactive-card:hover { transform: perspective(1000px) rotateY(var(--rotateY)) rotateX(var(--rotateX)) scale3d(1.04, 1.04, 1.04); }
 
-    /* Modal */
-    .modal-backdrop { background: rgba(0,0,0,0.6); }
-    .modal-panel { background: rgba(30,41,59,0.72); backdrop-filter: blur(10px); border: 1px solid rgba(148,163,184,0.18); }
-    .chip { border: 1px solid rgba(148,163,184,0.22); }
-    .chip:hover { border-color: rgba(6,182,212,0.7); box-shadow: 0 0 0 3px rgba(6,182,212,0.12); }
-    .progress-track { background: rgba(148,163,184,0.18); }
-    .progress-bar { background: linear-gradient(90deg, rgba(6,182,212,1), rgba(56,189,248,1)); }
+    #hero-canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      opacity: 0.6;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(50px);
+      transition: opacity 1s ease-out, transform 1s ease-out;
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    #mobile-menu {
+      transition: transform 0.3s ease-in-out;
+      background-color: #1E293B;
+    }
+
+    .interactive-card {
+      transform-style: preserve-3d;
+      transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+    .interactive-card:hover {
+      transform: perspective(1000px) rotateY(var(--rotateY)) rotateX(var(--rotateX)) scale3d(1.05, 1.05, 1.05);
+    }
   </style>
 </head>
 
@@ -52,27 +79,28 @@
   <header id="header" class="fixed top-0 left-0 right-0 z-50 bg-slate-900/80 backdrop-blur-md border-b border-slate-700/50">
     <div class="container mx-auto px-6 py-4">
       <div class="flex items-center justify-between">
+        <!-- Logo -->
         <a href="#" class="text-2xl font-extrabold text-primary-accent">
           Nexxintel<span class="text-secondary-accent">.</span>
         </a>
 
+        <!-- Desktop Navigation -->
         <nav class="hidden lg:flex items-center space-x-8">
           <a href="#capabilities" class="text-slate-300 hover:text-primary-accent transition duration-300">Capabilities</a>
-          <a href="#how" class="text-slate-300 hover:text-primary-accent transition duration-300">How it works</a>
-          <a href="#partner" class="text-slate-300 hover:text-primary-accent transition duration-300">Partner</a>
-
-          <!-- Primary CTA: Start assessment -->
-          <button id="open-assessment-cta-desktop"
-            class="bg-primary-accent text-white px-5 py-2 rounded-full hover:bg-opacity-90 transition duration-300 font-semibold glow-effect">
+          <a
+            id="nav-assessment-cta"
+            href="#"
+            class="bg-primary-accent text-white px-5 py-2 rounded-full hover:bg-opacity-90 transition duration-300 font-semibold glow-effect"
+          >
             Start Assessment
-          </button>
+          </a>
         </nav>
 
         <!-- Mobile Menu Button -->
         <div class="lg:hidden">
           <button id="mobile-menu-button" class="text-slate-200 focus:outline-none" aria-label="Open menu">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
             </svg>
           </button>
         </div>
@@ -80,215 +108,133 @@
     </div>
 
     <!-- Mobile Menu -->
-    <div id="mobile-menu" class="lg:hidden transform -translate-x-full fixed top-0 left-0 h-full w-72 z-50">
-      <div class="p-6">
+    <div id="mobile-menu" class="lg:hidden transform -translate-x-full fixed top-0 left-0 h-full w-64 z-50">
+      <div class="p-5">
         <a href="#" class="block text-2xl font-extrabold text-primary-accent mb-8">
           Nexxintel<span class="text-secondary-accent">.</span>
         </a>
-
         <a href="#capabilities" class="block py-2 text-slate-300 hover:text-primary-accent mobile-link">Capabilities</a>
-        <a href="#how" class="block py-2 text-slate-300 hover:text-primary-accent mobile-link">How it works</a>
-        <a href="#partner" class="block py-2 text-slate-300 hover:text-primary-accent mobile-link">Partner</a>
-
-        <button id="open-assessment-cta-mobile"
-          class="block mt-6 w-full bg-primary-accent text-white px-5 py-3 rounded-full text-center font-semibold glow-effect">
+        <a
+          id="mobile-assessment-cta"
+          href="#"
+          class="block mt-4 bg-primary-accent text-white px-5 py-2 rounded-full text-center mobile-link"
+        >
           Start Assessment
-        </button>
-
-        <p class="mt-6 text-xs text-slate-400">
-          Get a quick growth-readiness signal in under 60 seconds, then continue into the full VeriScore assessment.
-        </p>
+        </a>
       </div>
     </div>
     <div id="mobile-menu-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden"></div>
   </header>
 
   <main>
-    <!-- Hero -->
+    <!-- Hero Section -->
     <section class="relative h-screen flex items-center justify-center text-center overflow-hidden">
       <canvas id="hero-canvas"></canvas>
-
       <div class="relative z-10 px-6">
-        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-slate-700 bg-slate-900/60 text-slate-300 text-sm reveal">
-          <span class="text-primary-accent font-semibold">Verri</span>
-          <span class="text-slate-500">•</span>
-          <span>Business Intelligence, Scoring & Compliance Infrastructure</span>
-        </div>
-
-        <h1 class="mt-6 text-4xl md:text-6xl lg:text-7xl font-black text-slate-100 leading-tight reveal">
+        <h1 class="text-4xl md:text-6xl lg:text-7xl font-black text-slate-100 leading-tight">
           Open Infrastructure for <span class="text-primary-accent">Intelligent Economies</span>.
         </h1>
-
-        <p class="mt-6 max-w-3xl mx-auto text-lg md:text-xl text-slate-300 reveal" style="transition-delay: 0.1s;">
-          Measure SME maturity, governance strength, and growth readiness — and generate a <span class="text-primary-accent font-semibold">VeriScore</span> signal you can improve over time.
+        <p class="mt-6 max-w-3xl mx-auto text-lg md:text-xl text-slate-300">
+          Measure your business maturity and receive your VeriScore growth readiness signal.
         </p>
-
-        <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 reveal" style="transition-delay: 0.2s;">
-          <button id="open-assessment-hero"
-            class="bg-primary-accent text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-opacity-90 transition duration-300 shadow-lg glow-effect">
-            Start 60-Second Quick Check
-          </button>
-
-          <a href="#capabilities"
-            class="px-8 py-4 rounded-full text-lg font-semibold border border-slate-700 text-slate-200 hover:border-primary-accent hover:text-primary-accent transition duration-300">
-            See what Nexxintel powers
+        <div class="mt-10">
+          <a
+            id="hero-assessment-cta"
+            href="#"
+            class="bg-primary-accent text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-opacity-90 transition duration-300 shadow-lg glow-effect"
+          >
+            Start Business Assessment
           </a>
         </div>
-
-        <div class="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-4xl mx-auto reveal" style="transition-delay: 0.25s;">
-          <div class="bg-slate-900/60 border border-slate-700/60 rounded-xl p-4 text-left">
-            <p class="text-sm text-slate-400">Outcome</p>
-            <p class="mt-1 text-slate-100 font-semibold">VeriScore signal + growth actions</p>
-          </div>
-          <div class="bg-slate-900/60 border border-slate-700/60 rounded-xl p-4 text-left">
-            <p class="text-sm text-slate-400">For</p>
-            <p class="mt-1 text-slate-100 font-semibold">SMEs, councils, programs, lenders</p>
-          </div>
-          <div class="bg-slate-900/60 border border-slate-700/60 rounded-xl p-4 text-left">
-            <p class="text-sm text-slate-400">Time</p>
-            <p class="mt-1 text-slate-100 font-semibold">Quick check: 1 min • Full: 8–12 min</p>
-          </div>
-        </div>
       </div>
     </section>
 
-    <!-- How it works -->
-    <section id="how" class="py-20 lg:py-28 bg-slate-900/70 bg-grid">
-      <div class="container mx-auto px-6">
-        <div class="text-center mb-14 reveal">
-          <h2 class="text-3xl md:text-4xl font-bold text-slate-100">How it works</h2>
-          <p class="mt-4 text-lg text-slate-400">A simple funnel that increases completion and produces a usable signal fast.</p>
-        </div>
-
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          <div class="bg-slate-800/70 border border-slate-700/60 rounded-2xl p-8 reveal">
-            <div class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary-accent text-white font-bold">1</div>
-            <h3 class="mt-4 text-xl font-bold text-slate-100">Quick Check</h3>
-            <p class="mt-2 text-slate-300">Answer 5 focused questions. Get a growth-readiness signal instantly.</p>
-          </div>
-
-          <div class="bg-slate-800/70 border border-slate-700/60 rounded-2xl p-8 reveal" style="transition-delay:0.1s;">
-            <div class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary-accent text-white font-bold">2</div>
-            <h3 class="mt-4 text-xl font-bold text-slate-100">Full Assessment</h3>
-            <p class="mt-2 text-slate-300">Continue to the complete VeriScore assessment for deeper scoring and recommendations.</p>
-          </div>
-
-          <div class="bg-slate-800/70 border border-slate-700/60 rounded-2xl p-8 reveal" style="transition-delay:0.2s;">
-            <div class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary-accent text-white font-bold">3</div>
-            <h3 class="mt-4 text-xl font-bold text-slate-100">Programs & Pilots</h3>
-            <p class="mt-2 text-slate-300">Use the signal for lending, onboarding, compliance support, or government SME programs.</p>
-          </div>
-        </div>
-
-        <div class="mt-12 text-center reveal">
-          <button id="open-assessment-how"
-            class="bg-primary-accent text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-opacity-90 transition duration-300 shadow-lg glow-effect">
-            Start Quick Check
-          </button>
-        </div>
-      </div>
-    </section>
-
-    <!-- Capabilities -->
-    <section id="capabilities" class="py-20 lg:py-32">
+    <!-- What Nexxintel Powers Section -->
+    <section id="capabilities" class="py-20 lg:py-32 bg-slate-900/70 bg-grid">
       <div class="container mx-auto px-6">
         <div class="text-center mb-16 reveal">
           <h2 class="text-3xl md:text-4xl font-bold text-slate-100">What Nexxintel Powers</h2>
-          <p class="mt-4 text-lg text-slate-400">A modular stack of systems for governance, growth, and service delivery.</p>
+          <p class="mt-4 text-lg text-slate-400">A modular stack of AI-powered systems for core enterprise functions.</p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <!-- Card: AIREV -->
           <div class="interactive-card bg-slate-800 p-8 rounded-xl border-t-4 border-primary-accent reveal hover:shadow-2xl hover:shadow-cyan-500/20">
             <h3 class="text-2xl font-bold text-primary-accent">AIREV</h3>
             <p class="font-semibold text-slate-400 mb-2">Smart Revenue Engines</p>
-            <p class="text-slate-300">Automate tax workflows, payments, and compliance scoring for councils and states — with auditable reporting.</p>
-            <div class="mt-5 flex flex-wrap gap-2 text-xs text-slate-300/90">
-              <span class="chip rounded-full px-3 py-1 bg-slate-900/60">Collections</span>
-              <span class="chip rounded-full px-3 py-1 bg-slate-900/60">Compliance scoring</span>
-              <span class="chip rounded-full px-3 py-1 bg-slate-900/60">Real-time dashboards</span>
-            </div>
+            <p class="text-slate-300">AI-driven systems to automate tax collection, manage payments, and provide real-time financial oversight.</p>
           </div>
 
+          <!-- Card: Verri -->
           <div class="interactive-card bg-slate-800 p-8 rounded-xl border-t-4 border-primary-accent reveal hover:shadow-2xl hover:shadow-cyan-500/20" style="transition-delay: 0.1s;">
             <h3 class="text-2xl font-bold text-primary-accent">Verri</h3>
             <p class="font-semibold text-slate-400 mb-2">Business Intelligence Engine</p>
-            <p class="text-slate-300">SME scoring, growth readiness, and compliance infrastructure — producing a standardized signal: <span class="text-primary-accent font-semibold">VeriScore</span>.</p>
-            <div class="mt-5 flex flex-wrap gap-2 text-xs text-slate-300/90">
-              <span class="chip rounded-full px-3 py-1 bg-slate-900/60">SME maturity</span>
-              <span class="chip rounded-full px-3 py-1 bg-slate-900/60">VeriScore</span>
-              <span class="chip rounded-full px-3 py-1 bg-slate-900/60">Growth actions</span>
-            </div>
+            <p class="text-slate-300">Digital platforms for SME scoring and growth compliance.</p>
           </div>
 
+          <!-- Card: Capitelia -->
           <div class="interactive-card bg-slate-800 p-8 rounded-xl border-t-4 border-primary-accent reveal hover:shadow-2xl hover:shadow-cyan-500/20" style="transition-delay: 0.2s;">
             <h3 class="text-2xl font-bold text-primary-accent">Capitelia</h3>
             <p class="font-semibold text-slate-400 mb-2">Capital Intelligence</p>
-            <p class="text-slate-300">Risk scoring + investment readiness insights to support micro-funding, underwriting, and SME capital programs.</p>
-            <div class="mt-5 flex flex-wrap gap-2 text-xs text-slate-300/90">
-              <span class="chip rounded-full px-3 py-1 bg-slate-900/60">Risk scoring</span>
-              <span class="chip rounded-full px-3 py-1 bg-slate-900/60">Investor signals</span>
-              <span class="chip rounded-full px-3 py-1 bg-slate-900/60">Program analytics</span>
-            </div>
+            <p class="text-slate-300">Platforms that provide data-backed insights for investment and micro-funding with AI managed returns and risk scoring.</p>
           </div>
 
+          <!-- Card: Giddy -->
           <div class="interactive-card bg-slate-800 p-8 rounded-xl border-t-4 border-primary-accent reveal hover:shadow-2xl hover:shadow-cyan-500/20" style="transition-delay: 0.3s;">
             <h3 class="text-2xl font-bold text-primary-accent">Giddy</h3>
             <p class="font-semibold text-slate-400 mb-2">Messaging Infrastructure</p>
-            <p class="text-slate-300">Citizen and business engagement via WhatsApp/SMS — service alerts, reminders, feedback loops, and onboarding.</p>
-            <div class="mt-5 flex flex-wrap gap-2 text-xs text-slate-300/90">
-              <span class="chip rounded-full px-3 py-1 bg-slate-900/60">WhatsApp</span>
-              <span class="chip rounded-full px-3 py-1 bg-slate-900/60">SMS</span>
-              <span class="chip rounded-full px-3 py-1 bg-slate-900/60">Automation</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="mt-12 max-w-5xl mx-auto bg-slate-900/50 border border-slate-700/60 rounded-2xl p-8 reveal">
-          <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
-            <div>
-              <h3 class="text-xl font-bold text-slate-100">Start with Verri → generate a VeriScore signal</h3>
-              <p class="mt-2 text-slate-300">If you’re building a pilot, onboarding SMEs, or running a program, the fastest entry is the assessment funnel.</p>
-            </div>
-            <button id="open-assessment-capabilities"
-              class="bg-primary-accent text-white px-7 py-3 rounded-full font-semibold hover:bg-opacity-90 transition duration-300 glow-effect">
-              Run Quick Check
-            </button>
+            <p class="text-slate-300">The communication layer for citizen engagement, service alerts, and feedback loops via WhatsApp and SMS.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Partner -->
+    <!-- Contact / Redirect Section -->
+    <section id="contact" class="py-20 lg:py-32">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-16 reveal">
+          <h2 class="text-3xl md:text-4xl font-bold text-slate-100">Start the Assessment</h2>
+          <p class="mt-4 text-lg text-slate-400">Click below to begin your VeriScore business maturity assessment.</p>
+        </div>
+
+        <div class="max-w-2xl mx-auto bg-slate-800/50 p-8 rounded-2xl border border-slate-700 reveal text-center">
+          <p class="text-slate-300 mb-6">
+            This assessment takes about <span class="font-semibold text-slate-100">8–12 minutes</span>.
+          </p>
+          <a
+            id="contact-assessment-cta"
+            href="#"
+            class="inline-block bg-primary-accent text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-opacity-90 transition duration-300 shadow-lg glow-effect"
+          >
+            Proceed to Assessment
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action Section -->
     <section id="partner" class="py-20 lg:py-32 bg-slate-900/70 bg-grid">
       <div class="container mx-auto px-6 text-center">
         <div class="reveal">
           <h2 class="text-3xl md:text-4xl font-bold text-slate-100">Partner with Nexxintel</h2>
           <p class="mt-4 max-w-2xl mx-auto text-lg text-slate-300">
-            We’re seeking partners to accelerate SME governance and growth infrastructure across Africa.
+            We are seeking visionary partners to accelerate the future of SME governance in Africa. Let's build together.
           </p>
         </div>
 
         <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          <button class="bg-slate-800 text-primary-accent font-bold py-6 px-4 rounded-lg border border-slate-700 hover:bg-primary-accent hover:text-white hover:border-primary-accent transition duration-300 reveal"
-            style="transition-delay: 0.1s;" data-open-assessment>
+          <a href="#" class="bg-slate-800 text-primary-accent font-bold py-6 px-4 rounded-lg border border-slate-700 hover:bg-primary-accent hover:text-white hover:border-primary-accent transition duration-300 reveal" style="transition-delay: 0.1s;">
             Invite Us to Pilot
-          </button>
-          <button class="bg-slate-800 text-primary-accent font-bold py-6 px-4 rounded-lg border border-slate-700 hover:bg-primary-accent hover:text-white hover:border-primary-accent transition duration-300 reveal"
-            style="transition-delay: 0.2s;" data-open-assessment>
+          </a>
+          <a href="#" class="bg-slate-800 text-primary-accent font-bold py-6 px-4 rounded-lg border border-slate-700 hover:bg-primary-accent hover:text-white hover:border-primary-accent transition duration-300 reveal" style="transition-delay: 0.2s;">
             Partner as Telco
-          </button>
-          <button class="bg-slate-800 text-primary-accent font-bold py-6 px-4 rounded-lg border border-slate-700 hover:bg-primary-accent hover:text-white hover:border-primary-accent transition duration-300 reveal"
-            style="transition-delay: 0.3s;" data-open-assessment>
+          </a>
+          <a href="#" class="bg-slate-800 text-primary-accent font-bold py-6 px-4 rounded-lg border border-slate-700 hover:bg-primary-accent hover:text-white hover:border-primary-accent transition duration-300 reveal" style="transition-delay: 0.3s;">
             Sponsor a Pilot
-          </button>
-          <button class="bg-slate-800 text-primary-accent font-bold py-6 px-4 rounded-lg border border-slate-700 hover:bg-primary-accent hover:text-white hover:border-primary-accent transition duration-300 reveal"
-            style="transition-delay: 0.4s;" data-open-assessment>
+          </a>
+          <a href="#" class="bg-slate-800 text-primary-accent font-bold py-6 px-4 rounded-lg border border-slate-700 hover:bg-primary-accent hover:text-white hover:border-primary-accent transition duration-300 reveal" style="transition-delay: 0.4s;">
             See Tech in Action
-          </button>
-        </div>
-
-        <div class="mt-12 reveal">
-          <p class="text-sm text-slate-400">Prefer direct contact? Email: <span class="text-slate-200 font-semibold">partners@nexxintel.com</span></p>
+          </a>
         </div>
       </div>
     </section>
@@ -301,111 +247,33 @@
     </div>
   </footer>
 
-  <!-- Quick Assessment Modal -->
-  <div id="assessment-modal" class="fixed inset-0 z-[100] hidden">
-    <div id="assessment-backdrop" class="absolute inset-0 modal-backdrop"></div>
-
-    <div class="relative h-full w-full flex items-center justify-center p-4">
-      <div class="modal-panel w-full max-w-2xl rounded-2xl overflow-hidden shadow-2xl">
-        <!-- Header -->
-        <div class="p-6 border-b border-slate-700/50">
-          <div class="flex items-start justify-between gap-4">
-            <div>
-              <p class="text-xs text-slate-400">Verri • VeriScore</p>
-              <h3 class="mt-1 text-xl sm:text-2xl font-extrabold text-slate-100">
-                60-Second Quick Check
-              </h3>
-              <p class="mt-2 text-slate-300 text-sm">
-                Answer 5 questions. You’ll get a quick growth-readiness signal, then you can continue to the full assessment.
-              </p>
-            </div>
-            <button id="close-assessment" class="text-slate-300 hover:text-white" aria-label="Close">
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </button>
-          </div>
-
-          <!-- Progress -->
-          <div class="mt-5">
-            <div class="flex items-center justify-between text-xs text-slate-400">
-              <span id="q-step">Step 1 of 5</span>
-              <span id="q-hint">Takes ~1 min</span>
-            </div>
-            <div class="mt-2 h-2 rounded-full progress-track overflow-hidden">
-              <div id="q-progress" class="h-full progress-bar w-[20%]"></div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Body -->
-        <div class="p-6">
-          <div class="bg-slate-900/50 border border-slate-700/50 rounded-xl p-5">
-            <p id="q-title" class="text-lg font-bold text-slate-100"></p>
-            <p id="q-desc" class="mt-2 text-sm text-slate-300"></p>
-
-            <div id="q-options" class="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-3"></div>
-
-            <div class="mt-6 flex items-center justify-between gap-3">
-              <button id="q-back"
-                class="px-5 py-2 rounded-full border border-slate-700 text-slate-200 hover:border-primary-accent hover:text-primary-accent transition disabled:opacity-40 disabled:hover:border-slate-700 disabled:hover:text-slate-200">
-                Back
-              </button>
-
-              <button id="q-next"
-                class="px-6 py-2 rounded-full bg-primary-accent text-white font-semibold hover:bg-opacity-90 transition glow-effect disabled:opacity-40 disabled:hover:bg-primary-accent disabled:shadow-none">
-                Next
-              </button>
-            </div>
-          </div>
-
-          <!-- Result -->
-          <div id="q-result" class="hidden mt-6 bg-slate-900/50 border border-slate-700/50 rounded-xl p-5">
-            <div class="flex items-start justify-between gap-4">
-              <div>
-                <p class="text-xs text-slate-400">Your quick signal</p>
-                <p id="result-label" class="mt-1 text-xl font-extrabold text-slate-100"></p>
-                <p id="result-text" class="mt-2 text-sm text-slate-300"></p>
-              </div>
-              <div class="text-right">
-                <p class="text-xs text-slate-400">Signal score</p>
-                <p id="result-score" class="mt-1 text-2xl font-black text-primary-accent"></p>
-              </div>
-            </div>
-
-            <div class="mt-5 flex flex-col sm:flex-row gap-3">
-              <button id="continue-to-full"
-                class="w-full sm:w-auto px-6 py-3 rounded-full bg-primary-accent text-white font-semibold hover:bg-opacity-90 transition glow-effect">
-                Continue to Full VeriScore Assessment
-              </button>
-              <button id="close-after-result"
-                class="w-full sm:w-auto px-6 py-3 rounded-full border border-slate-700 text-slate-200 hover:border-primary-accent hover:text-primary-accent transition">
-                Not now
-              </button>
-            </div>
-
-            <p class="mt-4 text-xs text-slate-400">
-              Tip: The full assessment is where you get actionable recommendations, compliance gaps, and improvement steps.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Three.js -->
+  <!-- Three.js for background animation -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      // =========================
-      //  CONFIG — SET YOUR FORM
-      // =========================
-      const FULL_ASSESSMENT_URL = "https://form.jotform.com/YOUR_FORM_ID"; // <-- replace
 
       // =========================
-      // Mobile menu
+      // SET YOUR ASSESSMENT LINK
       // =========================
+      const ASSESSMENT_URL = "https://form.jotform.com/YOUR_FORM_ID";
+
+      // --- Wire all CTAs to assessment ---
+      const ctas = [
+        'nav-assessment-cta',
+        'mobile-assessment-cta',
+        'hero-assessment-cta',
+        'contact-assessment-cta'
+      ];
+      ctas.forEach((id) => {
+        const el = document.getElementById(id);
+        if (!el) return;
+        el.setAttribute('href', ASSESSMENT_URL);
+        el.setAttribute('target', '_blank');
+        el.setAttribute('rel', 'noopener noreferrer');
+      });
+
+      // --- Mobile Menu ---
       const mobileMenuButton = document.getElementById('mobile-menu-button');
       const mobileMenu = document.getElementById('mobile-menu');
       const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
@@ -416,35 +284,34 @@
         mobileMenuOverlay.classList.toggle('hidden');
       }
 
-      mobileMenuButton?.addEventListener('click', toggleMenu);
-      mobileMenuOverlay?.addEventListener('click', toggleMenu);
+      mobileMenuButton.addEventListener('click', toggleMenu);
+      mobileMenuOverlay.addEventListener('click', toggleMenu);
       mobileLinks.forEach(link => link.addEventListener('click', toggleMenu));
 
-      // =========================
-      // Scroll reveal
-      // =========================
+      // --- Scroll Animations ---
       const revealElements = document.querySelectorAll('.reveal');
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-          if (entry.isIntersecting) entry.target.classList.add('active');
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+          }
         });
       }, { threshold: 0.1 });
       revealElements.forEach(el => observer.observe(el));
 
-      // Footer year
+      // --- Footer Year ---
       document.getElementById('year').textContent = new Date().getFullYear();
 
-      // =========================
-      // 3D card tilt
-      // =========================
+      // --- Interactive 3D Card Effect ---
       const cards = document.querySelectorAll('.interactive-card');
       cards.forEach(card => {
         card.addEventListener('mousemove', (e) => {
           const rect = card.getBoundingClientRect();
           const x = e.clientX - rect.left;
           const y = e.clientY - rect.top;
-          const rotateX = (y / rect.height - 0.5) * -18;
-          const rotateY = (x / rect.width - 0.5) * 18;
+          const { width, height } = rect;
+          const rotateX = (y / height - 0.5) * -20;
+          const rotateY = (x / width - 0.5) * 20;
           card.style.setProperty('--rotateX', `${rotateX}deg`);
           card.style.setProperty('--rotateY', `${rotateY}deg`);
         });
@@ -454,243 +321,7 @@
         });
       });
 
-      // =========================
-      // Quick Assessment Modal
-      // =========================
-      const modal = document.getElementById('assessment-modal');
-      const backdrop = document.getElementById('assessment-backdrop');
-      const closeBtn = document.getElementById('close-assessment');
-      const closeAfterResultBtn = document.getElementById('close-after-result');
-
-      const openButtons = [
-        document.getElementById('open-assessment-hero'),
-        document.getElementById('open-assessment-how'),
-        document.getElementById('open-assessment-capabilities'),
-        document.getElementById('open-assessment-cta-desktop'),
-        document.getElementById('open-assessment-cta-mobile')
-      ].filter(Boolean);
-
-      document.querySelectorAll('[data-open-assessment]').forEach(btn => {
-        btn.addEventListener('click', () => openModal());
-      });
-
-      openButtons.forEach(btn => btn.addEventListener('click', () => openModal()));
-
-      function openModal() {
-        modal.classList.remove('hidden');
-        document.body.classList.add('overflow-hidden');
-        resetQuiz();
-        renderStep();
-      }
-      function closeModal() {
-        modal.classList.add('hidden');
-        document.body.classList.remove('overflow-hidden');
-      }
-
-      backdrop.addEventListener('click', closeModal);
-      closeBtn.addEventListener('click', closeModal);
-      closeAfterResultBtn?.addEventListener('click', closeModal);
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && !modal.classList.contains('hidden')) closeModal();
-      });
-
-      // Quiz data (5 Qs)
-      const questions = [
-        {
-          id: "structure",
-          title: "Do you have clear structure — or daily chaos?",
-          desc: "Think roles, responsibilities, and how decisions get made.",
-          options: [
-            { label: "Clear structure & owners", score: 4 },
-            { label: "Some structure, inconsistent", score: 3 },
-            { label: "Mostly ad-hoc / chaos", score: 1 },
-            { label: "Not sure yet", score: 2 },
-          ],
-        },
-        {
-          id: "process",
-          title: "How disciplined are your operations and processes?",
-          desc: "Do you run repeatable workflows, or reinvent every week?",
-          options: [
-            { label: "Repeatable processes", score: 4 },
-            { label: "Some processes, not enforced", score: 3 },
-            { label: "Mostly improvised", score: 1 },
-            { label: "Early stage (still forming)", score: 2 },
-          ],
-        },
-        {
-          id: "finance",
-          title: "How strong is your financial discipline?",
-          desc: "Tracking cashflow, separating business funds, basic records.",
-          options: [
-            { label: "Strong records & visibility", score: 4 },
-            { label: "Basic tracking only", score: 3 },
-            { label: "Weak / no consistent records", score: 1 },
-            { label: "Early stage", score: 2 },
-          ],
-        },
-        {
-          id: "sales",
-          title: "How consistent is your sales execution?",
-          desc: "Do you have a repeatable pipeline, or random sales?",
-          options: [
-            { label: "Repeatable pipeline", score: 4 },
-            { label: "Some repeatability", score: 3 },
-            { label: "Random / inconsistent", score: 1 },
-            { label: "Still validating market", score: 2 },
-          ],
-        },
-        {
-          id: "compliance",
-          title: "How ready are you for compliance & governance?",
-          desc: "Registrations, documentation, basic policies, accountability.",
-          options: [
-            { label: "Solid compliance posture", score: 4 },
-            { label: "Partial / improving", score: 3 },
-            { label: "Weak / unmanaged", score: 1 },
-            { label: "Not applicable yet", score: 2 },
-          ],
-        },
-      ];
-
-      let step = 0;
-      const answers = {}; // { qid: { label, score } }
-
-      const elStep = document.getElementById('q-step');
-      const elProgress = document.getElementById('q-progress');
-      const elTitle = document.getElementById('q-title');
-      const elDesc = document.getElementById('q-desc');
-      const elOptions = document.getElementById('q-options');
-      const elBack = document.getElementById('q-back');
-      const elNext = document.getElementById('q-next');
-
-      const elResultWrap = document.getElementById('q-result');
-      const elResultLabel = document.getElementById('result-label');
-      const elResultText = document.getElementById('result-text');
-      const elResultScore = document.getElementById('result-score');
-      const btnContinue = document.getElementById('continue-to-full');
-
-      function resetQuiz() {
-        step = 0;
-        for (const k in answers) delete answers[k];
-        elResultWrap.classList.add('hidden');
-        document.querySelector('.bg-slate-900\\/50.border.border-slate-700\\/50.rounded-xl.p-5')?.classList.remove('hidden');
-      }
-
-      function renderStep() {
-        const q = questions[step];
-
-        // UI
-        elStep.textContent = `Step ${step + 1} of ${questions.length}`;
-        elProgress.style.width = `${((step + 1) / questions.length) * 100}%`;
-
-        elTitle.textContent = q.title;
-        elDesc.textContent = q.desc;
-
-        // options
-        elOptions.innerHTML = "";
-        q.options.forEach((opt, idx) => {
-          const isSelected = answers[q.id]?.label === opt.label;
-
-          const btn = document.createElement('button');
-          btn.type = "button";
-          btn.className =
-            `text-left rounded-xl px-4 py-3 bg-slate-900/60 border transition ` +
-            (isSelected
-              ? "border-primary-accent glow-effect"
-              : "border-slate-700 hover:border-primary-accent");
-          btn.innerHTML = `
-            <div class="flex items-start justify-between gap-4">
-              <div>
-                <p class="font-semibold text-slate-100">${opt.label}</p>
-                <p class="mt-1 text-xs text-slate-400">Tap to select</p>
-              </div>
-              <div class="mt-1 w-5 h-5 rounded-full border ${isSelected ? "bg-primary-accent border-primary-accent" : "border-slate-600"}"></div>
-            </div>
-          `;
-          btn.addEventListener('click', () => {
-            answers[q.id] = { label: opt.label, score: opt.score };
-            renderStep();
-            updateNavState();
-          });
-
-          elOptions.appendChild(btn);
-        });
-
-        updateNavState();
-      }
-
-      function updateNavState() {
-        elBack.disabled = step === 0;
-
-        const q = questions[step];
-        elNext.disabled = !answers[q.id];
-
-        elNext.textContent = (step === questions.length - 1) ? "Finish" : "Next";
-      }
-
-      elBack.addEventListener('click', () => {
-        if (step > 0) {
-          step -= 1;
-          renderStep();
-        }
-      });
-
-      elNext.addEventListener('click', () => {
-        const q = questions[step];
-        if (!answers[q.id]) return;
-
-        if (step < questions.length - 1) {
-          step += 1;
-          renderStep();
-        } else {
-          showResult();
-        }
-      });
-
-      function showResult() {
-        const total = Object.values(answers).reduce((sum, a) => sum + a.score, 0);
-        const max = questions.length * 4;
-        const pct = Math.round((total / max) * 100);
-
-        let label = "Early Stage";
-        let text = "You’re building the basics. The fastest wins are structure + financial discipline + one repeatable sales routine.";
-        if (pct >= 75) {
-          label = "Growth-Ready";
-          text = "You have solid foundations. The full assessment will pinpoint scaling constraints and compliance gaps to unlock expansion.";
-        } else if (pct >= 50) {
-          label = "Stabilizing";
-          text = "You’re halfway there. The full assessment will highlight the top 3 operational improvements to raise your VeriScore quickly.";
-        } else if (pct >= 35) {
-          label = "Needs Structure";
-          text = "Your biggest gains come from operational discipline and governance. The full assessment will map what to fix first.";
-        }
-
-        elResultLabel.textContent = label;
-        elResultText.textContent = text;
-        elResultScore.textContent = `${pct}%`;
-
-        // swap views
-        const quizCard = document.querySelector('.bg-slate-900\\/50.border.border-slate-700\\/50.rounded-xl.p-5');
-        if (quizCard) quizCard.classList.add('hidden');
-        elResultWrap.classList.remove('hidden');
-      }
-
-      btnContinue.addEventListener('click', () => {
-        // Optional: pass quick-check result in querystring (safe, minimal)
-        // You can read these params later if you build your own assessment page.
-        const total = Object.values(answers).reduce((sum, a) => sum + a.score, 0);
-        const max = questions.length * 4;
-        const pct = Math.round((total / max) * 100);
-
-        const url = new URL(FULL_ASSESSMENT_URL);
-        url.searchParams.set("quick_signal", String(pct));
-        window.open(url.toString(), "_blank");
-      });
-
-      // =========================
-      // Three.js background
-      // =========================
+      // --- Three.js Background Animation ---
       let scene, camera, renderer, dataSphere;
       const canvas = document.getElementById('hero-canvas');
 
@@ -699,7 +330,7 @@
         camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
         camera.position.z = 2.5;
 
-        renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: true });
+        renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true });
         renderer.setSize(window.innerWidth, window.innerHeight);
         renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
@@ -707,11 +338,12 @@
         const sphereMaterial = new THREE.MeshStandardMaterial({
           color: 0x06B6D4,
           emissive: 0x06B6D4,
-          emissiveIntensity: 0.28,
+          emissiveIntensity: 0.3,
           metalness: 0.8,
           roughness: 0.4,
           wireframe: true,
         });
+
         dataSphere = new THREE.Mesh(sphereGeometry, sphereMaterial);
         scene.add(dataSphere);
 
@@ -723,27 +355,27 @@
         light2.position.set(-5, -5, -5);
         scene.add(light2);
 
-        scene.add(new THREE.AmbientLight(0xffffff, 0.08));
+        scene.add(new THREE.AmbientLight(0xffffff, 0.1));
       }
 
-      let mouseX = 0, mouseY = 0;
+      let mouseX = 0;
+      let mouseY = 0;
       document.addEventListener('mousemove', (event) => {
         mouseX = (event.clientX / window.innerWidth) * 2 - 1;
         mouseY = -(event.clientY / window.innerHeight) * 2 + 1;
       });
 
       const clock = new THREE.Clock();
+
       function animate() {
         requestAnimationFrame(animate);
-        const t = clock.getElapsedTime();
+        const elapsedTime = clock.getElapsedTime();
 
-        if (dataSphere) {
-          dataSphere.rotation.y = t * 0.1;
-          dataSphere.rotation.x = t * 0.05;
-        }
+        dataSphere.rotation.y = elapsedTime * 0.1;
+        dataSphere.rotation.x = elapsedTime * 0.05;
 
-        camera.position.x += (mouseX * 0.45 - camera.position.x) * 0.05;
-        camera.position.y += (mouseY * 0.45 - camera.position.y) * 0.05;
+        camera.position.x += (mouseX * 0.5 - camera.position.x) * 0.05;
+        camera.position.y += (mouseY * 0.5 - camera.position.y) * 0.05;
         camera.lookAt(scene.position);
 
         renderer.render(scene, camera);
@@ -755,6 +387,7 @@
         renderer.setSize(window.innerWidth, window.innerHeight);
         renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
       }
+
       window.addEventListener('resize', onWindowResize, false);
 
       initThree();
