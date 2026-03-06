@@ -5,60 +5,101 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Nexxintel - Intelligent Infrastructure for Africa</title>
 
-  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Google Fonts: Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
 
-  <!-- Favicon -->
   <link rel="icon" href="https://placehold.co/32x32/06B6D4/FFFFFF?text=NXT" type="image/png" />
 
   <style>
-    body { font-family: 'Inter', sans-serif; background: #ffffff; color: #0f172a; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #ffffff;
+      color: #0f172a;
+    }
+
     .bg-primary-accent { background-color: #06B6D4; }
     .text-primary-accent { color: #06B6D4; }
     .border-primary-accent { border-color: #06B6D4; }
-    .text-secondary-accent { color: #0284C7; }
-    .glow-effect { box-shadow: 0 18px 35px rgba(6,182,212,.25), 0 8px 18px rgba(2,132,199,.15); }
 
-    .bg-grid-light{
+    .glow-effect {
+      box-shadow: 0 18px 35px rgba(6, 182, 212, 0.22), 0 8px 18px rgba(2, 132, 199, 0.12);
+    }
+
+    .bg-grid-light {
       background-image:
-        linear-gradient(to right, rgba(2,6,23,.06) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(2,6,23,.06) 1px, transparent 1px);
+        linear-gradient(to right, rgba(2, 6, 23, 0.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(2, 6, 23, 0.05) 1px, transparent 1px);
       background-size: 42px 42px;
     }
 
-    .reveal { opacity: 0; transform: translateY(18px); transition: opacity .7s ease-out, transform .7s ease-out; }
-    .reveal.active { opacity: 1; transform: translateY(0); }
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+    }
 
-    #mobile-menu{ transition: transform .25s ease-in-out; background-color:#ffffff; }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
-    .interactive-card{
+    #mobile-menu {
+      transition: transform 0.25s ease-in-out;
+      background-color: #ffffff;
+    }
+
+    .interactive-card {
       transform-style: preserve-3d;
-      transition: transform .5s cubic-bezier(.25,1,.5,1), box-shadow .35s ease;
+      transition: transform 0.45s cubic-bezier(.25,1,.5,1), box-shadow 0.35s ease, border-color 0.25s ease;
     }
-    .interactive-card:hover{
+
+    .interactive-card:hover {
       transform: perspective(1000px) rotateY(var(--rotateY)) rotateX(var(--rotateX)) scale3d(1.02,1.02,1.02);
-      box-shadow: 0 22px 50px rgba(2,6,23,.12);
+      box-shadow: 0 24px 50px rgba(2, 6, 23, 0.10);
+      border-color: rgba(6, 182, 212, 0.45);
     }
 
-    .watermark-office{
-      position:absolute; inset:0; pointer-events:none; opacity:.16;
-      background-repeat:no-repeat; background-position:center; background-size:min(980px,92vw);
-      filter:saturate(1.05) contrast(1.05);
-      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='700' viewBox='0 0 1200 700'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%2306B6D4'/%3E%3Cstop offset='1' stop-color='%230284C7'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='1200' height='700' fill='none'/%3E%3Crect x='170' y='430' width='860' height='70' rx='18' fill='%23020b1a' fill-opacity='0.22'/%3E%3Crect x='220' y='460' width='760' height='22' rx='11' fill='url(%23g)' fill-opacity='0.55'/%3E%3Crect x='505' y='250' width='210' height='140' rx='18' fill='%23020b1a' fill-opacity='0.25'/%3E%3Crect x='525' y='270' width='170' height='90' rx='14' fill='url(%23g)' fill-opacity='0.45'/%3E%3Crect x='595' y='390' width='30' height='40' rx='10' fill='%23020b1a' fill-opacity='0.25'/%3E%3Crect x='560' y='425' width='100' height='20' rx='10' fill='%23020b1a' fill-opacity='0.22'/%3E%3Ccircle cx='360' cy='305' r='46' fill='url(%23g)' fill-opacity='0.50'/%3E%3Crect x='305' y='350' width='110' height='140' rx='28' fill='%23020b1a' fill-opacity='0.22'/%3E%3Crect x='290' y='385' width='60' height='22' rx='11' fill='url(%23g)' fill-opacity='0.40'/%3E%3Crect x='370' y='385' width='60' height='22' rx='11' fill='url(%23g)' fill-opacity='0.40'/%3E%3Ccircle cx='860' cy='305' r='46' fill='url(%23g)' fill-opacity='0.50'/%3E%3Crect x='805' y='350' width='110' height='140' rx='28' fill='%23020b1a' fill-opacity='0.22'/%3E%3Crect x='790' y='385' width='60' height='22' rx='11' fill='url(%23g)' fill-opacity='0.40'/%3E%3Crect x='870' y='385' width='60' height='22' rx='11' fill='url(%23g)' fill-opacity='0.40'/%3E%3Cpath d='M180 180 C260 80 420 80 500 180 C580 280 740 280 820 180' fill='none' stroke='url(%23g)' stroke-width='18' stroke-linecap='round' stroke-opacity='0.35'/%3E%3Cpath d='M380 560 C470 490 730 490 820 560' fill='none' stroke='%23020b1a' stroke-width='16' stroke-linecap='round' stroke-opacity='0.18'/%3E%3C/svg%3E");
+    .watermark-office {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.16;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: min(980px, 92vw);
+      filter: saturate(1.05) contrast(1.05);
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='700' viewBox='0 0 1200 700'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%2306B6D4'/%3E%3Cstop offset='1' stop-color='%230284C7'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='1200' height='700' fill='none'/%3E%3Crect x='170' y='430' width='860' height='70' rx='18' fill='%23020b1a' fill-opacity='0.22'/%3E%3Crect x='220' y='460' width='760' height='22' rx='11' fill='url(%23g)' fill-opacity='0.55'/%3E%3Crect x='505' y='250' width='210' height='140' rx='18' fill='%23020b1a' fill-opacity='0.25'/%3E%3Crect x='525' y='270' width='170' height='90' rx='14' fill='url(%23g)' fill-opacity='0.45'/%3E%3Crect x='595' y='390' width='30' height='40' rx='10' fill='%23020b1a' fill-opacity='0.25'/%3E%3Crect x='560' y='425' width='100' height='20' rx='10' fill='%23020b1a' fill-opacity='0.22'/%3E%3Ccircle cx='360' cy='305' r='46' fill='url(%23g)' fill-opacity='0.50'/%3E%3Crect x='305' y='350' width='110' height='140' rx='28' fill='%23020b1a' fill-opacity='0.22'/%3E%3Crect x='290' y='385' width='60' height='22' rx='11' fill='url(%23g)' fill-opacity='0.40'/%3E%3Crect x='370' y='385' width='60' height='22' rx='11' fill='url(%23g)' fill-opacity='0.40'/%3E%3Ccircle cx='860' cy='305' r='46' fill='url(%23g)' fill-opacity='0.50'/%3E%3Crect x='805' y='350' width='110' height='140' rx='28' fill='%23020b1a' fill-opacity='0.22'/%3E%3Crect x='790' y='385' width='60' height='22' rx='11' fill='url(%23g)' fill-opacity='0.40'/%3E%3Crect x='870' y='385' width='60' height='22' rx='11' fill='url(%23g)' fill-opacity='0.40'/%3E%3Cpath d='M180 180 C260 80 420 80 500 180 C580 280 740 280 820 180' fill='none' stroke='url(%23g)' stroke-width='18' stroke-linecap='round' stroke-opacity='0.35'/%3E%3Cpath d='M380 560 C470 490 730 490 820 560' fill='none' stroke='%23020b1a' stroke-width='16' stroke-linecap='round' stroke-opacity='0.18'/%3E%3C/svg%3E");
     }
 
-    .header-glass{ background: rgba(255,255,255,.78); backdrop-filter: blur(10px); }
+    .header-glass {
+      background: rgba(255,255,255,0.82);
+      backdrop-filter: blur(10px);
+    }
+
+    .framework-pill {
+      border: 1px solid rgba(15, 23, 42, 0.08);
+      background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+    }
+
+    .assessment-modal {
+      transition: opacity 0.25s ease, visibility 0.25s ease;
+    }
+
+    .assessment-panel {
+      transition: transform 0.28s ease, opacity 0.28s ease;
+    }
+
+    .question-card input[type="radio"] {
+      accent-color: #06B6D4;
+    }
   </style>
 </head>
 
 <body class="antialiased">
-  <!-- Header -->
-  <header id="header" class="fixed top-0 left-0 right-0 z-50 header-glass border-b border-slate-200">
+  <header class="fixed top-0 left-0 right-0 z-40 header-glass border-b border-slate-200">
     <div class="container mx-auto px-6 py-4">
       <div class="flex items-center justify-between">
         <a href="#" class="text-2xl font-extrabold text-slate-900">
@@ -66,8 +107,7 @@
         </a>
 
         <nav class="hidden lg:flex items-center space-x-8">
-          <a href="#capabilities" class="text-slate-700 hover:text-slate-900 transition duration-200 font-semibold">Capabilities</a>
-          <a href="#prelim" class="text-slate-700 hover:text-slate-900 transition duration-200 font-semibold">Start</a>
+          <a href="#frameworks" class="text-slate-700 hover:text-slate-950 transition duration-200 font-semibold">Frameworks</a>
           <button
             id="nav-start-cta"
             type="button"
@@ -87,20 +127,18 @@
       </div>
     </div>
 
-    <!-- Mobile Menu -->
     <div id="mobile-menu" class="lg:hidden transform -translate-x-full fixed top-0 left-0 h-full w-72 z-50 border-r border-slate-200">
       <div class="p-6">
         <a href="#" class="block text-2xl font-extrabold text-slate-900 mb-8">
           Nexxintel<span class="text-primary-accent">.</span>
         </a>
 
-        <a href="#capabilities" class="block py-3 text-slate-800 hover:text-slate-950 font-semibold mobile-link">Capabilities</a>
-        <a href="#prelim" class="block py-3 text-slate-800 hover:text-slate-950 font-semibold mobile-link">Start</a>
+        <a href="#frameworks" class="block py-3 text-slate-800 hover:text-slate-950 font-semibold mobile-link">Frameworks</a>
 
         <button
           id="mobile-start-cta"
           type="button"
-          class="block w-full mt-5 bg-primary-accent text-white px-5 py-3 rounded-full text-center font-bold mobile-link glow-effect"
+          class="block w-full mt-5 bg-primary-accent text-white px-5 py-3 rounded-full text-center font-bold glow-effect"
         >
           Start Business Assessment
         </button>
@@ -110,14 +148,13 @@
   </header>
 
   <main class="pt-20">
-    <!-- Hero -->
     <section class="relative overflow-hidden">
       <div class="absolute inset-0 bg-grid-light"></div>
       <div class="watermark-office"></div>
 
       <div class="relative container mx-auto px-6 py-16 lg:py-24">
         <div class="max-w-4xl">
-          <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-slate-200 bg-white/70 reveal">
+          <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-slate-200 bg-white/80 reveal">
             <span class="w-2 h-2 rounded-full bg-primary-accent"></span>
             <span class="text-sm font-semibold text-slate-700">Business Intelligence • Scoring • Compliance Infrastructure</span>
           </div>
@@ -127,21 +164,22 @@
           </h1>
 
           <p class="mt-6 text-lg md:text-xl text-slate-700 max-w-3xl reveal">
-            Activate your business maturity cycle with a <span class="font-extrabold text-slate-900">VeriScore</span> report and earn a global compliance rating with continuous business scoring.
+            Activate your business maturity cycle with a <span class="font-extrabold text-slate-950">VeriScore</span> report and earn a global compliance rating with continuous business scoring.
           </p>
 
           <div class="mt-10 flex flex-col sm:flex-row gap-4 reveal">
-            <a
-              href="#prelim"
+            <button
+              id="hero-start-cta"
+              type="button"
               class="inline-flex items-center justify-center bg-primary-accent text-white px-8 py-4 rounded-full text-lg font-extrabold hover:opacity-90 transition duration-200 glow-effect"
             >
               Start Business Assessment
-            </a>
+            </button>
             <a
-              href="#capabilities"
+              href="#frameworks"
               class="inline-flex items-center justify-center px-8 py-4 rounded-full text-lg font-bold border border-slate-300 bg-white hover:bg-slate-50 transition duration-200 text-slate-900"
             >
-              See What We Power
+              See Frameworks
             </a>
           </div>
 
@@ -155,184 +193,79 @@
       </div>
     </section>
 
-    <!-- Capabilities -->
-    <section id="capabilities" class="py-16 lg:py-24">
-      <div class="container mx-auto px-6">
-        <div class="text-center mb-12 reveal">
-          <h2 class="text-3xl md:text-4xl font-black text-slate-950">What Nexxintel Powers</h2>
-          <p class="mt-3 text-lg text-slate-700">A modular stack of systems for government-grade trust, SME scoring, and execution.</p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-          <div class="interactive-card bg-white p-7 rounded-2xl border border-slate-200 reveal">
-            <div class="flex items-start gap-4">
-              <div class="w-12 h-12 rounded-2xl bg-slate-950 text-white flex items-center justify-center font-black">AI</div>
-              <div>
-                <h3 class="text-2xl font-extrabold text-slate-950">AIREV</h3>
-                <p class="font-bold text-slate-600">Smart Revenue Engines</p>
-                <p class="mt-2 text-slate-700">AI-driven systems to automate tax collection, manage payments, and deliver real-time revenue oversight.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="interactive-card bg-white p-7 rounded-2xl border border-slate-200 reveal" style="transition-delay: 0.06s;">
-            <div class="flex items-start gap-4">
-              <div class="w-12 h-12 rounded-2xl bg-primary-accent text-white flex items-center justify-center font-black">VS</div>
-              <div>
-                <h3 class="text-2xl font-extrabold text-slate-950">Verri</h3>
-                <p class="font-bold text-slate-600">VeriScore Ranking</p>
-                <p class="mt-2 text-slate-700">SME maturity assessment, VeriScore report, and continuous scoring with compliance support pathways.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="interactive-card bg-white p-7 rounded-2xl border border-slate-200 reveal" style="transition-delay: 0.12s;">
-            <div class="flex items-start gap-4">
-              <div class="w-12 h-12 rounded-2xl bg-slate-900 text-white flex items-center justify-center font-black">CI</div>
-              <div>
-                <h3 class="text-2xl font-extrabold text-slate-950">Capitelia</h3>
-                <p class="font-bold text-slate-600">Capital Intelligence</p>
-                <p class="mt-2 text-slate-700">Data-backed insights for investment and micro-funding with risk scoring and managed return visibility.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="interactive-card bg-white p-7 rounded-2xl border border-slate-200 reveal" style="transition-delay: 0.18s;">
-            <div class="flex items-start gap-4">
-              <div class="w-12 h-12 rounded-2xl bg-slate-950 text-white flex items-center justify-center font-black">MS</div>
-              <div>
-                <h3 class="text-2xl font-extrabold text-slate-950">Giddy</h3>
-                <p class="font-bold text-slate-600">Messaging Infrastructure</p>
-                <p class="mt-2 text-slate-700">WhatsApp/SMS engagement for onboarding, service alerts, reminders, and feedback loops at scale.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Quick Check (4 questions) -->
-    <section id="prelim" class="py-16 lg:py-24 bg-slate-50 border-y border-slate-200 relative overflow-hidden">
-      <div class="watermark-office" style="opacity:0.10;"></div>
+    <section id="frameworks" class="py-16 lg:py-24 bg-slate-50 border-y border-slate-200 relative overflow-hidden">
+      <div class="watermark-office" style="opacity:0.08;"></div>
 
       <div class="relative container mx-auto px-6">
-        <div class="text-center mb-10 reveal">
-          <h2 class="text-3xl md:text-4xl font-black text-slate-950">Start your business assessment</h2>
+        <div class="text-center mb-12 reveal">
+          <h2 class="text-3xl md:text-4xl font-black text-slate-950">VeriScore Frameworks</h2>
           <p class="mt-3 text-lg text-slate-700 max-w-3xl mx-auto">
-            Answer these 4 quick questions. Next, you’ll be redirected to payment — then you’ll continue on the full VeriScore form.
+            The assessment is built around six business frameworks that shape your maturity signal, readiness profile, and continuous scoring path.
           </p>
         </div>
 
-        <div class="max-w-5xl mx-auto">
-          <form id="prelimForm" class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <!-- Q1 -->
-            <div class="bg-white rounded-2xl border border-slate-200 p-6 reveal">
-              <p class="text-sm font-extrabold text-slate-500 mb-2">Question 1</p>
-              <h3 class="text-xl font-black text-slate-950">Is your business structure clear — or mostly chaos?</h3>
-              <div class="mt-4 grid gap-3">
-                <label class="flex items-center gap-3 p-3 rounded-xl border border-slate-200 hover:bg-slate-50 cursor-pointer">
-                  <input type="radio" name="q1" value="clear" class="h-5 w-5" required />
-                  <span class="font-semibold text-slate-800">Clear structure (roles, routine, accountability)</span>
-                </label>
-                <label class="flex items-center gap-3 p-3 rounded-xl border border-slate-200 hover:bg-slate-50 cursor-pointer">
-                  <input type="radio" name="q1" value="mixed" class="h-5 w-5" />
-                  <span class="font-semibold text-slate-800">Mixed (some structure, still inconsistent)</span>
-                </label>
-                <label class="flex items-center gap-3 p-3 rounded-xl border border-slate-200 hover:bg-slate-50 cursor-pointer">
-                  <input type="radio" name="q1" value="chaos" class="h-5 w-5" />
-                  <span class="font-semibold text-slate-800">Mostly chaos (everything depends on the owner)</span>
-                </label>
-              </div>
-            </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          <div class="interactive-card framework-pill rounded-2xl p-7 reveal border">
+            <div class="w-12 h-12 rounded-2xl bg-slate-950 text-white flex items-center justify-center font-black mb-4">01</div>
+            <h3 class="text-2xl font-extrabold text-slate-950">Business Structure & Governance</h3>
+            <p class="mt-3 text-slate-700">
+              Measures ownership clarity, decision flow, accountability, basic controls, and whether the business can operate beyond founder dependency.
+            </p>
+          </div>
 
-            <!-- Q2 -->
-            <div class="bg-white rounded-2xl border border-slate-200 p-6 reveal" style="transition-delay:0.06s;">
-              <p class="text-sm font-extrabold text-slate-500 mb-2">Question 2</p>
-              <h3 class="text-xl font-black text-slate-950">Do you track cashflow weekly (not “in your head”)?</h3>
-              <div class="mt-4 grid gap-3">
-                <label class="flex items-center gap-3 p-3 rounded-xl border border-slate-200 hover:bg-slate-50 cursor-pointer">
-                  <input type="radio" name="q2" value="yes" class="h-5 w-5" required />
-                  <span class="font-semibold text-slate-800">Yes — consistent tracking</span>
-                </label>
-                <label class="flex items-center gap-3 p-3 rounded-xl border border-slate-200 hover:bg-slate-50 cursor-pointer">
-                  <input type="radio" name="q2" value="sometimes" class="h-5 w-5" />
-                  <span class="font-semibold text-slate-800">Sometimes — not consistent</span>
-                </label>
-                <label class="flex items-center gap-3 p-3 rounded-xl border border-slate-200 hover:bg-slate-50 cursor-pointer">
-                  <input type="radio" name="q2" value="no" class="h-5 w-5" />
-                  <span class="font-semibold text-slate-800">No — not tracked</span>
-                </label>
-              </div>
-            </div>
+          <div class="interactive-card framework-pill rounded-2xl p-7 reveal border" style="transition-delay: 0.05s;">
+            <div class="w-12 h-12 rounded-2xl bg-primary-accent text-white flex items-center justify-center font-black mb-4">02</div>
+            <h3 class="text-2xl font-extrabold text-slate-950">Financial Discipline</h3>
+            <p class="mt-3 text-slate-700">
+              Reviews cashflow visibility, record keeping, budgeting behaviour, pricing discipline, and the strength of your business financial controls.
+            </p>
+          </div>
 
-            <!-- Q3 -->
-            <div class="bg-white rounded-2xl border border-slate-200 p-6 reveal" style="transition-delay:0.12s;">
-              <p class="text-sm font-extrabold text-slate-500 mb-2">Question 3</p>
-              <h3 class="text-xl font-black text-slate-950">Are you going global — or staying local?</h3>
-              <div class="mt-4 grid gap-3">
-                <label class="flex items-center gap-3 p-3 rounded-xl border border-slate-200 hover:bg-slate-50 cursor-pointer">
-                  <input type="radio" name="q3" value="global" class="h-5 w-5" required />
-                  <span class="font-semibold text-slate-800">Going global (export, expansion, multi-location)</span>
-                </label>
-                <label class="flex items-center gap-3 p-3 rounded-xl border border-slate-200 hover:bg-slate-50 cursor-pointer">
-                  <input type="radio" name="q3" value="regional" class="h-5 w-5" />
-                  <span class="font-semibold text-slate-800">Regional (scale within Nigeria / West Africa)</span>
-                </label>
-                <label class="flex items-center gap-3 p-3 rounded-xl border border-slate-200 hover:bg-slate-50 cursor-pointer">
-                  <input type="radio" name="q3" value="local" class="h-5 w-5" />
-                  <span class="font-semibold text-slate-800">Staying local (optimize locally first)</span>
-                </label>
-              </div>
-            </div>
+          <div class="interactive-card framework-pill rounded-2xl p-7 reveal border" style="transition-delay: 0.10s;">
+            <div class="w-12 h-12 rounded-2xl bg-slate-900 text-white flex items-center justify-center font-black mb-4">03</div>
+            <h3 class="text-2xl font-extrabold text-slate-950">Operations & Process Discipline</h3>
+            <p class="mt-3 text-slate-700">
+              Evaluates repeatability, workflow clarity, fulfilment consistency, delivery systems, and the reliability of your internal execution engine.
+            </p>
+          </div>
 
-            <!-- Q4 -->
-            <div class="bg-white rounded-2xl border border-slate-200 p-6 reveal" style="transition-delay:0.18s;">
-              <p class="text-sm font-extrabold text-slate-500 mb-2">Question 4</p>
-              <h3 class="text-xl font-black text-slate-950">Do you have basic compliance in place (CAC + records)?</h3>
-              <div class="mt-4 grid gap-3">
-                <label class="flex items-center gap-3 p-3 rounded-xl border border-slate-200 hover:bg-slate-50 cursor-pointer">
-                  <input type="radio" name="q4" value="ready" class="h-5 w-5" required />
-                  <span class="font-semibold text-slate-800">Yes — compliant & documented</span>
-                </label>
-                <label class="flex items-center gap-3 p-3 rounded-xl border border-slate-200 hover:bg-slate-50 cursor-pointer">
-                  <input type="radio" name="q4" value="partial" class="h-5 w-5" />
-                  <span class="font-semibold text-slate-800">Partially — some gaps</span>
-                </label>
-                <label class="flex items-center gap-3 p-3 rounded-xl border border-slate-200 hover:bg-slate-50 cursor-pointer">
-                  <input type="radio" name="q4" value="none" class="h-5 w-5" />
-                  <span class="font-semibold text-slate-800">Not yet — need setup</span>
-                </label>
-              </div>
-            </div>
+          <div class="interactive-card framework-pill rounded-2xl p-7 reveal border" style="transition-delay: 0.15s;">
+            <div class="w-12 h-12 rounded-2xl bg-primary-accent text-white flex items-center justify-center font-black mb-4">04</div>
+            <h3 class="text-2xl font-extrabold text-slate-950">Market & Sales Execution</h3>
+            <p class="mt-3 text-slate-700">
+              Assesses customer clarity, market positioning, conversion systems, retention strength, and your ability to grow predictably.
+            </p>
+          </div>
 
-            <!-- Result + Continue -->
-            <div class="md:col-span-2 bg-white rounded-2xl border border-slate-200 p-6 reveal">
-              <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
-                <div>
-                  <h4 class="text-xl font-black text-slate-950">Your quick direction</h4>
-                  <p id="prelimResult" class="mt-2 text-slate-700 font-semibold">
-                    Answer the 4 questions, then continue to payment to unlock the full assessment.
-                  </p>
-                </div>
-                <div class="flex flex-col sm:flex-row gap-3 w-full lg:w-auto">
-                  <button
-                    type="submit"
-                    class="w-full sm:w-auto px-7 py-3 rounded-full bg-slate-950 text-white font-extrabold hover:opacity-90 transition"
-                  >
-                    Continue to Payment
-                  </button>
-                </div>
-              </div>
-              <p class="mt-3 text-sm text-slate-500 font-semibold">
-                After payment, you’ll be redirected to the full VeriScore assessment form.
-              </p>
-            </div>
-          </form>
+          <div class="interactive-card framework-pill rounded-2xl p-7 reveal border" style="transition-delay: 0.20s;">
+            <div class="w-12 h-12 rounded-2xl bg-slate-950 text-white flex items-center justify-center font-black mb-4">05</div>
+            <h3 class="text-2xl font-extrabold text-slate-950">Compliance & Trust Readiness</h3>
+            <p class="mt-3 text-slate-700">
+              Checks registration, documentation, governance hygiene, statutory readiness, and the trust signals needed for partnerships and scale.
+            </p>
+          </div>
+
+          <div class="interactive-card framework-pill rounded-2xl p-7 reveal border" style="transition-delay: 0.25s;">
+            <div class="w-12 h-12 rounded-2xl bg-primary-accent text-white flex items-center justify-center font-black mb-4">06</div>
+            <h3 class="text-2xl font-extrabold text-slate-950">People, Digital & Growth Readiness</h3>
+            <p class="mt-3 text-slate-700">
+              Measures capability depth, team coordination, digital adoption, scalability posture, and readiness for continuous scoring and expansion.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-12 text-center reveal">
+          <button
+            id="framework-start-cta"
+            type="button"
+            class="inline-flex items-center justify-center bg-primary-accent text-white px-8 py-4 rounded-full text-lg font-extrabold hover:opacity-90 transition duration-200 glow-effect"
+          >
+            Start Business Assessment
+          </button>
         </div>
       </div>
     </section>
 
-    <!-- Footer CTA -->
     <section class="py-16 lg:py-24">
       <div class="container mx-auto px-6">
         <div class="max-w-5xl mx-auto bg-white rounded-3xl border border-slate-200 p-10 lg:p-12 relative overflow-hidden reveal">
@@ -340,20 +273,21 @@
           <div class="relative">
             <h2 class="text-3xl md:text-4xl font-black text-slate-950">Unlock your VeriScore report</h2>
             <p class="mt-3 text-lg text-slate-700 max-w-2xl">
-              Start with the 4-question quick check. Payment unlocks the full assessment and your VeriScore cycle.
+              Start with the quick-screen assessment. Payment unlocks the full VeriScore form and continuous business scoring pathway.
             </p>
             <div class="mt-8 flex flex-col sm:flex-row gap-4">
-              <a
-                href="#prelim"
+              <button
+                id="footer-start-cta"
+                type="button"
                 class="inline-flex items-center justify-center bg-primary-accent text-white px-8 py-4 rounded-full text-lg font-extrabold hover:opacity-90 transition glow-effect"
               >
                 Start Business Assessment
-              </a>
+              </button>
               <a
-                href="#capabilities"
+                href="#frameworks"
                 class="inline-flex items-center justify-center px-8 py-4 rounded-full text-lg font-bold border border-slate-300 bg-white hover:bg-slate-50 transition text-slate-900"
               >
-                See Capabilities
+                Review Frameworks
               </a>
             </div>
           </div>
@@ -362,7 +296,128 @@
     </section>
   </main>
 
-  <!-- Footer -->
+  <div id="assessment-modal" class="assessment-modal fixed inset-0 z-[60] bg-slate-950/65 backdrop-blur-sm opacity-0 invisible">
+    <div class="min-h-full flex items-center justify-center p-4 lg:p-6">
+      <div id="assessment-panel" class="assessment-panel w-full max-w-5xl bg-white rounded-3xl border border-slate-200 shadow-2xl opacity-0 translate-y-4 overflow-hidden">
+        <div class="relative px-6 lg:px-8 py-6 border-b border-slate-200 bg-slate-50">
+          <div class="watermark-office" style="opacity:0.07;"></div>
+          <div class="relative flex items-start justify-between gap-4">
+            <div>
+              <p class="text-sm font-extrabold uppercase tracking-wide text-primary-accent">VeriScore Quick Screen</p>
+              <h2 class="mt-2 text-2xl md:text-3xl font-black text-slate-950">Start Business Assessment</h2>
+              <p class="mt-2 text-slate-700 max-w-2xl">
+                Answer these 4 preliminary questions. Once submitted, you’ll be redirected to payment. Payment completion should then redirect to your full Jotform assessment.
+              </p>
+            </div>
+            <button id="close-assessment-modal" type="button" class="shrink-0 w-11 h-11 rounded-full bg-white border border-slate-200 text-slate-800 font-black text-xl hover:bg-slate-100">
+              ×
+            </button>
+          </div>
+        </div>
+
+        <div class="p-6 lg:p-8">
+          <form id="prelimForm" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="question-card bg-white rounded-2xl border border-slate-200 p-6">
+              <p class="text-sm font-extrabold text-slate-500 mb-2">Question 1</p>
+              <h3 class="text-xl font-black text-slate-950">Is your business structure clear — or mostly chaos?</h3>
+              <div class="mt-4 grid gap-3">
+                <label class="flex items-center gap-3 p-3 rounded-xl border border-slate-200 cursor-pointer hover:bg-slate-50">
+                  <input type="radio" name="q1" value="clear" class="h-5 w-5" required />
+                  <span class="font-semibold text-slate-800">Clear structure with roles and accountability</span>
+                </label>
+                <label class="flex items-center gap-3 p-3 rounded-xl border border-slate-200 cursor-pointer hover:bg-slate-50">
+                  <input type="radio" name="q1" value="mixed" class="h-5 w-5" />
+                  <span class="font-semibold text-slate-800">Mixed structure with some inconsistencies</span>
+                </label>
+                <label class="flex items-center gap-3 p-3 rounded-xl border border-slate-200 cursor-pointer hover:bg-slate-50">
+                  <input type="radio" name="q1" value="chaos" class="h-5 w-5" />
+                  <span class="font-semibold text-slate-800">Mostly owner-driven and unstructured</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="question-card bg-white rounded-2xl border border-slate-200 p-6">
+              <p class="text-sm font-extrabold text-slate-500 mb-2">Question 2</p>
+              <h3 class="text-xl font-black text-slate-950">Do you track cashflow weekly and keep business records?</h3>
+              <div class="mt-4 grid gap-3">
+                <label class="flex items-center gap-3 p-3 rounded-xl border border-slate-200 cursor-pointer hover:bg-slate-50">
+                  <input type="radio" name="q2" value="yes" class="h-5 w-5" required />
+                  <span class="font-semibold text-slate-800">Yes, consistently</span>
+                </label>
+                <label class="flex items-center gap-3 p-3 rounded-xl border border-slate-200 cursor-pointer hover:bg-slate-50">
+                  <input type="radio" name="q2" value="sometimes" class="h-5 w-5" />
+                  <span class="font-semibold text-slate-800">Sometimes, but not disciplined</span>
+                </label>
+                <label class="flex items-center gap-3 p-3 rounded-xl border border-slate-200 cursor-pointer hover:bg-slate-50">
+                  <input type="radio" name="q2" value="no" class="h-5 w-5" />
+                  <span class="font-semibold text-slate-800">No, not consistently tracked</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="question-card bg-white rounded-2xl border border-slate-200 p-6">
+              <p class="text-sm font-extrabold text-slate-500 mb-2">Question 3</p>
+              <h3 class="text-xl font-black text-slate-950">Are you building to stay local, scale nationally, or go global?</h3>
+              <div class="mt-4 grid gap-3">
+                <label class="flex items-center gap-3 p-3 rounded-xl border border-slate-200 cursor-pointer hover:bg-slate-50">
+                  <input type="radio" name="q3" value="global" class="h-5 w-5" required />
+                  <span class="font-semibold text-slate-800">Global / export / multi-market ambition</span>
+                </label>
+                <label class="flex items-center gap-3 p-3 rounded-xl border border-slate-200 cursor-pointer hover:bg-slate-50">
+                  <input type="radio" name="q3" value="regional" class="h-5 w-5" />
+                  <span class="font-semibold text-slate-800">National or regional expansion</span>
+                </label>
+                <label class="flex items-center gap-3 p-3 rounded-xl border border-slate-200 cursor-pointer hover:bg-slate-50">
+                  <input type="radio" name="q3" value="local" class="h-5 w-5" />
+                  <span class="font-semibold text-slate-800">Local optimisation first</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="question-card bg-white rounded-2xl border border-slate-200 p-6">
+              <p class="text-sm font-extrabold text-slate-500 mb-2">Question 4</p>
+              <h3 class="text-xl font-black text-slate-950">Do you already have basic compliance and trust documents in place?</h3>
+              <div class="mt-4 grid gap-3">
+                <label class="flex items-center gap-3 p-3 rounded-xl border border-slate-200 cursor-pointer hover:bg-slate-50">
+                  <input type="radio" name="q4" value="ready" class="h-5 w-5" required />
+                  <span class="font-semibold text-slate-800">Yes, registration and records are in place</span>
+                </label>
+                <label class="flex items-center gap-3 p-3 rounded-xl border border-slate-200 cursor-pointer hover:bg-slate-50">
+                  <input type="radio" name="q4" value="partial" class="h-5 w-5" />
+                  <span class="font-semibold text-slate-800">Partially, with visible gaps</span>
+                </label>
+                <label class="flex items-center gap-3 p-3 rounded-xl border border-slate-200 cursor-pointer hover:bg-slate-50">
+                  <input type="radio" name="q4" value="none" class="h-5 w-5" />
+                  <span class="font-semibold text-slate-800">No, still needs setup</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="md:col-span-2 bg-slate-50 rounded-2xl border border-slate-200 p-6">
+              <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-5">
+                <div>
+                  <h4 class="text-xl font-black text-slate-950">Your quick direction</h4>
+                  <p id="prelimResult" class="mt-2 text-slate-700 font-semibold">
+                    Complete the 4 questions to continue to payment and unlock the full VeriScore assessment.
+                  </p>
+                  <p class="mt-2 text-sm text-slate-500 font-semibold">
+                    Configure your payment success URL to redirect to your Jotform assessment.
+                  </p>
+                </div>
+                <button
+                  type="submit"
+                  class="w-full lg:w-auto px-8 py-4 rounded-full bg-primary-accent text-white font-extrabold text-lg hover:opacity-90 transition glow-effect"
+                >
+                  Continue to Payment
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <footer class="border-t border-slate-200 bg-white">
     <div class="container mx-auto px-6 py-8 text-center text-slate-600">
       <p class="text-sm font-semibold">&copy; <span id="year"></span> Nexxintel. All Rights Reserved.</p>
@@ -374,26 +429,8 @@
       // =========================
       // SET YOUR LINKS
       // =========================
-      // 1) Payment link (Flutterwave/Paystack/payment page)
       const PAYMENT_URL = "https://YOUR_PAYMENT_LINK_HERE";
-
-      // 2) Jotform full assessment link
-      //    IMPORTANT: Configure your payment provider "success/redirect URL" to point to this Jotform link.
       const JOTFORM_URL = "https://form.jotform.com/YOUR_FORM_ID";
-
-      // Header/Mobile "Start Business Assessment" should scroll to prelim, not redirect
-      const startButtons = [
-        'nav-start-cta',
-        'mobile-start-cta'
-      ];
-      startButtons.forEach((id) => {
-        const el = document.getElementById(id);
-        if (!el) return;
-        el.addEventListener('click', () => {
-          const target = document.getElementById('prelim');
-          if (target) target.scrollIntoView({ behavior: 'smooth' });
-        });
-      });
 
       // Mobile menu
       const mobileMenuButton = document.getElementById('mobile-menu-button');
@@ -413,14 +450,16 @@
       // Reveal on scroll
       const revealElements = document.querySelectorAll('.reveal');
       const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
+        entries.forEach(entry => {
+          if (entry.isIntersecting) entry.target.classList.add('active');
+        });
       }, { threshold: 0.12 });
       revealElements.forEach(el => observer.observe(el));
 
       // Footer year
       document.getElementById('year').textContent = new Date().getFullYear();
 
-      // 3D card hover
+      // 3D hover cards
       const cards = document.querySelectorAll('.interactive-card');
       cards.forEach(card => {
         card.addEventListener('mousemove', (e) => {
@@ -428,8 +467,8 @@
           const x = e.clientX - rect.left;
           const y = e.clientY - rect.top;
           const { width, height } = rect;
-          const rotateX = (y / height - 0.5) * -10;
-          const rotateY = (x / width - 0.5) * 10;
+          const rotateX = (y / height - 0.5) * -8;
+          const rotateY = (x / width - 0.5) * 8;
           card.style.setProperty('--rotateX', `${rotateX}deg`);
           card.style.setProperty('--rotateY', `${rotateY}deg`);
         });
@@ -439,19 +478,60 @@
         });
       });
 
-      // Quick check logic + redirect to payment
+      // Assessment modal
+      const modal = document.getElementById('assessment-modal');
+      const panel = document.getElementById('assessment-panel');
+      const closeModalBtn = document.getElementById('close-assessment-modal');
+
+      function openAssessmentModal() {
+        modal.classList.remove('invisible', 'opacity-0');
+        panel.classList.remove('opacity-0', 'translate-y-4');
+        document.body.style.overflow = 'hidden';
+        if (!mobileMenu.classList.contains('-translate-x-full')) {
+          toggleMenu();
+        }
+      }
+
+      function closeAssessmentModal() {
+        modal.classList.add('opacity-0');
+        panel.classList.add('opacity-0', 'translate-y-4');
+        setTimeout(() => {
+          modal.classList.add('invisible');
+        }, 250);
+        document.body.style.overflow = '';
+      }
+
+      ['nav-start-cta', 'mobile-start-cta', 'hero-start-cta', 'framework-start-cta', 'footer-start-cta']
+        .forEach(id => {
+          const btn = document.getElementById(id);
+          if (!btn) return;
+          btn.addEventListener('click', openAssessmentModal);
+        });
+
+      closeModalBtn.addEventListener('click', closeAssessmentModal);
+
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeAssessmentModal();
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && !modal.classList.contains('invisible')) {
+          closeAssessmentModal();
+        }
+      });
+
+      // Preliminary assessment + payment redirect
       const prelimForm = document.getElementById('prelimForm');
       const prelimResult = document.getElementById('prelimResult');
 
       function scoreAnswer(name, map) {
-        const v = prelimForm.querySelector(`input[name="${name}"]:checked`)?.value;
-        return map[v] ?? 0;
+        const value = prelimForm.querySelector(`input[name="${name}"]:checked`)?.value;
+        return map[value] ?? 0;
       }
 
       prelimForm.addEventListener('submit', (e) => {
         e.preventDefault();
 
-        // Simple readiness score (optional display)
         const s1 = scoreAnswer('q1', { clear: 2, mixed: 1, chaos: 0 });
         const s2 = scoreAnswer('q2', { yes: 2, sometimes: 1, no: 0 });
         const s3 = scoreAnswer('q3', { global: 2, regional: 1, local: 1 });
@@ -459,14 +539,13 @@
         const total = s1 + s2 + s3 + s4;
 
         if (total >= 7) {
-          prelimResult.textContent = "Strong signal: you look growth-ready. Redirecting you to payment to unlock your full VeriScore assessment…";
+          prelimResult.textContent = "Strong signal: your business shows good maturity momentum. Redirecting to payment to unlock your full VeriScore assessment.";
         } else if (total >= 4) {
-          prelimResult.textContent = "Mixed signal: you’re progressing but may have gaps. Redirecting you to payment to unlock your full VeriScore assessment…";
+          prelimResult.textContent = "Mixed signal: your business has visible potential with some readiness gaps. Redirecting to payment to unlock your full VeriScore assessment.";
         } else {
-          prelimResult.textContent = "Early-stage signal: structure + records may be your first win. Redirecting you to payment to unlock your full VeriScore assessment…";
+          prelimResult.textContent = "Early-stage signal: structure, records, and compliance may be your first priority. Redirecting to payment to unlock your full VeriScore assessment.";
         }
 
-        // Store quick-check answers so you can use later if needed (optional)
         const payload = {
           q1: prelimForm.querySelector('input[name="q1"]:checked')?.value,
           q2: prelimForm.querySelector('input[name="q2"]:checked')?.value,
@@ -475,17 +554,20 @@
           score: total,
           ts: Date.now()
         };
-        try { localStorage.setItem('veriscore_prelim', JSON.stringify(payload)); } catch (_) {}
 
-        // Redirect to payment
-        window.location.href = PAYMENT_URL;
+        try {
+          localStorage.setItem('veriscore_prelim', JSON.stringify(payload));
+          localStorage.setItem('veriscore_jotform_url', JOTFORM_URL);
+        } catch (_) {}
+
+        setTimeout(() => {
+          window.location.href = PAYMENT_URL;
+        }, 700);
       });
 
-      // NOTE:
-      // - Configure your PAYMENT provider "success/redirect URL" to JOTFORM_URL.
-      // - After payment, user lands on Jotform to complete the full assessment.
-      // - If your payment provider supports query params, you can append identifiers.
-      // Example: PAYMENT_URL + "?redirect=" + encodeURIComponent(JOTFORM_URL)
+      // IMPORTANT:
+      // Set your payment provider success/redirect URL to JOTFORM_URL
+      // so payment completion lands the user on the full Jotform assessment.
     });
   </script>
 </body>
