@@ -17,75 +17,42 @@
   <link rel="icon" href="https://placehold.co/32x32/06B6D4/FFFFFF?text=NXT" type="image/png" />
 
   <style>
-    body {
-      font-family: 'Inter', sans-serif;
-      background: #ffffff;
-      color: #0f172a;
-    }
-
-    /* Brand accents */
+    body { font-family: 'Inter', sans-serif; background: #ffffff; color: #0f172a; }
     .bg-primary-accent { background-color: #06B6D4; }
     .text-primary-accent { color: #06B6D4; }
     .border-primary-accent { border-color: #06B6D4; }
-    .text-secondary-accent { color: #0284C7; } /* a bit deeper blue for white bg */
+    .text-secondary-accent { color: #0284C7; }
+    .glow-effect { box-shadow: 0 18px 35px rgba(6,182,212,.25), 0 8px 18px rgba(2,132,199,.15); }
 
-    .glow-effect {
-      box-shadow: 0 18px 35px rgba(6, 182, 212, 0.25), 0 8px 18px rgba(2, 132, 199, 0.15);
-    }
-
-    /* Subtle grid on white */
-    .bg-grid-light {
+    .bg-grid-light{
       background-image:
-        linear-gradient(to right, rgba(2, 6, 23, 0.06) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(2, 6, 23, 0.06) 1px, transparent 1px);
+        linear-gradient(to right, rgba(2,6,23,.06) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(2,6,23,.06) 1px, transparent 1px);
       background-size: 42px 42px;
     }
 
-    /* Reveal */
-    .reveal {
-      opacity: 0;
-      transform: translateY(18px);
-      transition: opacity 0.7s ease-out, transform 0.7s ease-out;
-    }
-    .reveal.active {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity .7s ease-out, transform .7s ease-out; }
+    .reveal.active { opacity: 1; transform: translateY(0); }
 
-    /* Mobile menu */
-    #mobile-menu {
-      transition: transform 0.25s ease-in-out;
-      background-color: #ffffff;
-    }
+    #mobile-menu{ transition: transform .25s ease-in-out; background-color:#ffffff; }
 
-    /* Interactive cards */
-    .interactive-card {
+    .interactive-card{
       transform-style: preserve-3d;
-      transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.35s ease;
+      transition: transform .5s cubic-bezier(.25,1,.5,1), box-shadow .35s ease;
     }
-    .interactive-card:hover {
-      transform: perspective(1000px) rotateY(var(--rotateY)) rotateX(var(--rotateX)) scale3d(1.02, 1.02, 1.02);
-      box-shadow: 0 22px 50px rgba(2, 6, 23, 0.12);
-    }
-
-    /* Watermark: bold "clipart-like" office illustration as inline SVG */
-    .watermark-office {
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-      opacity: 0.16;
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: min(980px, 92vw);
-      filter: saturate(1.05) contrast(1.05);
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='700' viewBox='0 0 1200 700'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%2306B6D4'/%3E%3Cstop offset='1' stop-color='%230284C7'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='1200' height='700' fill='none'/%3E%3C!-- Desk --%3E%3Crect x='170' y='430' width='860' height='70' rx='18' fill='%23020b1a' fill-opacity='0.22'/%3E%3Crect x='220' y='460' width='760' height='22' rx='11' fill='url(%23g)' fill-opacity='0.55'/%3E%3C!-- Monitor --%3E%3Crect x='505' y='250' width='210' height='140' rx='18' fill='%23020b1a' fill-opacity='0.25'/%3E%3Crect x='525' y='270' width='170' height='90' rx='14' fill='url(%23g)' fill-opacity='0.45'/%3E%3Crect x='595' y='390' width='30' height='40' rx='10' fill='%23020b1a' fill-opacity='0.25'/%3E%3Crect x='560' y='425' width='100' height='20' rx='10' fill='%23020b1a' fill-opacity='0.22'/%3E%3C!-- Person 1 --%3E%3Ccircle cx='360' cy='305' r='46' fill='url(%23g)' fill-opacity='0.50'/%3E%3Crect x='305' y='350' width='110' height='140' rx='28' fill='%23020b1a' fill-opacity='0.22'/%3E%3Crect x='290' y='385' width='60' height='22' rx='11' fill='url(%23g)' fill-opacity='0.40'/%3E%3Crect x='370' y='385' width='60' height='22' rx='11' fill='url(%23g)' fill-opacity='0.40'/%3E%3C!-- Person 2 --%3E%3Ccircle cx='860' cy='305' r='46' fill='url(%23g)' fill-opacity='0.50'/%3E%3Crect x='805' y='350' width='110' height='140' rx='28' fill='%23020b1a' fill-opacity='0.22'/%3E%3Crect x='790' y='385' width='60' height='22' rx='11' fill='url(%23g)' fill-opacity='0.40'/%3E%3Crect x='870' y='385' width='60' height='22' rx='11' fill='url(%23g)' fill-opacity='0.40'/%3E%3C!-- Floating shapes for bold clipart feel --%3E%3Cpath d='M180 180 C260 80 420 80 500 180 C580 280 740 280 820 180' fill='none' stroke='url(%23g)' stroke-width='18' stroke-linecap='round' stroke-opacity='0.35'/%3E%3Cpath d='M380 560 C470 490 730 490 820 560' fill='none' stroke='%23020b1a' stroke-width='16' stroke-linecap='round' stroke-opacity='0.18'/%3E%3C/svg%3E");
+    .interactive-card:hover{
+      transform: perspective(1000px) rotateY(var(--rotateY)) rotateX(var(--rotateX)) scale3d(1.02,1.02,1.02);
+      box-shadow: 0 22px 50px rgba(2,6,23,.12);
     }
 
-    /* Header blur on white */
-    .header-glass {
-      background: rgba(255, 255, 255, 0.78);
-      backdrop-filter: blur(10px);
+    .watermark-office{
+      position:absolute; inset:0; pointer-events:none; opacity:.16;
+      background-repeat:no-repeat; background-position:center; background-size:min(980px,92vw);
+      filter:saturate(1.05) contrast(1.05);
+      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='700' viewBox='0 0 1200 700'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%2306B6D4'/%3E%3Cstop offset='1' stop-color='%230284C7'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='1200' height='700' fill='none'/%3E%3Crect x='170' y='430' width='860' height='70' rx='18' fill='%23020b1a' fill-opacity='0.22'/%3E%3Crect x='220' y='460' width='760' height='22' rx='11' fill='url(%23g)' fill-opacity='0.55'/%3E%3Crect x='505' y='250' width='210' height='140' rx='18' fill='%23020b1a' fill-opacity='0.25'/%3E%3Crect x='525' y='270' width='170' height='90' rx='14' fill='url(%23g)' fill-opacity='0.45'/%3E%3Crect x='595' y='390' width='30' height='40' rx='10' fill='%23020b1a' fill-opacity='0.25'/%3E%3Crect x='560' y='425' width='100' height='20' rx='10' fill='%23020b1a' fill-opacity='0.22'/%3E%3Ccircle cx='360' cy='305' r='46' fill='url(%23g)' fill-opacity='0.50'/%3E%3Crect x='305' y='350' width='110' height='140' rx='28' fill='%23020b1a' fill-opacity='0.22'/%3E%3Crect x='290' y='385' width='60' height='22' rx='11' fill='url(%23g)' fill-opacity='0.40'/%3E%3Crect x='370' y='385' width='60' height='22' rx='11' fill='url(%23g)' fill-opacity='0.40'/%3E%3Ccircle cx='860' cy='305' r='46' fill='url(%23g)' fill-opacity='0.50'/%3E%3Crect x='805' y='350' width='110' height='140' rx='28' fill='%23020b1a' fill-opacity='0.22'/%3E%3Crect x='790' y='385' width='60' height='22' rx='11' fill='url(%23g)' fill-opacity='0.40'/%3E%3Crect x='870' y='385' width='60' height='22' rx='11' fill='url(%23g)' fill-opacity='0.40'/%3E%3Cpath d='M180 180 C260 80 420 80 500 180 C580 280 740 280 820 180' fill='none' stroke='url(%23g)' stroke-width='18' stroke-linecap='round' stroke-opacity='0.35'/%3E%3Cpath d='M380 560 C470 490 730 490 820 560' fill='none' stroke='%23020b1a' stroke-width='16' stroke-linecap='round' stroke-opacity='0.18'/%3E%3C/svg%3E");
     }
+
+    .header-glass{ background: rgba(255,255,255,.78); backdrop-filter: blur(10px); }
   </style>
 </head>
 
@@ -94,25 +61,22 @@
   <header id="header" class="fixed top-0 left-0 right-0 z-50 header-glass border-b border-slate-200">
     <div class="container mx-auto px-6 py-4">
       <div class="flex items-center justify-between">
-        <!-- Logo -->
         <a href="#" class="text-2xl font-extrabold text-slate-900">
           Nexxintel<span class="text-primary-accent">.</span>
         </a>
 
-        <!-- Desktop Navigation -->
         <nav class="hidden lg:flex items-center space-x-8">
           <a href="#capabilities" class="text-slate-700 hover:text-slate-900 transition duration-200 font-semibold">Capabilities</a>
-          <a href="#prelim" class="text-slate-700 hover:text-slate-900 transition duration-200 font-semibold">Quick Check</a>
-          <a
-            id="nav-assessment-cta"
-            href="#"
+          <a href="#prelim" class="text-slate-700 hover:text-slate-900 transition duration-200 font-semibold">Start</a>
+          <button
+            id="nav-start-cta"
+            type="button"
             class="bg-primary-accent text-white px-5 py-2 rounded-full hover:opacity-90 transition duration-200 font-bold glow-effect"
           >
-            Start Assessment
-          </a>
+            Start Business Assessment
+          </button>
         </nav>
 
-        <!-- Mobile Menu Button -->
         <div class="lg:hidden">
           <button id="mobile-menu-button" class="text-slate-900 focus:outline-none" aria-label="Open menu">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -131,15 +95,15 @@
         </a>
 
         <a href="#capabilities" class="block py-3 text-slate-800 hover:text-slate-950 font-semibold mobile-link">Capabilities</a>
-        <a href="#prelim" class="block py-3 text-slate-800 hover:text-slate-950 font-semibold mobile-link">Quick Check</a>
+        <a href="#prelim" class="block py-3 text-slate-800 hover:text-slate-950 font-semibold mobile-link">Start</a>
 
-        <a
-          id="mobile-assessment-cta"
-          href="#"
-          class="block mt-5 bg-primary-accent text-white px-5 py-3 rounded-full text-center font-bold mobile-link glow-effect"
+        <button
+          id="mobile-start-cta"
+          type="button"
+          class="block w-full mt-5 bg-primary-accent text-white px-5 py-3 rounded-full text-center font-bold mobile-link glow-effect"
         >
-          Start Assessment
-        </a>
+          Start Business Assessment
+        </button>
       </div>
     </div>
     <div id="mobile-menu-overlay" class="fixed inset-0 bg-black/40 z-40 hidden"></div>
@@ -162,31 +126,30 @@
             Open infrastructure for <span class="text-primary-accent">intelligent economies</span>.
           </h1>
 
-          <p class="mt-6 text-lg md:text-xl text-slate-700 max-w-2xl reveal">
-            Run a fast maturity check, then complete the full VeriScore assessment to generate your growth readiness signal.
+          <p class="mt-6 text-lg md:text-xl text-slate-700 max-w-3xl reveal">
+            Activate your business maturity cycle with a <span class="font-extrabold text-slate-900">VeriScore</span> report and earn a global compliance rating with continuous business scoring.
           </p>
 
           <div class="mt-10 flex flex-col sm:flex-row gap-4 reveal">
             <a
-              id="hero-assessment-cta"
-              href="#"
+              href="#prelim"
               class="inline-flex items-center justify-center bg-primary-accent text-white px-8 py-4 rounded-full text-lg font-extrabold hover:opacity-90 transition duration-200 glow-effect"
             >
               Start Business Assessment
             </a>
             <a
-              href="#prelim"
+              href="#capabilities"
               class="inline-flex items-center justify-center px-8 py-4 rounded-full text-lg font-bold border border-slate-300 bg-white hover:bg-slate-50 transition duration-200 text-slate-900"
             >
-              Take 60-sec Quick Check
+              See What We Power
             </a>
           </div>
 
           <div class="mt-10 flex flex-wrap gap-3 reveal">
-            <span class="px-3 py-1.5 rounded-full bg-slate-100 text-slate-700 font-semibold text-sm border border-slate-200">SME Maturity</span>
-            <span class="px-3 py-1.5 rounded-full bg-slate-100 text-slate-700 font-semibold text-sm border border-slate-200">Governance Readiness</span>
-            <span class="px-3 py-1.5 rounded-full bg-slate-100 text-slate-700 font-semibold text-sm border border-slate-200">Compliance Infrastructure</span>
-            <span class="px-3 py-1.5 rounded-full bg-slate-100 text-slate-700 font-semibold text-sm border border-slate-200">Growth Signals</span>
+            <span class="px-3 py-1.5 rounded-full bg-slate-100 text-slate-700 font-semibold text-sm border border-slate-200">VeriScore Ranking</span>
+            <span class="px-3 py-1.5 rounded-full bg-slate-100 text-slate-700 font-semibold text-sm border border-slate-200">Compliance Support</span>
+            <span class="px-3 py-1.5 rounded-full bg-slate-100 text-slate-700 font-semibold text-sm border border-slate-200">Continuous Scoring</span>
+            <span class="px-3 py-1.5 rounded-full bg-slate-100 text-slate-700 font-semibold text-sm border border-slate-200">Growth Readiness</span>
           </div>
         </div>
       </div>
@@ -217,8 +180,8 @@
               <div class="w-12 h-12 rounded-2xl bg-primary-accent text-white flex items-center justify-center font-black">VS</div>
               <div>
                 <h3 class="text-2xl font-extrabold text-slate-950">Verri</h3>
-                <p class="font-bold text-slate-600">Business Intelligence Engine</p>
-                <p class="mt-2 text-slate-700">SME maturity assessment, VeriScore rating, and compliance support pathways that unlock growth readiness.</p>
+                <p class="font-bold text-slate-600">VeriScore Ranking</p>
+                <p class="mt-2 text-slate-700">SME maturity assessment, VeriScore report, and continuous scoring with compliance support pathways.</p>
               </div>
             </div>
           </div>
@@ -248,15 +211,15 @@
       </div>
     </section>
 
-    <!-- Quick Check (4 preliminary questions) -->
+    <!-- Quick Check (4 questions) -->
     <section id="prelim" class="py-16 lg:py-24 bg-slate-50 border-y border-slate-200 relative overflow-hidden">
       <div class="watermark-office" style="opacity:0.10;"></div>
 
       <div class="relative container mx-auto px-6">
         <div class="text-center mb-10 reveal">
-          <h2 class="text-3xl md:text-4xl font-black text-slate-950">60-second quick check</h2>
+          <h2 class="text-3xl md:text-4xl font-black text-slate-950">Start your business assessment</h2>
           <p class="mt-3 text-lg text-slate-700 max-w-3xl mx-auto">
-            Answer 4 simple questions. You’ll get an instant direction — then you can proceed to the full VeriScore assessment.
+            Answer these 4 quick questions. Next, you’ll be redirected to payment — then you’ll continue on the full VeriScore form.
           </p>
         </div>
 
@@ -266,7 +229,7 @@
             <div class="bg-white rounded-2xl border border-slate-200 p-6 reveal">
               <p class="text-sm font-extrabold text-slate-500 mb-2">Question 1</p>
               <h3 class="text-xl font-black text-slate-950">Is your business structure clear — or mostly chaos?</h3>
-              <div class="mt-4 grid grid-cols-1 gap-3">
+              <div class="mt-4 grid gap-3">
                 <label class="flex items-center gap-3 p-3 rounded-xl border border-slate-200 hover:bg-slate-50 cursor-pointer">
                   <input type="radio" name="q1" value="clear" class="h-5 w-5" required />
                   <span class="font-semibold text-slate-800">Clear structure (roles, routine, accountability)</span>
@@ -286,7 +249,7 @@
             <div class="bg-white rounded-2xl border border-slate-200 p-6 reveal" style="transition-delay:0.06s;">
               <p class="text-sm font-extrabold text-slate-500 mb-2">Question 2</p>
               <h3 class="text-xl font-black text-slate-950">Do you track cashflow weekly (not “in your head”)?</h3>
-              <div class="mt-4 grid grid-cols-1 gap-3">
+              <div class="mt-4 grid gap-3">
                 <label class="flex items-center gap-3 p-3 rounded-xl border border-slate-200 hover:bg-slate-50 cursor-pointer">
                   <input type="radio" name="q2" value="yes" class="h-5 w-5" required />
                   <span class="font-semibold text-slate-800">Yes — consistent tracking</span>
@@ -306,7 +269,7 @@
             <div class="bg-white rounded-2xl border border-slate-200 p-6 reveal" style="transition-delay:0.12s;">
               <p class="text-sm font-extrabold text-slate-500 mb-2">Question 3</p>
               <h3 class="text-xl font-black text-slate-950">Are you going global — or staying local?</h3>
-              <div class="mt-4 grid grid-cols-1 gap-3">
+              <div class="mt-4 grid gap-3">
                 <label class="flex items-center gap-3 p-3 rounded-xl border border-slate-200 hover:bg-slate-50 cursor-pointer">
                   <input type="radio" name="q3" value="global" class="h-5 w-5" required />
                   <span class="font-semibold text-slate-800">Going global (export, expansion, multi-location)</span>
@@ -326,7 +289,7 @@
             <div class="bg-white rounded-2xl border border-slate-200 p-6 reveal" style="transition-delay:0.18s;">
               <p class="text-sm font-extrabold text-slate-500 mb-2">Question 4</p>
               <h3 class="text-xl font-black text-slate-950">Do you have basic compliance in place (CAC + records)?</h3>
-              <div class="mt-4 grid grid-cols-1 gap-3">
+              <div class="mt-4 grid gap-3">
                 <label class="flex items-center gap-3 p-3 rounded-xl border border-slate-200 hover:bg-slate-50 cursor-pointer">
                   <input type="radio" name="q4" value="ready" class="h-5 w-5" required />
                   <span class="font-semibold text-slate-800">Yes — compliant & documented</span>
@@ -342,13 +305,13 @@
               </div>
             </div>
 
-            <!-- Result + CTA -->
+            <!-- Result + Continue -->
             <div class="md:col-span-2 bg-white rounded-2xl border border-slate-200 p-6 reveal">
               <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
                 <div>
                   <h4 class="text-xl font-black text-slate-950">Your quick direction</h4>
                   <p id="prelimResult" class="mt-2 text-slate-700 font-semibold">
-                    Answer the 4 questions to see your direction here.
+                    Answer the 4 questions, then continue to payment to unlock the full assessment.
                   </p>
                 </div>
                 <div class="flex flex-col sm:flex-row gap-3 w-full lg:w-auto">
@@ -356,19 +319,12 @@
                     type="submit"
                     class="w-full sm:w-auto px-7 py-3 rounded-full bg-slate-950 text-white font-extrabold hover:opacity-90 transition"
                   >
-                    See Direction
+                    Continue to Payment
                   </button>
-                  <a
-                    id="prelim-assessment-cta"
-                    href="#"
-                    class="w-full sm:w-auto px-7 py-3 rounded-full bg-primary-accent text-white font-extrabold hover:opacity-90 transition glow-effect text-center"
-                  >
-                    Proceed to Full Assessment
-                  </a>
                 </div>
               </div>
               <p class="mt-3 text-sm text-slate-500 font-semibold">
-                This is a quick signal — the full VeriScore assessment generates your complete maturity rating.
+                After payment, you’ll be redirected to the full VeriScore assessment form.
               </p>
             </div>
           </form>
@@ -376,23 +332,22 @@
       </div>
     </section>
 
-    <!-- CTA -->
+    <!-- Footer CTA -->
     <section class="py-16 lg:py-24">
       <div class="container mx-auto px-6">
         <div class="max-w-5xl mx-auto bg-white rounded-3xl border border-slate-200 p-10 lg:p-12 relative overflow-hidden reveal">
           <div class="watermark-office" style="opacity:0.08;"></div>
           <div class="relative">
-            <h2 class="text-3xl md:text-4xl font-black text-slate-950">Ready for your VeriScore?</h2>
+            <h2 class="text-3xl md:text-4xl font-black text-slate-950">Unlock your VeriScore report</h2>
             <p class="mt-3 text-lg text-slate-700 max-w-2xl">
-              The full assessment takes about 8–12 minutes and produces an actionable growth readiness signal.
+              Start with the 4-question quick check. Payment unlocks the full assessment and your VeriScore cycle.
             </p>
             <div class="mt-8 flex flex-col sm:flex-row gap-4">
               <a
-                id="cta-assessment-cta"
-                href="#"
+                href="#prelim"
                 class="inline-flex items-center justify-center bg-primary-accent text-white px-8 py-4 rounded-full text-lg font-extrabold hover:opacity-90 transition glow-effect"
               >
-                Start Assessment Now
+                Start Business Assessment
               </a>
               <a
                 href="#capabilities"
@@ -417,24 +372,27 @@
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       // =========================
-      // SET YOUR ASSESSMENT LINK
+      // SET YOUR LINKS
       // =========================
-      const ASSESSMENT_URL = "https://form.jotform.com/YOUR_FORM_ID";
+      // 1) Payment link (Flutterwave/Paystack/payment page)
+      const PAYMENT_URL = "https://YOUR_PAYMENT_LINK_HERE";
 
-      // Wire all CTAs to assessment
-      const ctas = [
-        'nav-assessment-cta',
-        'mobile-assessment-cta',
-        'hero-assessment-cta',
-        'prelim-assessment-cta',
-        'cta-assessment-cta'
+      // 2) Jotform full assessment link
+      //    IMPORTANT: Configure your payment provider "success/redirect URL" to point to this Jotform link.
+      const JOTFORM_URL = "https://form.jotform.com/YOUR_FORM_ID";
+
+      // Header/Mobile "Start Business Assessment" should scroll to prelim, not redirect
+      const startButtons = [
+        'nav-start-cta',
+        'mobile-start-cta'
       ];
-      ctas.forEach((id) => {
+      startButtons.forEach((id) => {
         const el = document.getElementById(id);
         if (!el) return;
-        el.setAttribute('href', ASSESSMENT_URL);
-        el.setAttribute('target', '_blank');
-        el.setAttribute('rel', 'noopener noreferrer');
+        el.addEventListener('click', () => {
+          const target = document.getElementById('prelim');
+          if (target) target.scrollIntoView({ behavior: 'smooth' });
+        });
       });
 
       // Mobile menu
@@ -455,9 +413,7 @@
       // Reveal on scroll
       const revealElements = document.querySelectorAll('.reveal');
       const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) entry.target.classList.add('active');
-        });
+        entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
       }, { threshold: 0.12 });
       revealElements.forEach(el => observer.observe(el));
 
@@ -483,7 +439,7 @@
         });
       });
 
-      // Quick check logic (simple, legible, directional)
+      // Quick check logic + redirect to payment
       const prelimForm = document.getElementById('prelimForm');
       const prelimResult = document.getElementById('prelimResult');
 
@@ -495,22 +451,41 @@
       prelimForm.addEventListener('submit', (e) => {
         e.preventDefault();
 
-        // Higher score = more readiness
+        // Simple readiness score (optional display)
         const s1 = scoreAnswer('q1', { clear: 2, mixed: 1, chaos: 0 });
         const s2 = scoreAnswer('q2', { yes: 2, sometimes: 1, no: 0 });
-        const s3 = scoreAnswer('q3', { global: 2, regional: 1, local: 1 }); // local isn't "bad"—just different
+        const s3 = scoreAnswer('q3', { global: 2, regional: 1, local: 1 });
         const s4 = scoreAnswer('q4', { ready: 2, partial: 1, none: 0 });
-
         const total = s1 + s2 + s3 + s4;
 
         if (total >= 7) {
-          prelimResult.textContent = "Strong signal: you look growth-ready. Complete the full assessment to generate your VeriScore rating and next actions.";
+          prelimResult.textContent = "Strong signal: you look growth-ready. Redirecting you to payment to unlock your full VeriScore assessment…";
         } else if (total >= 4) {
-          prelimResult.textContent = "Mixed signal: you’re progressing, but gaps may slow growth. Complete the full assessment to see exactly what to fix first.";
+          prelimResult.textContent = "Mixed signal: you’re progressing but may have gaps. Redirecting you to payment to unlock your full VeriScore assessment…";
         } else {
-          prelimResult.textContent = "Early-stage signal: you likely need structure + records first. Complete the full assessment to get a clear step-by-step readiness plan.";
+          prelimResult.textContent = "Early-stage signal: structure + records may be your first win. Redirecting you to payment to unlock your full VeriScore assessment…";
         }
+
+        // Store quick-check answers so you can use later if needed (optional)
+        const payload = {
+          q1: prelimForm.querySelector('input[name="q1"]:checked')?.value,
+          q2: prelimForm.querySelector('input[name="q2"]:checked')?.value,
+          q3: prelimForm.querySelector('input[name="q3"]:checked')?.value,
+          q4: prelimForm.querySelector('input[name="q4"]:checked')?.value,
+          score: total,
+          ts: Date.now()
+        };
+        try { localStorage.setItem('veriscore_prelim', JSON.stringify(payload)); } catch (_) {}
+
+        // Redirect to payment
+        window.location.href = PAYMENT_URL;
       });
+
+      // NOTE:
+      // - Configure your PAYMENT provider "success/redirect URL" to JOTFORM_URL.
+      // - After payment, user lands on Jotform to complete the full assessment.
+      // - If your payment provider supports query params, you can append identifiers.
+      // Example: PAYMENT_URL + "?redirect=" + encodeURIComponent(JOTFORM_URL)
     });
   </script>
 </body>
