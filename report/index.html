@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Verri Assessment Report</title>
+  <style>
+    :root{
+      --bg:#f8fafc;
+      --card:#ffffff;
+      --text:#0f172a;
+      --muted:#475569;
+      --line:#e2e8f0;
+      --brand:#0f766e;
+      --brand-soft:#ccfbf1;
+      --warn:#b45309;
+      --warn-soft:#fef3c7;
+      --risk:#b91c1c;
+      --risk-soft:#fee2e2;
+      --good:#166534;
+      --good-soft:#dcfce7;
+      --shadow:0 18px 40px rgba(15,23,42,.08);
+      --radius:22px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body{
+      margin:0;
+      font-family: Inter, Arial, Helvetica, sans-serif;
+      background:linear-gradient(180deg,#f8fafc 0%,#eef6f5 100%);
+      color:var(--text);
+    }
+
+    .wrap{
+      width:min(1040px, calc(100% - 32px));
+      margin:32px auto 60px;
+    }
+
+    .topbar{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:16px;
+      margin-bottom:20px;
+      flex-wrap:wrap;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+
+    .brand-badge{
+      width:44px;
+      height:44px;
+      border-radius:14px;
+      background:linear-gradient(135deg,#0f766e,#14b8a6);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:#fff;
+      font-weight:700;
+      font-size:18px;
+      box-shadow:var(--shadow);
+    }
+
+    .brand h1{
+      margin:0;
+      font-size:20px;
+      line-height:1.1;
+    }
+
+    .brand p{
+      margin:4px 0 0;
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    .actions{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+
+    .btn{
+      border:none;
+      border-radius:14px;
+      padding:12px 16px;
+      font-size:14px;
+      font-weight:600;
+      cursor:pointer;
+      text-decoration:none;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .btn-primary{
+      background:#0f172a;
+      color:#fff;
+    }
+
+    .btn-secondary{
+      background:#fff;
+      color:#0f172a;
+      border:1px solid var(--line);
+    }
+
+    .hero{
+      background:var(--card);
+      border:1px solid rgba(255,255,255,.7);
+      box-shadow:var(--shadow);
+      border-radius:var(--radius);
+      padding:28px;
+      margin-bottom:20px;
+    }
+
+    .eyebrow{
+      display:inline-block;
+      padding:8px 12px;
+      border-radius:999px;
+      font-size:12px;
+      font-weight:700;
+      letter-spacing:.04em;
+      margin-bottom:14px;
+    }
+
+    .hero h2{
+      margin:0 0 10px;
+      font-size:32px;
+      line-height:1.08;
+    }
+
+    .hero p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.6;
+      font-size:16px;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:1.25fr .75fr;
+      gap:20px;
+    }
+
+    .card{
+      background:var(--card);
+      border:1px solid rgba(255,255,255,.7);
+      box-shadow:var(--shadow);
+      border-radius:var(--radius);
+      padding:24px;
+    }
+
+    .section-title{
+      font-size:18px;
+      margin:0 0 14px;
+    }
+
+    .meta{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:12px;
+      margin-top:18px;
+    }
+
+    .meta-item{
+      padding:14px;
+      border:1px solid var(--line);
+      border-radius:16px;
+      background:#fcfdff;
+    }
+
+    .meta-label{
+      display:block;
+      font-size:12px;
+      color:var(--muted);
+      margin-bottom:6px;
+      text-transform:uppercase;
+      letter-spacing:.04em;
+    }
+
+    .meta-value{
+      font-weight:700;
+      font-size:15px;
+      word-break:break-word;
+    }
+
+    .score-wrap{
+      margin-top:18px;
+      padding:18px;
+      border:1px solid var(--line);
+      border-radius:18px;
+      background:#fcfffe;
+    }
+
+    .score-head{
+      display:flex;
+      justify-content:space-between;
+      align-items:end;
+      gap:12px;
+      margin-bottom:10px;
+    }
+
+    .score-number{
+      font-size:42px;
+      font-weight:800;
+      line-height:1;
+    }
+
+    .score-caption{
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    .bar{
+      width:100%;
+      height:14px;
+      background:#e5e7eb;
+      border-radius:999px;
+      overflow:hidden;
+    }
+
+    .bar-fill{
+      height:100%;
+      width:0%;
+      border-radius:999px;
+      transition:width .6s ease;
+    }
+
+    .range-row{
+      display:flex;
+      justify-content:space-between;
+      font-size:12px;
+      color:var(--muted);
+      margin-top:8px;
+    }
+
+    .content p{
+      color:#1e293b;
+      line-height:1.7;
+      margin:0 0 14px;
+    }
+
+    .content ul{
+      margin:0 0 18px 18px;
+      padding:0;
+      color:#1e293b;
+      line-height:1.7;
+    }
+
+    .content h4{
+      margin:18px 0 10px;
+      font-size:16px;
+    }
+
+    .priority-table{
+      width:100%;
+      border-collapse:collapse;
+      margin-top:10px;
+      border:1px solid var(--line);
+      border-radius:16px;
+      overflow:hidden;
+    }
+
+    .priority-table th,
+    .priority-table td{
+      text-align:left;
+      padding:14px;
+      border-bottom:1px solid var(--line);
+      vertical-align:top;
+      font-size:14px;
+    }
+
+    .priority-table th{
+      background:#f8fafc;
+      font-size:13px;
+      text-transform:uppercase;
+      letter-spacing:.04em;
+      color:var(--muted);
+    }
+
+    .priority-table tr:last-child td{
+      border-bottom:none;
+    }
+
+    .next-steps{
+      display:grid;
+      gap:12px;
+      margin-top:14px;
+    }
+
+    .step{
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:14px;
+      background:#fff;
+    }
+
+    .step strong{
+      display:block;
+      margin-bottom:6px;
+    }
+
+    .side-stack{
+      display:grid;
+      gap:20px;
+    }
+
+    .tag{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:10px 12px;
+      border-radius:999px;
+      font-size:13px;
+      font-weight:700;
+    }
+
+    .muted{
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.7;
+    }
+
+    .footer-note{
+      margin-top:20px;
+      color:var(--muted);
+      font-size:13px;
+      text-align:center;
+    }
+
+    .missing{
+      padding:18px;
+      border:1px dashed #cbd5e1;
+      border-radius:16px;
+      background:#fff;
+      color:#334155;
+      margin-top:18px;
+    }
+
+    @media (max-width: 860px){
+      .grid{
+        grid-template-columns:1fr;
+      }
+
+      .hero h2{
+        font-size:26px;
+      }
+
+      .meta{
+        grid-template-columns:1fr;
+      }
+    }
+
+    @media print{
+      body{
+        background:#fff;
+      }
+
+      .wrap{
+        width:100%;
+        margin:0;
+      }
+
+      .actions{
+        display:none;
+      }
+
+      .card,.hero{
+        box-shadow:none;
+        border:1px solid #ddd;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="topbar">
+      <div class="brand">
+        <div class="brand-badge">V</div>
+        <div>
+          <h1>Verri Assessment Report</h1>
+          <p>Business Structural Assessment</p>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button class="btn btn-secondary" onclick="window.print()">Print / Save PDF</button>
+        <a class="btn btn-primary" id="whatsappBtn" href="#" target="_blank" rel="noopener">Contact on WhatsApp</a>
+      </div>
+    </div>
+
+    <section class="hero">
+      <div id="eyebrow" class="eyebrow">Assessment Result</div>
+      <h2 id="headline">Your structural result is loading...</h2>
+      <p id="subline">Please wait while your report is prepared.</p>
+
+      <div class="meta">
+        <div class="meta-item">
+          <span class="meta-label">Generated For</span>
+          <span class="meta-value" id="clientName">Structural Assessment Client</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Report ID</span>
+          <span class="meta-value" id="reportId">BSA-2026-0000</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Business Condition</span>
+          <span class="meta-value" id="conditionText">Pending</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Assessment Division</span>
+          <span class="meta-value">Business Structural Assessment Division</span>
+        </div>
+      </div>
+
+      <div class="score-wrap">
+        <div class="score-head">
+          <div>
+            <div class="score-number" id="scoreNumber">0</div>
+            <div class="score-caption">Structural Score</div>
+          </div>
+          <div class="score-caption">Scored over 240</div>
+        </div>
+        <div class="bar">
+          <div class="bar-fill" id="scoreBar"></div>
+        </div>
+        <div class="range-row">
+          <span>0</span>
+          <span>95</span>
+          <span>144</span>
+          <span>192</span>
+          <span>240</span>
+        </div>
+      </div>
+
+      <div id="missingState" class="missing" style="display:none;">
+        Missing result parameters. Open this page through the Jotform redirect so the report can load correctly.
+      </div>
+    </section>
+
+    <div class="grid">
+      <section class="card content">
+        <h3 class="section-title">Assessment Report</h3>
+        <div id="reportContent"></div>
+      </section>
+
+      <aside class="side-stack">
+        <section class="card">
+          <h3 class="section-title">Condition Summary</h3>
+          <div id="conditionTag" class="tag">Pending</div>
+          <p class="muted" id="conditionSummary">
+            Your structural summary will appear here.
+          </p>
+        </section>
+
+        <section class="card">
+          <h3 class="section-title">Immediate Next Steps</h3>
+          <div class="next-steps" id="stepsBox"></div>
+        </section>
+
+        <section class="card">
+          <h3 class="section-title">Support</h3>
+          <p class="muted">
+            For structural fixes, process refinement, KPI tracking support, or operational systemization, contact the Verri support line.
+          </p>
+          <p class="muted" style="margin:0;">
+            Support & Strategy: <strong>+234 906 874 9370</strong>
+          </p>
+        </section>
+      </aside>
+    </div>
+
+    <div class="footer-note">
+      Verri Business Structural Assessment • 2026
+    </div>
+  </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+
+    const rawCondition = (params.get("condition") || "").trim();
+    const rawScore = parseInt(params.get("score") || "0", 10);
+    const rawName = (params.get("name") || "Structural Assessment Client").trim();
+
+    const normalizedCondition = rawCondition.toUpperCase();
+    const safeScore = Number.isFinite(rawScore) ? Math.max(0, Math.min(rawScore, 240)) : 0;
+    const year = new Date().getFullYear();
+
+    function slugCode(condition){
+      const map = {
+        "SCALABLE STRUCTURE": "SCL",
+        "GROWTH READY": "GRW",
+        "EMERGING STRUCTURE": "EMG",
+        "STRUCTURAL RISK": "RSK"
+      };
+      return map[condition] || "GEN";
+    }
+
+    function buildReportId(condition, score, name){
+      const code = slugCode(condition);
+      const nameSeed = (name || "CLIENT")
+        .replace(/[^a-zA-Z]/g, "")
+        .slice(0, 3)
+        .toUpperCase()
+        .padEnd(3, "X");
+      const scoreSeed = String(score).padStart(3, "0");
+      return `BSA-${year}-${code}-${nameSeed}${scoreSeed}`;
+    }
+
+    function getConditionColor(condition){
+      if(condition === "SCALABLE STRUCTURE"){
+        return {
+          bg: "var(--good-soft)",
+          text: "var(--good)",
+          bar: "linear-gradient(90deg,#16a34a,#22c55e)"
+        };
+      }
+      if(condition === "GROWTH READY"){
+        return {
+          bg: "var(--brand-soft)",
+          text: "var(--brand)",
+          bar: "linear-gradient(90deg,#0f766e,#14b8a6)"
+        };
+      }
+      if(condition === "EMERGING STRUCTURE"){
+        return {
+          bg: "var(--warn-soft)",
+          text: "var(--warn)",
+          bar: "linear-gradient(90deg,#d97706,#f59e0b)"
+        };
+      }
+      return {
+        bg: "var(--risk-soft)",
+        text: "var(--risk)",
+        bar: "linear-gradient(90deg,#dc2626,#ef4444)"
+      };
+    }
+
+    function inferConditionFromScore(score){
+      if(score > 192) return "SCALABLE STRUCTURE";
+      if(score > 144) return "GROWTH READY";
+      if(score > 95) return "EMERGING STRUCTURE";
+      return "STRUCTURAL RISK";
+    }
+
+    const finalCondition = normalizedCondition || inferConditionFromScore(safeScore);
+    const reportId = buildReportId(finalCondition, safeScore, rawName);
+    const pct = Math.round((safeScore / 240) * 100);
+    const palette = getConditionColor(finalCondition);
+
+    const reportMap = {
+      "SCALABLE STRUCTURE": {
+        title: "Your business is showing strong structural maturity.",
+        subline: "Your result indicates readiness for scale, institutional engagement, and strategic expansion.",
+        summary: "Early structural maturity is visible across operational, financial, credibility, and market activity signals.",
+        body: `
+          <p>Thank you for completing the Business Structural Assessment. You have taken a vital step in evaluating the structural signals that shape your business stability and growth readiness.</p>
+          <p><strong>Current Condition:</strong> Scalable Structure</p>
+
+          <h4>Structural Strength Indicators</h4>
+          <ul>
+            <li>Consistent financial management systems</li>
+            <li>Clear operational governance and documentation</li>
+            <li>Strong external credibility and compliance signals</li>
+            <li>Active and structured market engagement</li>
+          </ul>
+
+          <h4>Strategic Expansion Priorities</h4>
+          <table class="priority-table">
+            <thead>
+              <tr>
+                <th>Focus Area</th>
+                <th>Objective</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Financials</td><td>Optimize financial intelligence for strategic investment decisions.</td></tr>
+              <tr><td>Operations</td><td>Strengthen governance and scalable operational architecture.</td></tr>
+              <tr><td>Credibility</td><td>Position the business for institutional partnerships.</td></tr>
+              <tr><td>Engagement</td><td>Expand market reach through strategic growth initiatives.</td></tr>
+            </tbody>
+          </table>
+
+          <h4>Immediate Next Steps</h4>
+          <p>Maintaining strong structural signals will sustain your VeriScore and support long-term scalable growth.</p>
+        `,
+        steps: [
+          ["Book a Session", "Fix current gaps and attain consistent execution using a centralized tracking solution."],
+          ["Get Core SOPs", "Refine operational tasks to ensure team consistency."],
+          ["Verify KPI Compliance", "Review business performance with digital footprints for tailored proficiency."],
+          ["Schedule Engagement", "Recreate a 30-day calendar for consistent operation and market outreach."]
+        ]
+      },
+
+      "GROWTH READY": {
+        title: "Your business is structurally positioned for growth.",
+        subline: "Your result shows disciplined execution and improving readiness for expansion and strategic partnerships.",
+        summary: "Strong structural signals exist across key operational areas, with clear room for reinforcement toward scalable maturity.",
+        body: `
+          <p>Thank you for completing the Business Structural Assessment. You have taken a vital step in evaluating the structural signals that shape your business stability and growth readiness.</p>
+          <p><strong>Current Condition:</strong> Growth Ready</p>
+
+          <h4>Identified Structural Opportunities</h4>
+          <ul>
+            <li>Strengthening governance systems for scale</li>
+            <li>Enhancing financial reporting for strategic decision making</li>
+            <li>Expanding institutional credibility signals</li>
+            <li>Scaling market engagement for broader reach</li>
+          </ul>
+
+          <h4>Strategic Priorities</h4>
+          <table class="priority-table">
+            <thead>
+              <tr>
+                <th>Focus Area</th>
+                <th>Objective</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Financials</td><td>Strengthen financial reporting for strategic planning.</td></tr>
+              <tr><td>Operations</td><td>Build scalable systems and internal governance frameworks.</td></tr>
+              <tr><td>Credibility</td><td>Increase institutional trust and industry positioning.</td></tr>
+              <tr><td>Engagement</td><td>Expand market reach with structured growth campaigns.</td></tr>
+            </tbody>
+          </table>
+
+          <h4>Immediate Next Steps</h4>
+          <p>Strengthening these signals will improve your VeriScore and move your business toward a Scalable Structure.</p>
+        `,
+        steps: [
+          ["Book a Session", "Fix current gaps and attain consistent execution using a centralized tracking solution."],
+          ["Get Core SOPs", "Refine operational tasks to ensure team consistency."],
+          ["Verify KPI Compliance", "Review business performance with digital footprints for tailored proficiency."],
+          ["Schedule Engagement", "Recreate a 30-day calendar for consistent market and client outreach."]
+        ]
+      },
+
+      "EMERGING STRUCTURE": {
+        title: "Your business is developing, but still needs stronger systems.",
+        subline: "Your result indicates promising structural development with some continued dependence on informal processes.",
+        summary: "The business is developing structural signals, but stability and credibility will improve significantly with stronger discipline.",
+        body: `
+          <p>Thank you for completing the Business Structural Assessment. You have taken a vital step in evaluating the structural signals that shape your business stability and growth readiness.</p>
+          <p><strong>Current Condition:</strong> Emerging Structure</p>
+
+          <h4>Identified Structural Gaps</h4>
+          <ul>
+            <li>Inconsistent financial controls and reporting rhythm</li>
+            <li>Partial operational documentation and workflow clarity</li>
+            <li>Developing but incomplete credibility signals</li>
+            <li>Irregular but improving market engagement patterns</li>
+          </ul>
+
+          <h4>Strategic Priorities</h4>
+          <table class="priority-table">
+            <thead>
+              <tr>
+                <th>Focus Area</th>
+                <th>Objective</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Financials</td><td>Introduce structured tracking and monthly reporting discipline.</td></tr>
+              <tr><td>Operations</td><td>Formalize workflows and standard operating procedures.</td></tr>
+              <tr><td>Credibility</td><td>Strengthen documentation and compliance visibility.</td></tr>
+              <tr><td>Engagement</td><td>Establish predictable marketing and client acquisition cycles.</td></tr>
+            </tbody>
+          </table>
+
+          <h4>Immediate Next Steps</h4>
+          <p>Strengthening these signals will improve your VeriScore and move your business toward a Growth Ready condition.</p>
+        `,
+        steps: [
+          ["Book a Session", "Fix current gaps and attain consistent execution using a centralized tracking solution."],
+          ["Get Core SOPs", "Refine operational tasks to ensure team consistency."],
+          ["Verify KPI Compliance", "Review business performance with digital footprints for tailored proficiency."],
+          ["Schedule Engagement", "Create a 30-day calendar for consistent market and client outreach."]
+        ]
+      },
+
+      "STRUCTURAL RISK": {
+        title: "Your business currently needs stronger structural reinforcement.",
+        subline: "Your result shows weak structural support across key signals, with clear opportunities for stabilization and growth readiness.",
+        summary: "Current systems are too light across financials, operations, credibility, and engagement, making stability and scale harder to sustain.",
+        body: `
+          <p>Thank you for completing the Business Structural Assessment. You have taken a vital step in evaluating the structural signals that shape your business stability and growth readiness.</p>
+          <p><strong>Current Condition:</strong> Structural Risk</p>
+
+          <h4>Identified Structural Gaps</h4>
+          <ul>
+            <li>Inconsistent financial tracking and reporting</li>
+            <li>Limited formal operational documentation</li>
+            <li>Weak external credibility and compliance signals</li>
+            <li>Irregular market engagement patterns</li>
+          </ul>
+
+          <h4>Strategic Priorities</h4>
+          <table class="priority-table">
+            <thead>
+              <tr>
+                <th>Focus Area</th>
+                <th>Objective</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Financials</td><td>Implement disciplined, real-time tracking systems.</td></tr>
+              <tr><td>Operations</td><td>Formalize internal processes and SOPs.</td></tr>
+              <tr><td>Credibility</td><td>Strengthen compliance and industry signals.</td></tr>
+              <tr><td>Engagement</td><td>Establish a predictable market outreach cadence.</td></tr>
+            </tbody>
+          </table>
+
+          <h4>Immediate Next Steps</h4>
+          <p>Strengthening these signals will improve your VeriScore and position your business for stronger growth readiness.</p>
+        `,
+        steps: [
+          ["Book a Session", "Fix current gaps and attain consistent execution."],
+          ["Get Core SOPs", "Document operational tasks to ensure team consistency."],
+          ["Verify KPI Compliance", "Review performance with digital footprints for tailored proficiency."],
+          ["Schedule Engagement", "Create a 30-day calendar for consistent outreach."]
+        ]
+      }
+    };
+
+    const selected = reportMap[finalCondition] || reportMap["STRUCTURAL RISK"];
+
+    document.getElementById("clientName").textContent = rawName || "Structural Assessment Client";
+    document.getElementById("reportId").textContent = reportId;
+    document.getElementById("conditionText").textContent = finalCondition;
+    document.getElementById("scoreNumber").textContent = safeScore;
+    document.getElementById("headline").textContent = selected.title;
+    document.getElementById("subline").textContent = selected.subline;
+    document.getElementById("conditionSummary").textContent = selected.summary;
+    document.getElementById("reportContent").innerHTML = selected.body;
+
+    const eyebrow = document.getElementById("eyebrow");
+    eyebrow.textContent = `Assessment Result • ${finalCondition}`;
+    eyebrow.style.background = palette.bg;
+    eyebrow.style.color = palette.text;
+
+    const conditionTag = document.getElementById("conditionTag");
+    conditionTag.textContent = finalCondition;
+    conditionTag.style.background = palette.bg;
+    conditionTag.style.color = palette.text;
+
+    const scoreBar = document.getElementById("scoreBar");
+    scoreBar.style.width = `${pct}%`;
+    scoreBar.style.background = palette.bar;
+
+    const stepsBox = document.getElementById("stepsBox");
+    stepsBox.innerHTML = "";
+    selected.steps.forEach(([title, desc]) => {
+      const div = document.createElement("div");
+      div.className = "step";
+      div.innerHTML = `<strong>${title}</strong><span>${desc}</span>`;
+      stepsBox.appendChild(div);
+    });
+
+    if (!rawCondition && !params.get("score")) {
+      document.getElementById("missingState").style.display = "block";
+    }
+
+    const whatsappMessage = encodeURIComponent(
+      `Hello Verri, I just completed my Business Structural Assessment.\n\nName: ${rawName}\nReport ID: ${reportId}\nCondition: ${finalCondition}\nScore: ${safeScore}\n\nI would like support on my next steps.`
+    );
+
+    document.getElementById("whatsappBtn").href =
+      `https://wa.me/2349068749370?text=${whatsappMessage}`;
+  </script>
+</body>
+</html>

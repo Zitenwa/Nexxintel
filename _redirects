@@ -1,1 +1,3 @@
-/start-assessment  /start_assessment.html  200
+/start-assessment   /start_assessment.html   200
+/report             /report/index.html       200
+/report/*           /report/index.html       200
