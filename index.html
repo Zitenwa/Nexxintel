@@ -719,248 +719,248 @@
   </footer>
 
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const PAYMENT_URL = "https://pay.squadco.com/link/verri-basic";
-      const JOTFORM_URL = "https://form.jotform.com/260633600514043";
+  document.addEventListener('DOMContentLoaded', () => {
+    const PAYMENT_URL = "https://pay.squadco.com/link/verri-basic";
+    const JOTFORM_URL = "https://form.jotform.com/260633600514043";
 
-      const mobileMenuButton = document.getElementById('mobile-menu-button');
-      const mobileMenu = document.getElementById('mobile-menu');
-      const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
-      const mobileLinks = document.querySelectorAll('.mobile-link');
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
 
-      function toggleMenu() {
-        mobileMenu.classList.toggle('-translate-x-full');
-        mobileMenuOverlay.classList.toggle('hidden');
-      }
+    function toggleMenu() {
+      mobileMenu.classList.toggle('-translate-x-full');
+      mobileMenuOverlay.classList.toggle('hidden');
+    }
 
-      mobileMenuButton.addEventListener('click', toggleMenu);
-      mobileMenuOverlay.addEventListener('click', toggleMenu);
-      mobileLinks.forEach(link => link.addEventListener('click', toggleMenu));
+    mobileMenuButton.addEventListener('click', toggleMenu);
+    mobileMenuOverlay.addEventListener('click', toggleMenu);
+    mobileLinks.forEach(link => link.addEventListener('click', toggleMenu));
 
-      const revealElements = document.querySelectorAll('.reveal');
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) entry.target.classList.add('active');
-        });
-      }, { threshold: 0.12 });
-      revealElements.forEach(el => observer.observe(el));
+    const revealElements = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('active');
+      });
+    }, { threshold: 0.12 });
+    revealElements.forEach(el => observer.observe(el));
 
-      document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('year').textContent = new Date().getFullYear();
 
-      const cards = document.querySelectorAll('.interactive-card');
-      cards.forEach(card => {
-        card.addEventListener('mousemove', (e) => {
-          const rect = card.getBoundingClientRect();
-          const x = e.clientX - rect.left;
-          const y = e.clientY - rect.top;
-          const rotateX = (y / rect.height - 0.5) * -8;
-          const rotateY = (x / rect.width - 0.5) * 8;
-          card.style.setProperty('--rotateX', `${rotateX}deg`);
-          card.style.setProperty('--rotateY', `${rotateY}deg`);
-        });
-
-        card.addEventListener('mouseleave', () => {
-          card.style.setProperty('--rotateX', '0deg');
-          card.style.setProperty('--rotateY', '0deg');
-        });
+    const cards = document.querySelectorAll('.interactive-card');
+    cards.forEach(card => {
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const rotateX = (y / rect.height - 0.5) * -8;
+        const rotateY = (x / rect.width - 0.5) * 8;
+        card.style.setProperty('--rotateX', `${rotateX}deg`);
+        card.style.setProperty('--rotateY', `${rotateY}deg`);
       });
 
-      const modal = document.getElementById('assessment-modal');
-      const panel = document.getElementById('assessment-panel');
-      const closeModalBtn = document.getElementById('close-assessment-modal');
+      card.addEventListener('mouseleave', () => {
+        card.style.setProperty('--rotateX', '0deg');
+        card.style.setProperty('--rotateY', '0deg');
+      });
+    });
 
-      function openAssessmentModal() {
-        modal.classList.remove('invisible', 'opacity-0');
-        panel.classList.remove('opacity-0', 'translate-y-4');
-        document.body.style.overflow = 'hidden';
+    const modal = document.getElementById('assessment-modal');
+    const panel = document.getElementById('assessment-panel');
+    const closeModalBtn = document.getElementById('close-assessment-modal');
 
-        if (!mobileMenu.classList.contains('-translate-x-full')) {
-          toggleMenu();
-        }
+    function openAssessmentModal() {
+      modal.classList.remove('invisible', 'opacity-0');
+      panel.classList.remove('opacity-0', 'translate-y-4');
+      document.body.style.overflow = 'hidden';
+
+      if (!mobileMenu.classList.contains('-translate-x-full')) {
+        toggleMenu();
       }
+    }
 
-      function closeAssessmentModal() {
-        modal.classList.add('opacity-0');
-        panel.classList.add('opacity-0', 'translate-y-4');
+    function closeAssessmentModal() {
+      modal.classList.add('opacity-0');
+      panel.classList.add('opacity-0', 'translate-y-4');
 
-        setTimeout(() => {
-          modal.classList.add('invisible');
-        }, 250);
+      setTimeout(() => {
+        modal.classList.add('invisible');
+      }, 250);
 
-        document.body.style.overflow = '';
-      }
+      document.body.style.overflow = '';
+    }
 
-      ['nav-start-cta', 'mobile-start-cta', 'hero-start-cta', 'framework-start-cta', 'footer-start-cta']
-        .forEach(id => {
-          const btn = document.getElementById(id);
-          if (btn) btn.addEventListener('click', openAssessmentModal);
-        });
-
-      closeModalBtn.addEventListener('click', closeAssessmentModal);
-
-      modal.addEventListener('click', (e) => {
-        if (e.target === modal) closeAssessmentModal();
+    ['nav-start-cta', 'mobile-start-cta', 'hero-start-cta', 'framework-start-cta', 'footer-start-cta']
+      .forEach(id => {
+        const btn = document.getElementById(id);
+        if (btn) btn.addEventListener('click', openAssessmentModal);
       });
 
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && !modal.classList.contains('invisible')) {
-          closeAssessmentModal();
-        }
-      });
+    closeModalBtn.addEventListener('click', closeAssessmentModal);
 
-      const prelimForm = document.getElementById('prelimForm');
-      const prelimResult = document.getElementById('prelimResult');
-      const progressFill = document.getElementById('progress-fill');
-      const progressText = document.getElementById('progress-text');
-      const continuePaymentBtn = document.getElementById('continue-payment-btn');
-      const footerPaymentBtn = document.getElementById('footer-payment-btn');
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) closeAssessmentModal();
+    });
 
-      const questionNames = ['q1', 'q2', 'q3', 'q4'];
-      const actionButtons = [continuePaymentBtn, footerPaymentBtn].filter(Boolean);
-      let isRedirecting = false;
-
-      function updateSelectedStates() {
-        document.querySelectorAll('.question-option').forEach(option => option.classList.remove('selected'));
-
-        questionNames.forEach(name => {
-          const checked = prelimForm.querySelector(`input[name="${name}"]:checked`);
-          if (checked) {
-            const label = checked.closest('.question-option');
-            if (label) label.classList.add('selected');
-          }
-        });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !modal.classList.contains('invisible')) {
+        closeAssessmentModal();
       }
+    });
 
-      function updateProgress() {
-        let answered = 0;
-        questionNames.forEach(name => {
-          if (prelimForm.querySelector(`input[name="${name}"]:checked`)) answered += 1;
-        });
+    const prelimForm = document.getElementById('prelimForm');
+    const prelimResult = document.getElementById('prelimResult');
+    const progressFill = document.getElementById('progress-fill');
+    const progressText = document.getElementById('progress-text');
+    const continuePaymentBtn = document.getElementById('continue-payment-btn');
+    const footerPaymentBtn = document.getElementById('footer-payment-btn');
 
-        const percent = (answered / questionNames.length) * 100;
-        progressFill.style.width = `${percent}%`;
-        progressText.textContent = `${answered} of ${questionNames.length} answered`;
+    const questionNames = ['q1', 'q2', 'q3', 'q4'];
+    const actionButtons = [continuePaymentBtn, footerPaymentBtn].filter(Boolean);
+    let isRedirecting = false;
 
-        if (answered === questionNames.length) {
-          prelimResult.textContent = "All 4 questions completed. You can now continue to payment and unlock the full VeriScore assessment.";
-        } else if (answered > 0) {
-          prelimResult.textContent = "Good progress. Complete the remaining question(s) to continue to payment.";
-        } else {
-          prelimResult.textContent = "Complete the 4 questions to unlock the full VeriScore assessment.";
-        }
-      }
-
-      function setButtonLoading(button, loading, loadingText = "Processing...") {
-        if (!button) return;
-
-        const textEl = button.querySelector('.btn-text');
-        const defaultText = button.dataset.defaultText || (textEl ? textEl.textContent.trim() : button.textContent.trim());
-
-        button.dataset.defaultText = defaultText;
-
-        if (loading) {
-          button.disabled = true;
-          button.classList.add('btn-loading');
-
-          if (textEl) {
-            textEl.textContent = loadingText;
-          } else {
-            button.textContent = loadingText;
-          }
-
-          if (!button.querySelector('.loading-spinner')) {
-            const spinner = document.createElement('span');
-            spinner.className = 'loading-spinner';
-            button.prepend(spinner);
-          }
-        } else {
-          button.disabled = false;
-          button.classList.remove('btn-loading');
-
-          const spinner = button.querySelector('.loading-spinner');
-          if (spinner) spinner.remove();
-
-          if (textEl) {
-            textEl.textContent = defaultText;
-          } else {
-            button.textContent = defaultText;
-          }
-        }
-      }
-
-      function setAllButtonsLoading(loading, text = "Processing...") {
-        actionButtons.forEach(button => setButtonLoading(button, loading, text));
-      }
+    function updateSelectedStates() {
+      document.querySelectorAll('.question-option').forEach(option => option.classList.remove('selected'));
 
       questionNames.forEach(name => {
-        prelimForm.querySelectorAll(`input[name="${name}"]`).forEach(input => {
-          input.addEventListener('change', () => {
-            updateSelectedStates();
-            updateProgress();
-          });
+        const checked = prelimForm.querySelector(`input[name="${name}"]:checked`);
+        if (checked) {
+          const label = checked.closest('.question-option');
+          if (label) label.classList.add('selected');
+        }
+      });
+    }
+
+    function updateProgress() {
+      let answered = 0;
+      questionNames.forEach(name => {
+        if (prelimForm.querySelector(`input[name="${name}"]:checked`)) answered += 1;
+      });
+
+      const percent = (answered / questionNames.length) * 100;
+      progressFill.style.width = `${percent}%`;
+      progressText.textContent = `${answered} of ${questionNames.length} answered`;
+
+      if (answered === questionNames.length) {
+        prelimResult.textContent = "All 4 questions completed. You can now continue to payment and unlock the full VeriScore assessment.";
+      } else if (answered > 0) {
+        prelimResult.textContent = "Good progress. Complete the remaining question(s) to continue to payment.";
+      } else {
+        prelimResult.textContent = "Complete the 4 questions to unlock the full VeriScore assessment.";
+      }
+    }
+
+    function setButtonLoading(button, loading, loadingText = "Processing...") {
+      if (!button) return;
+
+      const textEl = button.querySelector('.btn-text');
+      const defaultText = button.dataset.defaultText || (textEl ? textEl.textContent.trim() : button.textContent.trim());
+
+      button.dataset.defaultText = defaultText;
+
+      if (loading) {
+        button.disabled = true;
+        button.classList.add('btn-loading');
+
+        if (textEl) {
+          textEl.textContent = loadingText;
+        } else {
+          button.textContent = loadingText;
+        }
+
+        if (!button.querySelector('.loading-spinner')) {
+          const spinner = document.createElement('span');
+          spinner.className = 'loading-spinner';
+          button.prepend(spinner);
+        }
+      } else {
+        button.disabled = false;
+        button.classList.remove('btn-loading');
+
+        const spinner = button.querySelector('.loading-spinner');
+        if (spinner) spinner.remove();
+
+        if (textEl) {
+          textEl.textContent = defaultText;
+        } else {
+          button.textContent = defaultText;
+        }
+      }
+    }
+
+    function setAllButtonsLoading(loading, text = "Processing...") {
+      actionButtons.forEach(button => setButtonLoading(button, loading, text));
+    }
+
+    questionNames.forEach(name => {
+      prelimForm.querySelectorAll(`input[name="${name}"]`).forEach(input => {
+        input.addEventListener('change', () => {
+          updateSelectedStates();
+          updateProgress();
         });
       });
-
-      function scoreAnswer(name, map) {
-        const value = prelimForm.querySelector(`input[name="${name}"]:checked`)?.value;
-        return map[value] ?? 0;
-      }
-
-      function redirectToPayment() {
-        if (isRedirecting) return;
-
-        if (!prelimForm.checkValidity()) {
-          prelimForm.reportValidity();
-          return;
-        }
-
-        const s1 = scoreAnswer('q1', { global: 2, regional: 1, local: 0 });
-        const s2 = scoreAnswer('q2', { clear: 2, mixed: 1, chaos: 0 });
-        const s3 = scoreAnswer('q3', { yes: 2, sometimes: 1, no: 0 });
-        const s4 = scoreAnswer('q4', { ready: 2, partial: 1, none: 0 });
-        const total = s1 + s2 + s3 + s4;
-
-        if (total >= 7) {
-          prelimResult.textContent = "Strong signal: your business shows solid maturity momentum. Redirecting to payment to unlock your full VeriScore assessment.";
-        } else if (total >= 4) {
-          prelimResult.textContent = "Mixed signal: your business has potential with visible readiness gaps. Redirecting to payment to unlock your full VeriScore assessment.";
-        } else {
-          prelimResult.textContent = "Early-stage signal: structure, records, and compliance may be your first priority. Redirecting to payment to unlock your full VeriScore assessment.";
-        }
-
-        const payload = {
-          q1: prelimForm.querySelector('input[name="q1"]:checked')?.value,
-          q2: prelimForm.querySelector('input[name="q2"]:checked')?.value,
-          q3: prelimForm.querySelector('input[name="q3"]:checked')?.value,
-          q4: prelimForm.querySelector('input[name="q4"]:checked')?.value,
-          score: total,
-          ts: Date.now()
-        };
-
-        try {
-          localStorage.setItem('veriscore_prelim', JSON.stringify(payload));
-          localStorage.setItem('veriscore_jotform_url', JOTFORM_URL);
-        } catch (_) {}
-
-        isRedirecting = true;
-        setAllButtonsLoading(true, "Redirecting...");
-
-        setTimeout(() => {
-          window.location.href = PAYMENT_URL;
-        }, 650);
-      }
-
-      prelimForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        redirectToPayment();
-      });
-
-      continuePaymentBtn.addEventListener('click', redirectToPayment);
-      footerPaymentBtn.addEventListener('click', redirectToPayment);
-
-      updateSelectedStates();
-      updateProgress();
     });
-  </script>
+
+    function scoreAnswer(name, map) {
+      const value = prelimForm.querySelector(`input[name="${name}"]:checked`)?.value;
+      return map[value] ?? 0;
+    }
+
+    function redirectToPayment() {
+      if (isRedirecting) return;
+
+      if (!prelimForm.checkValidity()) {
+        prelimForm.reportValidity();
+        return;
+      }
+
+      const s1 = scoreAnswer('q1', { global: 2, regional: 1, local: 0 });
+      const s2 = scoreAnswer('q2', { clear: 2, mixed: 1, chaos: 0 });
+      const s3 = scoreAnswer('q3', { yes: 2, sometimes: 1, no: 0 });
+      const s4 = scoreAnswer('q4', { ready: 2, partial: 1, none: 0 });
+      const total = s1 + s2 + s3 + s4;
+
+      if (total >= 7) {
+        prelimResult.textContent = "Strong signal: your business shows solid maturity momentum. Redirecting to payment to unlock your full VeriScore assessment.";
+      } else if (total >= 4) {
+        prelimResult.textContent = "Mixed signal: your business has potential with visible readiness gaps. Redirecting to payment to unlock your full VeriScore assessment.";
+      } else {
+        prelimResult.textContent = "Early-stage signal: structure, records, and compliance may be your first priority. Redirecting to payment to unlock your full VeriScore assessment.";
+      }
+
+      const payload = {
+        q1: prelimForm.querySelector('input[name="q1"]:checked')?.value,
+        q2: prelimForm.querySelector('input[name="q2"]:checked')?.value,
+        q3: prelimForm.querySelector('input[name="q3"]:checked')?.value,
+        q4: prelimForm.querySelector('input[name="q4"]:checked')?.value,
+        score: total,
+        ts: Date.now()
+      };
+
+      try {
+        localStorage.setItem('veriscore_prelim', JSON.stringify(payload));
+        localStorage.setItem('veriscore_jotform_url', JOTFORM_URL);
+      } catch (_) {}
+
+      isRedirecting = true;
+      setAllButtonsLoading(true, "Redirecting...");
+
+      setTimeout(() => {
+        window.location.href = PAYMENT_URL;
+      }, 650);
+    }
+
+    prelimForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      redirectToPayment();
+    });
+
+    continuePaymentBtn.addEventListener('click', redirectToPayment);
+    footerPaymentBtn.addEventListener('click', redirectToPayment);
+
+    updateSelectedStates();
+    updateProgress();
+  });
+</script>
 </body>
 </html>
