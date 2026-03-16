@@ -132,897 +132,6 @@
     .modal-scroll::-webkit-scrollbar-track {
       background: transparent;
     }
-  </style>
-</head>
-
-<body class="antialiased">
-  <header class="fixed top-0 left-0 right-0 z-40 header-glass border-b border-slate-200">
-    <div class="container mx-auto px-6 py-4">
-      <div class="flex items-center justify-between">
-        <a href="#" class="text-2xl font-extrabold text-slate-900">
-          Nexxintel<span class="text-primary-accent">.</span>
-        </a>
-
-        <nav class="hidden lg:flex items-center space-x-8">
-          <a href="#frameworks" class="text-slate-700 hover:text-slate-950 transition duration-200 font-semibold">Frameworks</a>
-          <button
-            id="nav-start-cta"
-            type="button"
-            class="bg-primary-accent text-white px-5 py-2 rounded-full hover:opacity-90 transition duration-200 font-bold glow-effect"
-          >
-            Start Business Assessment
-          </button>
-        </nav>
-
-        <div class="lg:hidden">
-          <button id="mobile-menu-button" class="text-slate-900 focus:outline-none" aria-label="Open menu">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-            </svg>
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <div id="mobile-menu" class="lg:hidden transform -translate-x-full fixed top-0 left-0 h-full w-72 z-50 border-r border-slate-200">
-      <div class="p-6">
-        <a href="#" class="block text-2xl font-extrabold text-slate-900 mb-8">
-          Nexxintel<span class="text-primary-accent">.</span>
-        </a>
-
-        <a href="#frameworks" class="block py-3 text-slate-800 hover:text-slate-950 font-semibold mobile-link">Frameworks</a>
-
-        <button
-          id="mobile-start-cta"
-          type="button"
-          class="block w-full mt-5 bg-primary-accent text-white px-5 py-3 rounded-full text-center font-bold glow-effect"
-        >
-          Start Business Assessment
-        </button>
-      </div>
-    </div>
-    <div id="mobile-menu-overlay" class="fixed inset-0 bg-black/40 z-40 hidden"></div>
-  </header>
-
-  <main class="pt-20">
-    <section class="relative overflow-hidden">
-      <div class="absolute inset-0 bg-grid-light"></div>
-      <div class="watermark-office"></div>
-
-      <div class="relative container mx-auto px-6 py-16 lg:py-24">
-        <div class="max-w-4xl">
-          <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-slate-200 bg-white/80 reveal">
-            <span class="w-2 h-2 rounded-full bg-primary-accent"></span>
-            <span class="text-sm font-semibold text-slate-700">System Intelligence • Signal Scoring • Compliance Infrastructure</span>
-          </div>
-
-          <h1 class="mt-6 text-4xl md:text-6xl font-black leading-tight text-slate-950 reveal">
-            Build infrastructure for a <span class="text-primary-accent">RESILIENT BUSINESS</span>.
-          </h1>
-
-          <p class="mt-6 text-lg md:text-xl text-slate-700 max-w-3xl reveal">
-            Evaluate a business structural and operational <span class="font-extrabold text-red-600">Maturity</span>. Activate the resilience cycle with a <span class="font-extrabold text-red-600">VeriScore</span> report and check the compliance <span class="font-extrabold text-red-600">Rating</span> with continuous growth intelligence.
-          </p>
-
-          <div class="mt-10 flex flex-col sm:flex-row gap-4 reveal">
-            <button
-              id="hero-start-cta"
-              type="button"
-              class="inline-flex items-center justify-center bg-primary-accent text-white px-8 py-4 rounded-full text-lg font-extrabold hover:opacity-90 transition duration-200 glow-effect"
-            >
-              Start Business Assessment
-            </button>
-            <a
-              href="#frameworks"
-              class="inline-flex items-center justify-center px-8 py-4 rounded-full text-lg font-bold border border-slate-300 bg-white hover:bg-slate-50 transition duration-200 text-slate-900"
-            >
-              See Capabilities
-            </a>
-          </div>
-
-          <div class="mt-10 flex flex-wrap gap-3 reveal">
-            <span class="px-3 py-1.5 rounded-full bg-slate-100 text-slate-700 font-semibold text-sm border border-slate-200">Business Verification</span>
-            <span class="px-3 py-1.5 rounded-full bg-slate-100 text-slate-700 font-semibold text-sm border border-slate-200">Growth Readiness</span>
-            <span class="px-3 py-1.5 rounded-full bg-slate-100 text-slate-700 font-semibold text-sm border border-slate-200">Compliance Support</span>
-            <span class="px-3 py-1.5 rounded-full bg-slate-100 text-slate-700 font-semibold text-sm border border-slate-200">VeriScore Ranking</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="frameworks" class="py-16 lg:py-24 bg-slate-50 border-y border-slate-200 relative overflow-hidden">
-      <div class="watermark-office" style="opacity:0.08;"></div>
-
-      <div class="relative container mx-auto px-6">
-        <div class="text-center mb-12 reveal">
-          <h2 class="text-3xl md:text-4xl font-black text-slate-950">VeriScore Frameworks</h2>
-          <p class="mt-3 text-lg text-slate-700 max-w-3xl mx-auto">
-            The assessment is built around six frameworks that shape your readiness profile, maturity signal and business gowth intelligence.
-          </p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 max-w-6xl mx-auto">
-          <div class="interactive-card framework-pill rounded-2xl p-7 reveal border">
-            <div class="w-12 h-12 rounded-2xl bg-slate-950 text-white flex items-center justify-center font-black mb-4">01</div>
-            <h3 class="text-2xl font-extrabold text-slate-950">Business Structure & Governance</h3>
-            <p class="mt-3 text-slate-700">
-              Measures ownership clarity, decision flow, accountability, internal controls, and whether the business can function beyond founder dependency.
-            </p>
-          </div>
-
-          <div class="interactive-card framework-pill rounded-2xl p-7 reveal border" style="transition-delay: 0.05s;">
-            <div class="w-12 h-12 rounded-2xl bg-primary-accent text-white flex items-center justify-center font-black mb-4">02</div>
-            <h3 class="text-2xl font-extrabold text-slate-950">Financial Discipline</h3>
-            <p class="mt-3 text-slate-700">
-              Reviews cashflow visibility, record keeping, budgeting behaviour, pricing discipline, and the strength of financial controls.
-            </p>
-          </div>
-
-          <div class="interactive-card framework-pill rounded-2xl p-7 reveal border" style="transition-delay: 0.10s;">
-            <div class="w-12 h-12 rounded-2xl bg-slate-900 text-white flex items-center justify-center font-black mb-4">03</div>
-            <h3 class="text-2xl font-extrabold text-slate-950">Operations & Process Discipline</h3>
-            <p class="mt-3 text-slate-700">
-              Evaluates repeatability, workflow clarity, delivery consistency, fulfilment strength, and the reliability of execution systems.
-            </p>
-          </div>
-
-          <div class="interactive-card framework-pill rounded-2xl p-7 reveal border" style="transition-delay: 0.15s;">
-            <div class="w-12 h-12 rounded-2xl bg-primary-accent text-white flex items-center justify-center font-black mb-4">04</div>
-            <h3 class="text-2xl font-extrabold text-slate-950">Market & Sales Execution</h3>
-            <p class="mt-3 text-slate-700">
-              Assesses customer clarity, market positioning, conversion systems, retention strength, and the ability to grow predictably.
-            </p>
-          </div>
-
-          <div class="interactive-card framework-pill rounded-2xl p-7 reveal border" style="transition-delay: 0.20s;">
-            <div class="w-12 h-12 rounded-2xl bg-slate-950 text-white flex items-center justify-center font-black mb-4">05</div>
-            <h3 class="text-2xl font-extrabold text-slate-950">Compliance & Trust Readiness</h3>
-            <p class="mt-3 text-slate-700">
-              Checks registration, governance hygiene, documentation quality, statutory readiness, and trust signals needed for scale and partnerships.
-            </p>
-          </div>
-
-          <div class="interactive-card framework-pill rounded-2xl p-7 reveal border" style="transition-delay: 0.25s;">
-            <div class="w-12 h-12 rounded-2xl bg-primary-accent text-white flex items-center justify-center font-black mb-4">06</div>
-            <h3 class="text-2xl font-extrabold text-slate-950">People, Digital & Growth Readiness</h3>
-            <p class="mt-3 text-slate-700">
-              Measures team coordination, capability depth, digital adoption, scalability posture, and readiness for continuous business scoring.
-            </p>
-          </div>
-        </div>
-
-        <div class="mt-12 text-center reveal">
-          <button
-            id="framework-start-cta"
-            type="button"
-            class="inline-flex items-center justify-center bg-primary-accent text-white px-8 py-4 rounded-full text-lg font-extrabold hover:opacity-90 transition duration-200 glow-effect"
-          >
-            Start Business Assessment
-          </button>
-        </div>
-      </div>
-    </section>
-
-    <section class="py-16 lg:py-24">
-      <div class="container mx-auto px-6">
-        <div class="max-w-5xl mx-auto bg-white rounded-3xl border border-slate-200 p-10 lg:p-12 relative overflow-hidden reveal">
-          <div class="watermark-office" style="opacity:0.08;"></div>
-          <div class="relative">
-            <h2 class="text-3xl md:text-4xl font-black text-slate-950">Unlock your VeriScore report</h2>
-            <p class="mt-3 text-lg text-slate-700 max-w-2xl">
-              Start with a premium quick-screen assessment. Payment unlocks the full VeriScore form and your continuous scoring pathway.
-            </p>
-            <div class="mt-8 flex flex-col sm:flex-row gap-4">
-              <button
-                id="footer-start-cta"
-                type="button"
-                class="inline-flex items-center justify-center bg-primary-accent text-white px-8 py-4 rounded-full text-lg font-extrabold hover:opacity-90 transition glow-effect"
-              >
-                Start Business Assessment
-              </button>
-              <a
-                href="#frameworks"
-                class="inline-flex items-center justify-center px-8 py-4 rounded-full text-lg font-bold border border-slate-300 bg-white hover:bg-slate-50 transition text-slate-900"
-              >
-                Review Capabilities
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-<section class="py-16 lg:py-24 bg-slate-50 border-y border-slate-200">
-  <div class="container mx-auto px-6 max-w-4xl">
-
-    <div class="text-center mb-12">
-      <h2 class="text-3xl md:text-4xl font-black text-slate-950">Platform Insights</h2>
-      <p class="mt-3 text-lg text-slate-700">
-        Learn more about who Nexxintel serves and how the infrastructure works.
-      </p>
-    </div>
-
-    <div class="space-y-4">
-
-      <details class="group bg-white border border-slate-200 rounded-2xl p-6 cursor-pointer">
-        <summary class="flex justify-between items-center font-extrabold text-xl text-slate-950">
-          Who We Serve
-          <span class="text-primary-accent group-open:rotate-45 transition">+</span>
-        </summary>
-
-        <div class="mt-4 text-slate-700 space-y-3">
-          <p><strong>SMEs and Growth Businesses</strong> — businesses seeking maturity assessment, compliance support, and structured growth.</p>
-          <p><strong>Government and Public Sector Programs</strong> — agencies needing digital infrastructure for compliance, revenue visibility, and service delivery.</p>
-          <p><strong>Financial and Capital Partners</strong> — lenders and investors requiring stronger trust signals before deploying capital.</p>
-          <p><strong>Ecosystem Operators</strong> — telcos, insurers, and enterprise networks integrating digital infrastructure.</p>
-        </div>
-      </details>
-
-      <details class="group bg-white border border-slate-200 rounded-2xl p-6 cursor-pointer">
-        <summary class="flex justify-between items-center font-extrabold text-xl text-slate-950">
-          Our Solutions
-          <span class="text-primary-accent group-open:rotate-45 transition">+</span>
-        </summary>
-
-        <div class="mt-4 text-slate-700 space-y-3">
-          <p><strong>VeriScore</strong> — business maturity diagnostics and continuous scoring infrastructure.</p>
-          <p><strong>Compliance Infrastructure</strong> — systems that improve documentation, governance hygiene, and operational trust.</p>
-          <p><strong>Revenue and Payment Systems</strong> — structured digital rails for collections and financial workflows.</p>
-          <p><strong>Messaging Infrastructure</strong> — WhatsApp and SMS powered engagement systems.</p>
-          <p><strong>Growth Readiness Intelligence</strong> — signals that help businesses become more fundable and scalable.</p>
-        </div>
-      </details>
-
-      <details class="group bg-white border border-slate-200 rounded-2xl p-6 cursor-pointer">
-        <summary class="flex justify-between items-center font-extrabold text-xl text-slate-950">
-          Contact Us
-          <span class="text-primary-accent group-open:rotate-45 transition">+</span>
-        </summary>
-
-        <div class="mt-6 space-y-4">
-          <input
-            type="text"
-            placeholder="Full Name"
-            class="w-full border border-slate-200 rounded-xl px-4 py-3"
-          >
-
-          <input
-            type="email"
-            placeholder="Email Address"
-            class="w-full border border-slate-200 rounded-xl px-4 py-3"
-          >
-
-          <input
-            type="text"
-            placeholder="Organization"
-            class="w-full border border-slate-200 rounded-xl px-4 py-3"
-          >
-
-          <textarea
-            placeholder="Your message"
-            rows="4"
-            class="w-full border border-slate-200 rounded-xl px-4 py-3"
-          ></textarea>
-
-          <button class="bg-primary-accent text-white px-6 py-3 rounded-full font-bold">
-            Send Message
-          </button>
-        </div>
-      </details>
-
-      <details class="group bg-white border border-slate-200 rounded-2xl p-6 cursor-pointer">
-        <summary class="flex justify-between items-center font-extrabold text-xl text-slate-950">
-          FAQ
-          <span class="text-primary-accent group-open:rotate-45 transition">+</span>
-        </summary>
-
-        <div class="mt-4 space-y-4 text-slate-700">
-          <div>
-            <p class="font-bold">What is Nexxintel?</p>
-            <p>Nexxintel builds infrastructure for business intelligence, compliance support, and continuous scoring systems.</p>
-          </div>
-
-          <div>
-            <p class="font-bold">What is VeriScore?</p>
-            <p>A maturity and readiness rating generated from structured business assessment frameworks.</p>
-          </div>
-
-          <div>
-            <p class="font-bold">Who can use the platform?</p>
-            <p>SMEs, governments, capital partners, and ecosystem operators.</p>
-          </div>
-
-          <div>
-            <p class="font-bold">How does the assessment work?</p>
-            <p>Users complete a quick screen → proceed to payment → then complete the full assessment.</p>
-          </div>
-        </div>
-      </details>
-
-    </div>
-  </div>
-</section>
-
-</main>
-
-<!-- Assessment Modal -->
-
- <!-- Assessment Modal -->
-<div id="assessment-modal" class="assessment-modal fixed inset-0 z-[60] bg-slate-950/65 backdrop-blur-sm opacity-0 invisible">
-  <div class="min-h-screen overflow-y-auto modal-scroll px-3 py-3 sm:px-4 sm:py-6 lg:py-10">
-    <div
-      id="assessment-panel"
-      class="assessment-panel mx-auto w-full max-w-6xl bg-white rounded-2xl sm:rounded-3xl border border-slate-200 shadow-2xl opacity-0 translate-y-4 overflow-hidden"
-    >
-      <!-- Sticky header -->
-      <div class="sticky top-0 z-20 bg-white/96 backdrop-blur-md border-b border-slate-200">
-        <div class="px-4 sm:px-6 lg:px-8 py-4 sm:py-5 relative">
-          <div class="watermark-office" style="opacity:0.05;"></div>
-          <div class="relative flex items-start justify-between gap-4">
-            <div class="max-w-3xl pr-2">
-              <p class="text-sm font-extrabold uppercase tracking-[0.16em] text-primary-accent">VeriScore Quick Screen</p>
-              <h2 class="mt-2 text-2xl md:text-3xl font-black text-slate-950">Start Business Assessment</h2>
-              <p class="mt-2 text-sm sm:text-base text-slate-700 leading-relaxed">
-                Begin your preliminary assessment to determine your Business Maturity Index and Compliance Readiness Score.
-              </p>
-            </div>
-
-            <button
-              id="close-assessment-modal"
-              type="button"
-              class="shrink-0 w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-white border border-slate-200 text-slate-800 font-black text-xl hover:bg-slate-100"
-              aria-label="Close assessment"
-            >
-              ×
-            </button>
-          </div>
-
-          <div class="relative mt-4 sm:mt-5">
-            <div class="h-2 bg-slate-100 rounded-full overflow-hidden">
-              <div id="progress-fill" class="progress-bar-fill h-full bg-primary-accent rounded-full" style="width: 0%;"></div>
-            </div>
-            <div class="mt-2 flex items-center justify-between text-xs sm:text-sm font-semibold text-slate-500">
-              <span id="progress-text">0 of 4 answered</span>
-              <span>Quick Screen</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Scrollable body -->
-      <div class="max-h-[calc(100vh-220px)] sm:max-h-[calc(100vh-250px)] overflow-y-auto modal-scroll">
-        <div class="p-4 sm:p-6 lg:p-8">
-          <form id="prelimForm" class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
-            <!-- Q1 -->
-            <div class="bg-white rounded-2xl border border-slate-200 p-4 sm:p-6 shadow-sm">
-              <p class="text-sm font-extrabold text-slate-500 mb-2">Question 1</p>
-              <h3 class="text-lg sm:text-xl font-black text-slate-950 leading-snug">
-                What is the scale ambition of your business?
-              </h3>
-
-              <div class="mt-4 grid gap-3">
-                <label class="question-option flex items-start gap-3 p-3 sm:p-4 rounded-xl border border-slate-200 cursor-pointer hover:bg-slate-50">
-                  <input type="radio" name="q1" value="global" class="mt-1 h-5 w-5" required />
-                  <span class="font-semibold text-slate-800 leading-snug">
-                    Global or export-oriented growth ambition
-                  </span>
-                </label>
-
-                <label class="question-option flex items-start gap-3 p-3 sm:p-4 rounded-xl border border-slate-200 cursor-pointer hover:bg-slate-50">
-                  <input type="radio" name="q1" value="regional" class="mt-1 h-5 w-5" />
-                  <span class="font-semibold text-slate-800 leading-snug">
-                    National or regional expansion within current markets
-                  </span>
-                </label>
-
-                <label class="question-option flex items-start gap-3 p-3 sm:p-4 rounded-xl border border-slate-200 cursor-pointer hover:bg-slate-50">
-                  <input type="radio" name="q1" value="local" class="mt-1 h-5 w-5" />
-                  <span class="font-semibold text-slate-800 leading-snug">
-                    Local optimization first before broader scale
-                  </span>
-                </label>
-              </div>
-            </div>
-
-            <!-- Q2 -->
-            <div class="bg-white rounded-2xl border border-slate-200 p-4 sm:p-6 shadow-sm">
-              <p class="text-sm font-extrabold text-slate-500 mb-2">Question 2</p>
-              <h3 class="text-lg sm:text-xl font-black text-slate-950 leading-snug">
-                Is your business structure clear — or mostly chaotic and owner-dependent?
-              </h3>
-
-              <div class="mt-4 grid gap-3">
-                <label class="question-option flex items-start gap-3 p-3 sm:p-4 rounded-xl border border-slate-200 cursor-pointer hover:bg-slate-50">
-                  <input type="radio" name="q2" value="clear" class="mt-1 h-5 w-5" required />
-                  <span class="font-semibold text-slate-800 leading-snug">
-                    Clear structure with defined roles, accountability, and decision flow
-                  </span>
-                </label>
-
-                <label class="question-option flex items-start gap-3 p-3 sm:p-4 rounded-xl border border-slate-200 cursor-pointer hover:bg-slate-50">
-                  <input type="radio" name="q2" value="mixed" class="mt-1 h-5 w-5" />
-                  <span class="font-semibold text-slate-800 leading-snug">
-                    Some structure exists but with visible operational inconsistencies
-                  </span>
-                </label>
-
-                <label class="question-option flex items-start gap-3 p-3 sm:p-4 rounded-xl border border-slate-200 cursor-pointer hover:bg-slate-50">
-                  <input type="radio" name="q2" value="chaos" class="mt-1 h-5 w-5" />
-                  <span class="font-semibold text-slate-800 leading-snug">
-                    Mostly founder-driven and operationally unstructured
-                  </span>
-                </label>
-              </div>
-            </div>
-
-            <!-- Q3 -->
-            <div class="bg-white rounded-2xl border border-slate-200 p-4 sm:p-6 shadow-sm">
-              <p class="text-sm font-extrabold text-slate-500 mb-2">Question 3</p>
-              <h3 class="text-lg sm:text-xl font-black text-slate-950 leading-snug">
-                Do you track cashflow weekly and maintain proper business records?
-              </h3>
-
-              <div class="mt-4 grid gap-3">
-                <label class="question-option flex items-start gap-3 p-3 sm:p-4 rounded-xl border border-slate-200 cursor-pointer hover:bg-slate-50">
-                  <input type="radio" name="q3" value="yes" class="mt-1 h-5 w-5" required />
-                  <span class="font-semibold text-slate-800 leading-snug">
-                    Yes, consistently tracked and properly documented
-                  </span>
-                </label>
-
-                <label class="question-option flex items-start gap-3 p-3 sm:p-4 rounded-xl border border-slate-200 cursor-pointer hover:bg-slate-50">
-                  <input type="radio" name="q3" value="sometimes" class="mt-1 h-5 w-5" />
-                  <span class="font-semibold text-slate-800 leading-snug">
-                    Sometimes, but not with reliable discipline
-                  </span>
-                </label>
-
-                <label class="question-option flex items-start gap-3 p-3 sm:p-4 rounded-xl border border-slate-200 cursor-pointer hover:bg-slate-50">
-                  <input type="radio" name="q3" value="no" class="mt-1 h-5 w-5" />
-                  <span class="font-semibold text-slate-800 leading-snug">
-                    No, records and cashflow are still mostly informal
-                  </span>
-                </label>
-              </div>
-            </div>
-
-            <!-- Q4 -->
-            <div class="bg-white rounded-2xl border border-slate-200 p-4 sm:p-6 shadow-sm">
-              <p class="text-sm font-extrabold text-slate-500 mb-2">Question 4</p>
-              <h3 class="text-lg sm:text-xl font-black text-slate-950 leading-snug">
-                Do you already have basic compliance and trust documents in place?
-              </h3>
-
-              <div class="mt-4 grid gap-3">
-                <label class="question-option flex items-start gap-3 p-3 sm:p-4 rounded-xl border border-slate-200 cursor-pointer hover:bg-slate-50">
-                  <input type="radio" name="q4" value="ready" class="mt-1 h-5 w-5" required />
-                  <span class="font-semibold text-slate-800 leading-snug">
-                    Yes, registration and business documentation are in place
-                  </span>
-                </label>
-
-                <label class="question-option flex items-start gap-3 p-3 sm:p-4 rounded-xl border border-slate-200 cursor-pointer hover:bg-slate-50">
-                  <input type="radio" name="q4" value="partial" class="mt-1 h-5 w-5" />
-                  <span class="font-semibold text-slate-800 leading-snug">
-                    Partially, but there are visible documentation gaps
-                  </span>
-                </label>
-
-                <label class="question-option flex items-start gap-3 p-3 sm:p-4 rounded-xl border border-slate-200 cursor-pointer hover:bg-slate-50">
-                  <input type="radio" name="q4" value="none" class="mt-1 h-5 w-5" />
-                  <span class="font-semibold text-slate-800 leading-snug">
-                    Not yet, compliance setup is still pending
-                  </span>
-                </label>
-              </div>
-            </div>
-
-            <!-- Guidance -->
-            <div class="md:col-span-2 bg-slate-50 rounded-2xl border border-slate-200 p-4 sm:p-6">
-              <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-5">
-                <div class="max-w-3xl">
-                  <h4 class="text-lg sm:text-xl font-black text-slate-950">Your quick direction</h4>
-                  <p id="prelimResult" class="mt-2 text-slate-700 font-semibold leading-snug">
-                    Complete the 4 questions to continue your VeriScore screening.
-                  </p>
-                  <p class="mt-2 text-sm text-slate-500 font-semibold leading-snug">
-                    This quick screen helps estimate your Business Maturity Index and Compliance Readiness Score.
-                  </p>
-                </div>
-                <button
-                  id="continue-payment-btn"
-                  type="submit"
-                  class="w-full lg:w-auto px-8 py-4 rounded-full bg-primary-accent text-white font-extrabold text-base sm:text-lg hover:opacity-90 transition glow-effect disabled:opacity-50 disabled:cursor-not-allowed"
-                >
-                  Continue
-                </button>
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
-
-      <!-- Sticky footer -->
-<div class="sticky bottom-0 z-30 bg-white/96 backdrop-blur-md border-t border-slate-200">
-  <div class="px-4 sm:px-6 lg:px-8 py-3 sm:py-4">
-    <div class="flex flex-col gap-3">
-      <div>
-        <p class="text-xs sm:text-sm font-bold text-slate-700">
-          Continue to unlock your full VeriScore screening flow.
-        </p>
-        <p class="text-[11px] sm:text-xs text-slate-500 font-semibold leading-snug">
-          Your preliminary answers help shape your Business Maturity Index and Compliance Readiness Score.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-        <button
-          id="mobile-continue-btn"
-          type="button"
-          class="sm:hidden w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-primary-accent text-white font-extrabold hover:opacity-90 transition glow-effect"
-        >
-          <span class="btn-text">Continue</span>
-        </button>
-
-        <button
-          id="footer-payment-btn"
-          type="button"
-          class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-slate-950 text-white font-extrabold hover:opacity-90 transition"
-        >
-          <span class="btn-text">Continue</span>
-        </button>
-      </div>
-    </div>
-  </div>
-</div>
-
-  <footer class="border-t border-slate-200 bg-white">
-    <div class="container mx-auto px-6 py-8 text-center text-slate-600">
-      <p class="text-sm font-semibold">&copy; <span id="year"></span> Nexxintel. All Rights Reserved.</p>
-    </div>
-  </footer>
-
-  <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    // =========================
-    // SET YOUR LINKS
-    // =========================
-    const PAYMENT_URL = "https://sandbox-pay.squadco.com/verricanon";
-    const JOTFORM_URL = "https://form.jotform.com/260633600514043";
-
-    // Mobile menu
-    const mobileMenuButton = document.getElementById('mobile-menu-button');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
-    const mobileLinks = document.querySelectorAll('.mobile-link');
-
-    function toggleMenu() {
-      mobileMenu.classList.toggle('-translate-x-full');
-      mobileMenuOverlay.classList.toggle('hidden');
-    }
-
-    mobileMenuButton.addEventListener('click', toggleMenu);
-    mobileMenuOverlay.addEventListener('click', toggleMenu);
-    mobileLinks.forEach(link => link.addEventListener('click', toggleMenu));
-
-    // Reveal on scroll
-    const revealElements = document.querySelectorAll('.reveal');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add('active');
-      });
-    }, { threshold: 0.12 });
-    revealElements.forEach(el => observer.observe(el));
-
-    // Footer year
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Card hover
-    const cards = document.querySelectorAll('.interactive-card');
-    cards.forEach(card => {
-      card.addEventListener('mousemove', (e) => {
-        const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        const rotateX = (y / rect.height - 0.5) * -8;
-        const rotateY = (x / rect.width - 0.5) * 8;
-        card.style.setProperty('--rotateX', `${rotateX}deg`);
-        card.style.setProperty('--rotateY', `${rotateY}deg`);
-      });
-
-      card.addEventListener('mouseleave', () => {
-        card.style.setProperty('--rotateX', '0deg');
-        card.style.setProperty('--rotateY', '0deg');
-      });
-    });
-
-    // Modal
-    const modal = document.getElementById('assessment-modal');
-    const panel = document.getElementById('assessment-panel');
-    const closeModalBtn = document.getElementById('close-assessment-modal');
-
-    function openAssessmentModal() {
-      modal.classList.remove('invisible', 'opacity-0');
-      panel.classList.remove('opacity-0', 'translate-y-4');
-      document.body.style.overflow = 'hidden';
-
-      if (!mobileMenu.classList.contains('-translate-x-full')) {
-        toggleMenu();
-      }
-    }
-
-    function closeAssessmentModal() {
-      modal.classList.add('opacity-0');
-      panel.classList.add('opacity-0', 'translate-y-4');
-
-      setTimeout(() => {
-        modal.classList.add('invisible');
-      }, 250);
-
-      document.body.style.overflow = '';
-    }
-
-    ['nav-start-cta', 'mobile-start-cta', 'hero-start-cta', 'framework-start-cta', 'footer-start-cta']
-      .forEach(id => {
-        const btn = document.getElementById(id);
-        if (btn) btn.addEventListener('click', openAssessmentModal);
-      });
-
-    closeModalBtn.addEventListener('click', closeAssessmentModal);
-
-    modal.addEventListener('click', (e) => {
-      if (e.target === modal) closeAssessmentModal();
-    });
-
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && !modal.classList.contains('invisible')) {
-        closeAssessmentModal();
-      }
-    });
-
-    // Assessment logic
-    const prelimForm = document.getElementById('prelimForm');
-    const prelimResult = document.getElementById('prelimResult');
-    const progressFill = document.getElementById('progress-fill');
-    const progressText = document.getElementById('progress-text');
-    const footerPaymentBtn = document.getElementById('footer-payment-btn');
-
-    const questionNames = ['q1', 'q2', 'q3', 'q4'];
-
-    function updateSelectedStates() {
-      document.querySelectorAll('.question-option').forEach(option => option.classList.remove('selected'));
-
-      questionNames.forEach(name => {
-        const checked = prelimForm.querySelector(`input[name="${name}"]:checked`);
-        if (checked) {
-          const label = checked.closest('.question-option');
-          if (label) label.classList.add('selected');
-        }
-      });
-    }
-
-    function updateProgress() {
-      let answered = 0;
-      questionNames.forEach(name => {
-        if (prelimForm.querySelector(`input[name="${name}"]:checked`)) answered += 1;
-      });
-
-      const percent = (answered / questionNames.length) * 100;
-      progressFill.style.width = `${percent}%`;
-      progressText.textContent = `${answered} of ${questionNames.length} answered`;
-
-      if (answered === questionNames.length) {
-        prelimResult.textContent = "All 4 questions completed. You can now continue to payment and unlock the full VeriScore assessment.";
-      } else if (answered > 0) {
-        prelimResult.textContent = "Good progress. Complete the remaining question(s) to continue to payment.";
-      } else {
-        prelimResult.textContent = "Complete the 4 questions to unlock the full VeriScore assessment.";
-      }
-    }
-
-    questionNames.forEach(name => {
-      prelimForm.querySelectorAll(`input[name="${name}"]`).forEach(input => {
-        input.addEventListener('change', () => {
-          updateSelectedStates();
-          updateProgress();
-        });
-      });
-    });
-
-    function scoreAnswer(name, map) {
-      const value = prelimForm.querySelector(`input[name="${name}"]:checked`)?.value;
-      return map[value] ?? 0;
-    }
-
-    function redirectToPayment() {
-      if (!prelimForm.checkValidity()) {
-        prelimForm.reportValidity();
-        return;
-      }
-
-      const s1 = scoreAnswer('q1', { global: 2, regional: 1, local: 0 });
-      const s2 = scoreAnswer('q2', { clear: 2, mixed: 1, chaos: 0 });
-      const s3 = scoreAnswer('q3', { yes: 2, sometimes: 1, no: 0 });
-      const s4 = scoreAnswer('q4', { ready: 2, partial: 1, none: 0 });
-      const total = s1 + s2 + s3 + s4;
-
-      if (total >= 7) {
-        prelimResult.textContent = "Strong signal: your business shows solid maturity momentum. Redirecting to payment to unlock your full VeriScore assessment.";
-      } else if (total >= 4) {
-        prelimResult.textContent = "Mixed signal: your business has potential with visible readiness gaps. Redirecting to payment to unlock your full VeriScore assessment.";
-      } else {
-        prelimResult.textContent = "Early-stage signal: structure, records, and compliance may be your first priority. Redirecting to payment to unlock your full VeriScore assessment.";
-      }
-
-      const payload = {
-        q1: prelimForm.querySelector('input[name="q1"]:checked')?.value,
-        q2: prelimForm.querySelector('input[name="q2"]:checked')?.value,
-        q3: prelimForm.querySelector('input[name="q3"]:checked')?.value,
-        q4: prelimForm.querySelector('input[name="q4"]:checked')?.value,
-        score: total,
-        ts: Date.now()
-      };
-
-      try {
-        localStorage.setItem('veriscore_prelim', JSON.stringify(payload));
-        localStorage.setItem('veriscore_jotform_url', JOTFORM_URL);
-      } catch (_) {}
-
-      setTimeout(() => {
-        window.location.href = PAYMENT_URL;
-      }, 650);
-    }
-
-    prelimForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      redirectToPayment();
-    });
-
-    footerPaymentBtn.addEventListener('click', redirectToPayment);
-
-    updateSelectedStates();
-    updateProgress();
-
-    // IMPORTANT:
-    // Configure Squad success/redirect URL to:
-    // https://form.jotform.com/260633600514043
-  });
-</script>
-</body>
-</html><!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nexxintel - Intelligent Infrastructure for Africa</title>
-
-  <script src="https://cdn.tailwindcss.com"></script>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-
-  <link rel="icon" href="https://placehold.co/32x32/06B6D4/FFFFFF?text=NXT" type="image/png" />
-
-  <style>
-    :root {
-      --primary: #06B6D4;
-      --primary-dark: #0891B2;
-      --secondary: #0284C7;
-      --text: #0F172A;
-      --muted: #475569;
-      --border: #E2E8F0;
-      --soft: #F8FAFC;
-    }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      background: #FDE68A;
-      color: var(--text);
-    }
-
-    .text-primary-accent { color: var(--primary); }
-    .bg-primary-accent { background-color: var(--primary); }
-    .border-primary-accent { border-color: var(--primary); }
-
-    .glow-effect {
-      box-shadow: 0 18px 40px rgba(6, 182, 212, 0.24), 0 8px 20px rgba(2, 132, 199, 0.12);
-    }
-
-    .bg-grid-light {
-      background-image:
-        linear-gradient(to right, rgba(15, 23, 42, 0.05) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(15, 23, 42, 0.05) 1px, transparent 1px);
-      background-size: 42px 42px;
-    }
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(18px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
-    }
-
-    .reveal.active {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .interactive-card {
-      transform-style: preserve-3d;
-      transition: transform 0.45s cubic-bezier(.25,1,.5,1), box-shadow 0.3s ease, border-color 0.3s ease;
-    }
-
-    .interactive-card:hover {
-      transform: perspective(1000px) rotateY(var(--rotateY)) rotateX(var(--rotateX)) scale3d(1.02,1.02,1.02);
-      box-shadow: 0 24px 50px rgba(15, 23, 42, 0.10);
-      border-color: rgba(6, 182, 212, 0.45);
-    }
-
-    .header-glass {
-      background: rgba(255,255,255,0.86);
-      backdrop-filter: blur(12px);
-    }
-
-    #mobile-menu {
-      transition: transform 0.25s ease-in-out;
-      background: #ffffff;
-    }
-
-    .watermark-office {
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-      opacity: 0.15;
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: min(1000px, 94vw);
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='700' viewBox='0 0 1200 700'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%2306B6D4'/%3E%3Cstop offset='1' stop-color='%230284C7'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='1200' height='700' fill='none'/%3E%3Crect x='170' y='430' width='860' height='70' rx='18' fill='%23020b1a' fill-opacity='0.22'/%3E%3Crect x='220' y='460' width='760' height='22' rx='11' fill='url(%23g)' fill-opacity='0.55'/%3E%3Crect x='505' y='250' width='210' height='140' rx='18' fill='%23020b1a' fill-opacity='0.25'/%3E%3Crect x='525' y='270' width='170' height='90' rx='14' fill='url(%23g)' fill-opacity='0.45'/%3E%3Crect x='595' y='390' width='30' height='40' rx='10' fill='%23020b1a' fill-opacity='0.25'/%3E%3Crect x='560' y='425' width='100' height='20' rx='10' fill='%23020b1a' fill-opacity='0.22'/%3E%3Ccircle cx='360' cy='305' r='46' fill='url(%23g)' fill-opacity='0.50'/%3E%3Crect x='305' y='350' width='110' height='140' rx='28' fill='%23020b1a' fill-opacity='0.22'/%3E%3Crect x='290' y='385' width='60' height='22' rx='11' fill='url(%23g)' fill-opacity='0.40'/%3E%3Crect x='370' y='385' width='60' height='22' rx='11' fill='url(%23g)' fill-opacity='0.40'/%3E%3Ccircle cx='860' cy='305' r='46' fill='url(%23g)' fill-opacity='0.50'/%3E%3Crect x='805' y='350' width='110' height='140' rx='28' fill='%23020b1a' fill-opacity='0.22'/%3E%3Crect x='790' y='385' width='60' height='22' rx='11' fill='url(%23g)' fill-opacity='0.40'/%3E%3Crect x='870' y='385' width='60' height='22' rx='11' fill='url(%23g)' fill-opacity='0.40'/%3E%3Cpath d='M180 180 C260 80 420 80 500 180 C580 280 740 280 820 180' fill='none' stroke='url(%23g)' stroke-width='18' stroke-linecap='round' stroke-opacity='0.35'/%3E%3Cpath d='M380 560 C470 490 730 490 820 560' fill='none' stroke='%23020b1a' stroke-width='16' stroke-linecap='round' stroke-opacity='0.18'/%3E%3C/svg%3E");
-    }
-
-    .framework-pill {
-      border: 1px solid rgba(15, 23, 42, 0.08);
-      background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
-    }
-
-    .assessment-modal {
-      transition: opacity 0.25s ease, visibility 0.25s ease;
-    }
-
-    .assessment-panel {
-      transition: transform 0.28s ease, opacity 0.28s ease;
-    }
-
-    .question-option input[type="radio"] {
-      accent-color: var(--primary);
-    }
-
-    .question-option.selected {
-      border-color: rgba(6, 182, 212, 0.65);
-      background: rgba(6, 182, 212, 0.08);
-      box-shadow: inset 0 0 0 1px rgba(6, 182, 212, 0.15);
-    }
-
-    .progress-bar-fill {
-      transition: width 0.25s ease;
-    }
-
-    .modal-scroll {
-      scrollbar-width: thin;
-      scrollbar-color: rgba(148, 163, 184, 0.8) transparent;
-    }
-
-    .modal-scroll::-webkit-scrollbar {
-      width: 10px;
-    }
-
-    .modal-scroll::-webkit-scrollbar-thumb {
-      background: rgba(148, 163, 184, 0.7);
-      border-radius: 999px;
-    }
-
-    .modal-scroll::-webkit-scrollbar-track {
-      background: transparent;
-    }
 
     .rating-strip {
       position: relative;
@@ -1283,330 +392,315 @@
       </div>
     </section>
 
-<section class="py-16 lg:py-24 bg-slate-50 border-y border-slate-200">
-  <div class="container mx-auto px-6 max-w-4xl">
-
-    <div class="text-center mb-12">
-      <h2 class="text-3xl md:text-4xl font-black text-slate-950">Platform Insights</h2>
-      <p class="mt-3 text-lg text-slate-700">
-        Learn more about who Nexxintel serves and how the infrastructure works.
-      </p>
-    </div>
-
-    <div class="space-y-4">
-
-      <details class="group bg-white border border-slate-200 rounded-2xl p-6 cursor-pointer">
-        <summary class="flex justify-between items-center font-extrabold text-xl text-slate-950">
-          Who We Serve
-          <span class="text-primary-accent group-open:rotate-45 transition">+</span>
-        </summary>
-
-        <div class="mt-4 text-slate-700 space-y-3">
-          <p><strong>SMEs and Growth Businesses</strong> — businesses seeking maturity assessment, compliance support, and structured growth.</p>
-          <p><strong>Government and Public Sector Programs</strong> — agencies needing digital infrastructure for compliance, revenue visibility, and service delivery.</p>
-          <p><strong>Financial and Capital Partners</strong> — lenders and investors requiring stronger trust signals before deploying capital.</p>
-          <p><strong>Ecosystem Operators</strong> — telcos, insurers, and enterprise networks integrating digital infrastructure.</p>
+    <section class="py-16 lg:py-24 bg-slate-50 border-y border-slate-200">
+      <div class="container mx-auto px-6 max-w-4xl">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-black text-slate-950">Platform Insights</h2>
+          <p class="mt-3 text-lg text-slate-700">
+            Learn more about who Nexxintel serves and how the infrastructure works.
+          </p>
         </div>
-      </details>
 
-      <details class="group bg-white border border-slate-200 rounded-2xl p-6 cursor-pointer">
-        <summary class="flex justify-between items-center font-extrabold text-xl text-slate-950">
-          Our Solutions
-          <span class="text-primary-accent group-open:rotate-45 transition">+</span>
-        </summary>
+        <div class="space-y-4">
+          <details class="group bg-white border border-slate-200 rounded-2xl p-6 cursor-pointer">
+            <summary class="flex justify-between items-center font-extrabold text-xl text-slate-950">
+              Who We Serve
+              <span class="text-primary-accent group-open:rotate-45 transition">+</span>
+            </summary>
 
-        <div class="mt-4 text-slate-700 space-y-3">
-          <p><strong>VeriScore</strong> — business maturity diagnostics and continuous scoring infrastructure.</p>
-          <p><strong>Compliance Infrastructure</strong> — systems that improve documentation, governance hygiene, and operational trust.</p>
-          <p><strong>Revenue and Payment Systems</strong> — structured digital rails for collections and financial workflows.</p>
-          <p><strong>Messaging Infrastructure</strong> — WhatsApp and SMS powered engagement systems.</p>
-          <p><strong>Growth Readiness Intelligence</strong> — signals that help businesses become more fundable and scalable.</p>
+            <div class="mt-4 text-slate-700 space-y-3">
+              <p><strong>SMEs and Growth Businesses</strong> — businesses seeking maturity assessment, compliance support, and structured growth.</p>
+              <p><strong>Government and Public Sector Programs</strong> — agencies needing digital infrastructure for compliance, revenue visibility, and service delivery.</p>
+              <p><strong>Financial and Capital Partners</strong> — lenders and investors requiring stronger trust signals before deploying capital.</p>
+              <p><strong>Ecosystem Operators</strong> — telcos, insurers, and enterprise networks integrating digital infrastructure.</p>
+            </div>
+          </details>
+
+          <details class="group bg-white border border-slate-200 rounded-2xl p-6 cursor-pointer">
+            <summary class="flex justify-between items-center font-extrabold text-xl text-slate-950">
+              Our Solutions
+              <span class="text-primary-accent group-open:rotate-45 transition">+</span>
+            </summary>
+
+            <div class="mt-4 text-slate-700 space-y-3">
+              <p><strong>VeriScore</strong> — business maturity diagnostics and continuous scoring infrastructure.</p>
+              <p><strong>Compliance Infrastructure</strong> — systems that improve documentation, governance hygiene, and operational trust.</p>
+              <p><strong>Revenue and Payment Systems</strong> — structured digital rails for collections and financial workflows.</p>
+              <p><strong>Messaging Infrastructure</strong> — WhatsApp and SMS powered engagement systems.</p>
+              <p><strong>Growth Readiness Intelligence</strong> — signals that help businesses become more fundable and scalable.</p>
+            </div>
+          </details>
+
+          <details class="group bg-white border border-slate-200 rounded-2xl p-6 cursor-pointer">
+            <summary class="flex justify-between items-center font-extrabold text-xl text-slate-950">
+              Contact Us
+              <span class="text-primary-accent group-open:rotate-45 transition">+</span>
+            </summary>
+
+            <div class="mt-6 space-y-4">
+              <input type="text" placeholder="Full Name" class="w-full border border-slate-200 rounded-xl px-4 py-3">
+              <input type="email" placeholder="Email Address" class="w-full border border-slate-200 rounded-xl px-4 py-3">
+              <input type="text" placeholder="Organization" class="w-full border border-slate-200 rounded-xl px-4 py-3">
+              <textarea placeholder="Your message" rows="4" class="w-full border border-slate-200 rounded-xl px-4 py-3"></textarea>
+
+              <button class="bg-primary-accent text-white px-6 py-3 rounded-full font-bold">
+                Send Message
+              </button>
+            </div>
+          </details>
+
+          <details class="group bg-white border border-slate-200 rounded-2xl p-6 cursor-pointer">
+            <summary class="flex justify-between items-center font-extrabold text-xl text-slate-950">
+              FAQ
+              <span class="text-primary-accent group-open:rotate-45 transition">+</span>
+            </summary>
+
+            <div class="mt-4 space-y-4 text-slate-700">
+              <div>
+                <p class="font-bold">What is Nexxintel?</p>
+                <p>Nexxintel builds infrastructure for business intelligence, compliance support, and continuous scoring systems.</p>
+              </div>
+
+              <div>
+                <p class="font-bold">What is VeriScore?</p>
+                <p>A maturity and readiness rating generated from structured business assessment frameworks.</p>
+              </div>
+
+              <div>
+                <p class="font-bold">Who can use the platform?</p>
+                <p>SMEs, governments, capital partners, and ecosystem operators.</p>
+              </div>
+
+              <div>
+                <p class="font-bold">How does the assessment work?</p>
+                <p>Users complete a quick screen → proceed to payment → then complete the full assessment.</p>
+              </div>
+            </div>
+          </details>
         </div>
-      </details>
+      </div>
+    </section>
+  </main>
 
-      <details class="group bg-white border border-slate-200 rounded-2xl p-6 cursor-pointer">
-        <summary class="flex justify-between items-center font-extrabold text-xl text-slate-950">
-          Contact Us
-          <span class="text-primary-accent group-open:rotate-45 transition">+</span>
-        </summary>
+  <div id="assessment-modal" class="assessment-modal fixed inset-0 z-[60] bg-slate-950/65 backdrop-blur-sm opacity-0 invisible">
+    <div class="min-h-screen overflow-y-auto modal-scroll px-3 py-3 sm:px-4 sm:py-6 lg:py-10">
+      <div
+        id="assessment-panel"
+        class="assessment-panel mx-auto w-full max-w-6xl bg-white rounded-2xl sm:rounded-3xl border border-slate-200 shadow-2xl opacity-0 translate-y-4 overflow-hidden"
+      >
+        <div class="sticky top-0 z-20 bg-white/96 backdrop-blur-md border-b border-slate-200">
+          <div class="px-4 sm:px-6 lg:px-8 py-4 sm:py-5 relative">
+            <div class="watermark-office" style="opacity:0.05;"></div>
+            <div class="relative flex items-start justify-between gap-4">
+              <div class="max-w-3xl pr-2">
+                <p class="text-sm font-extrabold uppercase tracking-[0.16em] text-primary-accent">VeriScore Quick Screen</p>
+                <h2 class="mt-2 text-2xl md:text-3xl font-black text-slate-950">Start Business Assessment</h2>
+                <p class="mt-2 text-sm sm:text-base text-slate-700 leading-relaxed">
+                  Begin your preliminary assessment to determine your Business Maturity Index and Compliance Readiness Score.
+                </p>
+              </div>
 
-        <div class="mt-6 space-y-4">
-          <input
-            type="text"
-            placeholder="Full Name"
-            class="w-full border border-slate-200 rounded-xl px-4 py-3"
-          >
-
-          <input
-            type="email"
-            placeholder="Email Address"
-            class="w-full border border-slate-200 rounded-xl px-4 py-3"
-          >
-
-          <input
-            type="text"
-            placeholder="Organization"
-            class="w-full border border-slate-200 rounded-xl px-4 py-3"
-          >
-
-          <textarea
-            placeholder="Your message"
-            rows="4"
-            class="w-full border border-slate-200 rounded-xl px-4 py-3"
-          ></textarea>
-
-          <button class="bg-primary-accent text-white px-6 py-3 rounded-full font-bold">
-            Send Message
-          </button>
-        </div>
-      </details>
-
-      <details class="group bg-white border border-slate-200 rounded-2xl p-6 cursor-pointer">
-        <summary class="flex justify-between items-center font-extrabold text-xl text-slate-950">
-          FAQ
-          <span class="text-primary-accent group-open:rotate-45 transition">+</span>
-        </summary>
-
-        <div class="mt-4 space-y-4 text-slate-700">
-          <div>
-            <p class="font-bold">What is Nexxintel?</p>
-            <p>Nexxintel builds infrastructure for business intelligence, compliance support, and continuous scoring systems.</p>
-          </div>
-
-          <div>
-            <p class="font-bold">What is VeriScore?</p>
-            <p>A maturity and readiness rating generated from structured business assessment frameworks.</p>
-          </div>
-
-          <div>
-            <p class="font-bold">Who can use the platform?</p>
-            <p>SMEs, governments, capital partners, and ecosystem operators.</p>
-          </div>
-
-          <div>
-            <p class="font-bold">How does the assessment work?</p>
-            <p>Users complete a quick screen → proceed to payment → then complete the full assessment.</p>
-          </div>
-        </div>
-      </details>
-
-    </div>
-  </div>
-</section>
-
-</main>
-
-<div id="assessment-modal" class="assessment-modal fixed inset-0 z-[60] bg-slate-950/65 backdrop-blur-sm opacity-0 invisible">
-  <div class="min-h-screen overflow-y-auto modal-scroll px-3 py-3 sm:px-4 sm:py-6 lg:py-10">
-    <div
-      id="assessment-panel"
-      class="assessment-panel mx-auto w-full max-w-6xl bg-white rounded-2xl sm:rounded-3xl border border-slate-200 shadow-2xl opacity-0 translate-y-4 overflow-hidden"
-    >
-      <div class="sticky top-0 z-20 bg-white/96 backdrop-blur-md border-b border-slate-200">
-        <div class="px-4 sm:px-6 lg:px-8 py-4 sm:py-5 relative">
-          <div class="watermark-office" style="opacity:0.05;"></div>
-          <div class="relative flex items-start justify-between gap-4">
-            <div class="max-w-3xl pr-2">
-              <p class="text-sm font-extrabold uppercase tracking-[0.16em] text-primary-accent">VeriScore Quick Screen</p>
-              <h2 class="mt-2 text-2xl md:text-3xl font-black text-slate-950">Start Business Assessment</h2>
-              <p class="mt-2 text-sm sm:text-base text-slate-700 leading-relaxed">
-                Begin your preliminary assessment to determine your Business Maturity Index and Compliance Readiness Score.
-              </p>
+              <button
+                id="close-assessment-modal"
+                type="button"
+                class="shrink-0 w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-white border border-slate-200 text-slate-800 font-black text-xl hover:bg-slate-100"
+                aria-label="Close assessment"
+              >
+                ×
+              </button>
             </div>
 
-            <button
-              id="close-assessment-modal"
-              type="button"
-              class="shrink-0 w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-white border border-slate-200 text-slate-800 font-black text-xl hover:bg-slate-100"
-              aria-label="Close assessment"
-            >
-              ×
-            </button>
-          </div>
-
-          <div class="relative mt-4 sm:mt-5 rating-strip rounded-full px-4 py-2">
-            <div class="rating-marquee text-[11px] sm:text-xs font-extrabold uppercase tracking-[0.14em] text-slate-700">
-              <span>VeriScore Rating • Business Maturity Scores • VeriScore Rating • Business Maturity Scores •</span>
-              <span>VeriScore Rating • Business Maturity Scores • VeriScore Rating • Business Maturity Scores •</span>
-            </div>
-          </div>
-
-          <div class="relative mt-4 sm:mt-5">
-            <div class="h-2 bg-slate-100 rounded-full overflow-hidden">
-              <div id="progress-fill" class="progress-bar-fill h-full bg-primary-accent rounded-full" style="width: 0%;"></div>
-            </div>
-            <div class="mt-2 flex items-center justify-between text-xs sm:text-sm font-semibold text-slate-500">
-              <span id="progress-text">0 of 4 answered</span>
-              <span>Quick Screen</span>
-            </div>
-          </div>
-
-          
-      <div class="max-h-[calc(100vh-220px)] sm:max-h-[calc(100vh-250px)] overflow-y-auto modal-scroll">
-        <div class="p-4 sm:p-6 lg:p-8">
-          <form id="prelimForm" class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
-            <div class="bg-white rounded-2xl border border-slate-200 p-4 sm:p-6 shadow-sm">
-              <p class="text-sm font-extrabold text-slate-500 mb-2">Question 1</p>
-              <h3 class="text-lg sm:text-xl font-black text-slate-950 leading-snug">
-                What is the scale ambition of your business?
-              </h3>
-
-              <div class="mt-4 grid gap-3">
-                <label class="question-option flex items-start gap-3 p-3 sm:p-4 rounded-xl border border-slate-200 cursor-pointer hover:bg-slate-50">
-                  <input type="radio" name="q1" value="global" class="mt-1 h-5 w-5" required />
-                  <span class="font-semibold text-slate-800 leading-snug">
-                    Global or export-oriented growth ambition
-                  </span>
-                </label>
-
-                <label class="question-option flex items-start gap-3 p-3 sm:p-4 rounded-xl border border-slate-200 cursor-pointer hover:bg-slate-50">
-                  <input type="radio" name="q1" value="regional" class="mt-1 h-5 w-5" />
-                  <span class="font-semibold text-slate-800 leading-snug">
-                    National or regional expansion within current markets
-                  </span>
-                </label>
-
-                <label class="question-option flex items-start gap-3 p-3 sm:p-4 rounded-xl border border-slate-200 cursor-pointer hover:bg-slate-50">
-                  <input type="radio" name="q1" value="local" class="mt-1 h-5 w-5" />
-                  <span class="font-semibold text-slate-800 leading-snug">
-                    Local optimization first before broader scale
-                  </span>
-                </label>
+            <div class="relative mt-4 sm:mt-5 rating-strip rounded-full px-4 py-2">
+              <div class="rating-marquee text-[11px] sm:text-xs font-extrabold uppercase tracking-[0.14em] text-slate-700">
+                <span>VeriScore Rating • Business Maturity Scores • VeriScore Rating • Business Maturity Scores •</span>
+                <span>VeriScore Rating • Business Maturity Scores • VeriScore Rating • Business Maturity Scores •</span>
               </div>
             </div>
 
-            <div class="bg-white rounded-2xl border border-slate-200 p-4 sm:p-6 shadow-sm">
-              <p class="text-sm font-extrabold text-slate-500 mb-2">Question 2</p>
-              <h3 class="text-lg sm:text-xl font-black text-slate-950 leading-snug">
-                Is your business structure clear — or mostly chaotic and owner-dependent?
-              </h3>
-
-              <div class="mt-4 grid gap-3">
-                <label class="question-option flex items-start gap-3 p-3 sm:p-4 rounded-xl border border-slate-200 cursor-pointer hover:bg-slate-50">
-                  <input type="radio" name="q2" value="clear" class="mt-1 h-5 w-5" required />
-                  <span class="font-semibold text-slate-800 leading-snug">
-                    Clear structure with defined roles, accountability, and decision flow
-                  </span>
-                </label>
-
-                <label class="question-option flex items-start gap-3 p-3 sm:p-4 rounded-xl border border-slate-200 cursor-pointer hover:bg-slate-50">
-                  <input type="radio" name="q2" value="mixed" class="mt-1 h-5 w-5" />
-                  <span class="font-semibold text-slate-800 leading-snug">
-                    Some structure exists but with visible operational inconsistencies
-                  </span>
-                </label>
-
-                <label class="question-option flex items-start gap-3 p-3 sm:p-4 rounded-xl border border-slate-200 cursor-pointer hover:bg-slate-50">
-                  <input type="radio" name="q2" value="chaos" class="mt-1 h-5 w-5" />
-                  <span class="font-semibold text-slate-800 leading-snug">
-                    Mostly founder-driven and operationally unstructured
-                  </span>
-                </label>
+            <div class="relative mt-4 sm:mt-5">
+              <div class="h-2 bg-slate-100 rounded-full overflow-hidden">
+                <div id="progress-fill" class="progress-bar-fill h-full bg-primary-accent rounded-full" style="width: 0%;"></div>
+              </div>
+              <div class="mt-2 flex items-center justify-between text-xs sm:text-sm font-semibold text-slate-500">
+                <span id="progress-text">0 of 4 answered</span>
+                <span>Quick Screen</span>
               </div>
             </div>
+          </div>
+        </div>
 
-            <div class="bg-white rounded-2xl border border-slate-200 p-4 sm:p-6 shadow-sm">
-              <p class="text-sm font-extrabold text-slate-500 mb-2">Question 3</p>
-              <h3 class="text-lg sm:text-xl font-black text-slate-950 leading-snug">
-                Do you track cashflow weekly and maintain proper business records?
-              </h3>
+        <div class="max-h-[calc(100vh-220px)] sm:max-h-[calc(100vh-250px)] overflow-y-auto modal-scroll">
+          <div class="p-4 sm:p-6 lg:p-8">
+            <form id="prelimForm" class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+              <div class="bg-white rounded-2xl border border-slate-200 p-4 sm:p-6 shadow-sm">
+                <p class="text-sm font-extrabold text-slate-500 mb-2">Question 1</p>
+                <h3 class="text-lg sm:text-xl font-black text-slate-950 leading-snug">
+                  What is the scale ambition of your business?
+                </h3>
 
-              <div class="mt-4 grid gap-3">
-                <label class="question-option flex items-start gap-3 p-3 sm:p-4 rounded-xl border border-slate-200 cursor-pointer hover:bg-slate-50">
-                  <input type="radio" name="q3" value="yes" class="mt-1 h-5 w-5" required />
-                  <span class="font-semibold text-slate-800 leading-snug">
-                    Yes, consistently tracked and properly documented
-                  </span>
-                </label>
+                <div class="mt-4 grid gap-3">
+                  <label class="question-option flex items-start gap-3 p-3 sm:p-4 rounded-xl border border-slate-200 cursor-pointer hover:bg-slate-50">
+                    <input type="radio" name="q1" value="global" class="mt-1 h-5 w-5" required />
+                    <span class="font-semibold text-slate-800 leading-snug">
+                      Global or export-oriented growth ambition
+                    </span>
+                  </label>
 
-                <label class="question-option flex items-start gap-3 p-3 sm:p-4 rounded-xl border border-slate-200 cursor-pointer hover:bg-slate-50">
-                  <input type="radio" name="q3" value="sometimes" class="mt-1 h-5 w-5" />
-                  <span class="font-semibold text-slate-800 leading-snug">
-                    Sometimes, but not with reliable discipline
-                  </span>
-                </label>
+                  <label class="question-option flex items-start gap-3 p-3 sm:p-4 rounded-xl border border-slate-200 cursor-pointer hover:bg-slate-50">
+                    <input type="radio" name="q1" value="regional" class="mt-1 h-5 w-5" />
+                    <span class="font-semibold text-slate-800 leading-snug">
+                      National or regional expansion within current markets
+                    </span>
+                  </label>
 
-                <label class="question-option flex items-start gap-3 p-3 sm:p-4 rounded-xl border border-slate-200 cursor-pointer hover:bg-slate-50">
-                  <input type="radio" name="q3" value="no" class="mt-1 h-5 w-5" />
-                  <span class="font-semibold text-slate-800 leading-snug">
-                    No, records and cashflow are still mostly informal
-                  </span>
-                </label>
-              </div>
-            </div>
-
-            <div class="bg-white rounded-2xl border border-slate-200 p-4 sm:p-6 shadow-sm">
-              <p class="text-sm font-extrabold text-slate-500 mb-2">Question 4</p>
-              <h3 class="text-lg sm:text-xl font-black text-slate-950 leading-snug">
-                Do you already have basic compliance and trust documents in place?
-              </h3>
-
-              <div class="mt-4 grid gap-3">
-                <label class="question-option flex items-start gap-3 p-3 sm:p-4 rounded-xl border border-slate-200 cursor-pointer hover:bg-slate-50">
-                  <input type="radio" name="q4" value="ready" class="mt-1 h-5 w-5" required />
-                  <span class="font-semibold text-slate-800 leading-snug">
-                    Yes, registration and business documentation are in place
-                  </span>
-                </label>
-
-                <label class="question-option flex items-start gap-3 p-3 sm:p-4 rounded-xl border border-slate-200 cursor-pointer hover:bg-slate-50">
-                  <input type="radio" name="q4" value="partial" class="mt-1 h-5 w-5" />
-                  <span class="font-semibold text-slate-800 leading-snug">
-                    Partially, but there are visible documentation gaps
-                  </span>
-                </label>
-
-                <label class="question-option flex items-start gap-3 p-3 sm:p-4 rounded-xl border border-slate-200 cursor-pointer hover:bg-slate-50">
-                  <input type="radio" name="q4" value="none" class="mt-1 h-5 w-5" />
-                  <span class="font-semibold text-slate-800 leading-snug">
-                    Not yet, compliance setup is still pending
-                  </span>
-                </label>
-              </div>
-            </div>
-
-            <div class="md:col-span-2 bg-slate-50 rounded-2xl border border-slate-200 p-4 sm:p-6">
-              <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-5">
-                <div class="max-w-3xl">
-                  <h4 class="text-lg sm:text-xl font-black text-slate-950">Your quick direction</h4>
-                  <p id="prelimResult" class="mt-2 text-slate-700 font-semibold leading-snug">
-                    Complete the 4 questions to continue your VeriScore screening.
-                  </p>
-                  <p class="mt-2 text-sm text-slate-500 font-semibold leading-snug">
-                    This quick screen helps estimate your Business Maturity Index and Compliance Readiness Score.
-                  </p>
+                  <label class="question-option flex items-start gap-3 p-3 sm:p-4 rounded-xl border border-slate-200 cursor-pointer hover:bg-slate-50">
+                    <input type="radio" name="q1" value="local" class="mt-1 h-5 w-5" />
+                    <span class="font-semibold text-slate-800 leading-snug">
+                      Local optimization first before broader scale
+                    </span>
+                  </label>
                 </div>
-                <button
-                  id="continue-payment-btn"
-                  type="submit"
-                  class="w-full lg:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-primary-accent text-white font-extrabold text-base sm:text-lg hover:opacity-90 transition glow-effect disabled:opacity-50 disabled:cursor-not-allowed"
-                >
-                  <span class="btn-text">Continue</span>
-                </button>
               </div>
-            </div>
-          </form>
-        </div>
-      </div>
 
-      <div class="sticky bottom-0 z-20 bg-white/96 backdrop-blur-md border-t border-slate-200">
-        <div class="px-4 sm:px-6 lg:px-8 py-3 sm:py-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
-          <div>
-            <p class="text-xs sm:text-sm font-bold text-slate-700">Continue to unlock your full VeriScore screening flow.</p>
-            <p class="text-[11px] sm:text-xs text-slate-500 font-semibold leading-snug">Your preliminary answers help shape your Business Maturity Index and Compliance Readiness Score.</p>
+              <div class="bg-white rounded-2xl border border-slate-200 p-4 sm:p-6 shadow-sm">
+                <p class="text-sm font-extrabold text-slate-500 mb-2">Question 2</p>
+                <h3 class="text-lg sm:text-xl font-black text-slate-950 leading-snug">
+                  Is your business structure clear — or mostly chaotic and owner-dependent?
+                </h3>
+
+                <div class="mt-4 grid gap-3">
+                  <label class="question-option flex items-start gap-3 p-3 sm:p-4 rounded-xl border border-slate-200 cursor-pointer hover:bg-slate-50">
+                    <input type="radio" name="q2" value="clear" class="mt-1 h-5 w-5" required />
+                    <span class="font-semibold text-slate-800 leading-snug">
+                      Clear structure with defined roles, accountability, and decision flow
+                    </span>
+                  </label>
+
+                  <label class="question-option flex items-start gap-3 p-3 sm:p-4 rounded-xl border border-slate-200 cursor-pointer hover:bg-slate-50">
+                    <input type="radio" name="q2" value="mixed" class="mt-1 h-5 w-5" />
+                    <span class="font-semibold text-slate-800 leading-snug">
+                      Some structure exists but with visible operational inconsistencies
+                    </span>
+                  </label>
+
+                  <label class="question-option flex items-start gap-3 p-3 sm:p-4 rounded-xl border border-slate-200 cursor-pointer hover:bg-slate-50">
+                    <input type="radio" name="q2" value="chaos" class="mt-1 h-5 w-5" />
+                    <span class="font-semibold text-slate-800 leading-snug">
+                      Mostly founder-driven and operationally unstructured
+                    </span>
+                  </label>
+                </div>
+              </div>
+
+              <div class="bg-white rounded-2xl border border-slate-200 p-4 sm:p-6 shadow-sm">
+                <p class="text-sm font-extrabold text-slate-500 mb-2">Question 3</p>
+                <h3 class="text-lg sm:text-xl font-black text-slate-950 leading-snug">
+                  Do you track cashflow weekly and maintain proper business records?
+                </h3>
+
+                <div class="mt-4 grid gap-3">
+                  <label class="question-option flex items-start gap-3 p-3 sm:p-4 rounded-xl border border-slate-200 cursor-pointer hover:bg-slate-50">
+                    <input type="radio" name="q3" value="yes" class="mt-1 h-5 w-5" required />
+                    <span class="font-semibold text-slate-800 leading-snug">
+                      Yes, consistently tracked and properly documented
+                    </span>
+                  </label>
+
+                  <label class="question-option flex items-start gap-3 p-3 sm:p-4 rounded-xl border border-slate-200 cursor-pointer hover:bg-slate-50">
+                    <input type="radio" name="q3" value="sometimes" class="mt-1 h-5 w-5" />
+                    <span class="font-semibold text-slate-800 leading-snug">
+                      Sometimes, but not with reliable discipline
+                    </span>
+                  </label>
+
+                  <label class="question-option flex items-start gap-3 p-3 sm:p-4 rounded-xl border border-slate-200 cursor-pointer hover:bg-slate-50">
+                    <input type="radio" name="q3" value="no" class="mt-1 h-5 w-5" />
+                    <span class="font-semibold text-slate-800 leading-snug">
+                      No, records and cashflow are still mostly informal
+                    </span>
+                  </label>
+                </div>
+              </div>
+
+              <div class="bg-white rounded-2xl border border-slate-200 p-4 sm:p-6 shadow-sm">
+                <p class="text-sm font-extrabold text-slate-500 mb-2">Question 4</p>
+                <h3 class="text-lg sm:text-xl font-black text-slate-950 leading-snug">
+                  Do you already have basic compliance and trust documents in place?
+                </h3>
+
+                <div class="mt-4 grid gap-3">
+                  <label class="question-option flex items-start gap-3 p-3 sm:p-4 rounded-xl border border-slate-200 cursor-pointer hover:bg-slate-50">
+                    <input type="radio" name="q4" value="ready" class="mt-1 h-5 w-5" required />
+                    <span class="font-semibold text-slate-800 leading-snug">
+                      Yes, registration and business documentation are in place
+                    </span>
+                  </label>
+
+                  <label class="question-option flex items-start gap-3 p-3 sm:p-4 rounded-xl border border-slate-200 cursor-pointer hover:bg-slate-50">
+                    <input type="radio" name="q4" value="partial" class="mt-1 h-5 w-5" />
+                    <span class="font-semibold text-slate-800 leading-snug">
+                      Partially, but there are visible documentation gaps
+                    </span>
+                  </label>
+
+                  <label class="question-option flex items-start gap-3 p-3 sm:p-4 rounded-xl border border-slate-200 cursor-pointer hover:bg-slate-50">
+                    <input type="radio" name="q4" value="none" class="mt-1 h-5 w-5" />
+                    <span class="font-semibold text-slate-800 leading-snug">
+                      Not yet, compliance setup is still pending
+                    </span>
+                  </label>
+                </div>
+              </div>
+
+              <div class="md:col-span-2 bg-slate-50 rounded-2xl border border-slate-200 p-4 sm:p-6">
+                <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-5">
+                  <div class="max-w-3xl">
+                    <h4 class="text-lg sm:text-xl font-black text-slate-950">Your quick direction</h4>
+                    <p id="prelimResult" class="mt-2 text-slate-700 font-semibold leading-snug">
+                      Complete the 4 questions to continue your VeriScore screening.
+                    </p>
+                    <p class="mt-2 text-sm text-slate-500 font-semibold leading-snug">
+                      This quick screen helps estimate your Business Maturity Index and Compliance Readiness Score.
+                    </p>
+                  </div>
+                  <button
+                    id="continue-payment-btn"
+                    type="submit"
+                    class="w-full lg:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-primary-accent text-white font-extrabold text-base sm:text-lg hover:opacity-90 transition glow-effect disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    <span class="btn-text">Continue</span>
+                  </button>
+                </div>
+              </div>
+            </form>
           </div>
-          <button
-            id="footer-payment-btn"
-            type="button"
-            class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-slate-950 text-white font-extrabold hover:opacity-90 transition"
-          >
-            <span class="btn-text">Continue</span>
-          </button>
+        </div>
+
+        <div class="sticky bottom-0 z-30 bg-white/96 backdrop-blur-md border-t border-slate-200">
+          <div class="px-4 sm:px-6 lg:px-8 py-3 sm:py-4">
+            <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+              <div>
+                <p class="text-xs sm:text-sm font-bold text-slate-700">
+                  Continue to unlock your full VeriScore screening flow.
+                </p>
+                <p class="text-[11px] sm:text-xs text-slate-500 font-semibold leading-snug">
+                  Your preliminary answers help shape your Business Maturity Index and Compliance Readiness Score.
+                </p>
+              </div>
+
+              <button
+                id="footer-payment-btn"
+                type="button"
+                class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-primary-accent text-white font-extrabold hover:opacity-90 transition glow-effect"
+              >
+                <span class="btn-text">Continue</span>
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 
   <footer class="border-t border-slate-200 bg-white">
     <div class="container mx-auto px-6 py-8 text-center text-slate-600">
@@ -1615,252 +709,250 @@
   </footer>
 
   <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const PAYMENT_URL = "https://sandbox-pay.squadco.com/verricanon";
-    const JOTFORM_URL = "https://form.jotform.com/260633600514043";
+    document.addEventListener('DOMContentLoaded', () => {
+      const PAYMENT_URL = "https://sandbox-pay.squadco.com/verricanon";
+      const JOTFORM_URL = "https://form.jotform.com/260633600514043";
 
-    const mobileMenuButton = document.getElementById('mobile-menu-button');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
-    const mobileLinks = document.querySelectorAll('.mobile-link');
+      const mobileMenuButton = document.getElementById('mobile-menu-button');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+      const mobileLinks = document.querySelectorAll('.mobile-link');
 
-    function toggleMenu() {
-      mobileMenu.classList.toggle('-translate-x-full');
-      mobileMenuOverlay.classList.toggle('hidden');
-    }
-
-    mobileMenuButton.addEventListener('click', toggleMenu);
-    mobileMenuOverlay.addEventListener('click', toggleMenu);
-    mobileLinks.forEach(link => link.addEventListener('click', toggleMenu));
-
-    const revealElements = document.querySelectorAll('.reveal');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add('active');
-      });
-    }, { threshold: 0.12 });
-    revealElements.forEach(el => observer.observe(el));
-
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    const cards = document.querySelectorAll('.interactive-card');
-    cards.forEach(card => {
-      card.addEventListener('mousemove', (e) => {
-        const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        const rotateX = (y / rect.height - 0.5) * -8;
-        const rotateY = (x / rect.width - 0.5) * 8;
-        card.style.setProperty('--rotateX', `${rotateX}deg`);
-        card.style.setProperty('--rotateY', `${rotateY}deg`);
-      });
-
-      card.addEventListener('mouseleave', () => {
-        card.style.setProperty('--rotateX', '0deg');
-        card.style.setProperty('--rotateY', '0deg');
-      });
-    });
-
-    const modal = document.getElementById('assessment-modal');
-    const panel = document.getElementById('assessment-panel');
-    const closeModalBtn = document.getElementById('close-assessment-modal');
-
-    function openAssessmentModal() {
-      modal.classList.remove('invisible', 'opacity-0');
-      panel.classList.remove('opacity-0', 'translate-y-4');
-      document.body.style.overflow = 'hidden';
-
-      if (!mobileMenu.classList.contains('-translate-x-full')) {
-        toggleMenu();
+      function toggleMenu() {
+        mobileMenu.classList.toggle('-translate-x-full');
+        mobileMenuOverlay.classList.toggle('hidden');
       }
-    }
 
-    function closeAssessmentModal() {
-      modal.classList.add('opacity-0');
-      panel.classList.add('opacity-0', 'translate-y-4');
+      mobileMenuButton.addEventListener('click', toggleMenu);
+      mobileMenuOverlay.addEventListener('click', toggleMenu);
+      mobileLinks.forEach(link => link.addEventListener('click', toggleMenu));
 
-      setTimeout(() => {
-        modal.classList.add('invisible');
-      }, 250);
+      const revealElements = document.querySelectorAll('.reveal');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) entry.target.classList.add('active');
+        });
+      }, { threshold: 0.12 });
+      revealElements.forEach(el => observer.observe(el));
 
-      document.body.style.overflow = '';
-    }
+      document.getElementById('year').textContent = new Date().getFullYear();
 
-    ['nav-start-cta', 'mobile-start-cta', 'hero-start-cta', 'framework-start-cta', 'footer-start-cta']
-      .forEach(id => {
-        const btn = document.getElementById(id);
-        if (btn) btn.addEventListener('click', openAssessmentModal);
-      });
+      const cards = document.querySelectorAll('.interactive-card');
+      cards.forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          const rotateX = (y / rect.height - 0.5) * -8;
+          const rotateY = (x / rect.width - 0.5) * 8;
+          card.style.setProperty('--rotateX', `${rotateX}deg`);
+          card.style.setProperty('--rotateY', `${rotateY}deg`);
+        });
 
-    closeModalBtn.addEventListener('click', closeAssessmentModal);
-
-    modal.addEventListener('click', (e) => {
-      if (e.target === modal) closeAssessmentModal();
-    });
-
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && !modal.classList.contains('invisible')) {
-        closeAssessmentModal();
-      }
-    });
-
-    const prelimForm = document.getElementById('prelimForm');
-    const prelimResult = document.getElementById('prelimResult');
-    const progressFill = document.getElementById('progress-fill');
-    const progressText = document.getElementById('progress-text');
-    const continuePaymentBtn = document.getElementById('continue-payment-btn');
-    const footerPaymentBtn = document.getElementById('footer-payment-btn');
-    const mobileContinueBtn = document.getElementById('mobile-continue-btn');
-
-    const questionNames = ['q1', 'q2', 'q3', 'q4'];
-    const actionButtons = [continuePaymentBtn, footerPaymentBtn, mobileContinueBtn].filter(Boolean);
-    let isRedirecting = false;
-
-    function updateSelectedStates() {
-      document.querySelectorAll('.question-option').forEach(option => option.classList.remove('selected'));
-
-      questionNames.forEach(name => {
-        const checked = prelimForm.querySelector(`input[name="${name}"]:checked`);
-        if (checked) {
-          const label = checked.closest('.question-option');
-          if (label) label.classList.add('selected');
-        }
-      });
-    }
-
-    function updateProgress() {
-      let answered = 0;
-      questionNames.forEach(name => {
-        if (prelimForm.querySelector(`input[name="${name}"]:checked`)) answered += 1;
-      });
-
-      const percent = (answered / questionNames.length) * 100;
-      progressFill.style.width = `${percent}%`;
-      progressText.textContent = `${answered} of ${questionNames.length} answered`;
-
-      if (answered === questionNames.length) {
-        prelimResult.textContent = "All 4 questions completed. You can now continue to payment and unlock the full VeriScore assessment.";
-      } else if (answered > 0) {
-        prelimResult.textContent = "Good progress. Complete the remaining question(s) to continue to payment.";
-      } else {
-        prelimResult.textContent = "Complete the 4 questions to unlock the full VeriScore assessment.";
-      }
-    }
-
-    function setButtonLoading(button, loading, loadingText = "Processing...") {
-      if (!button) return;
-
-      const textEl = button.querySelector('.btn-text');
-      const defaultText = button.dataset.defaultText || (textEl ? textEl.textContent.trim() : button.textContent.trim());
-
-      button.dataset.defaultText = defaultText;
-
-      if (loading) {
-        button.disabled = true;
-        button.classList.add('btn-loading');
-
-        if (textEl) {
-          textEl.textContent = loadingText;
-        } else {
-          button.textContent = loadingText;
-        }
-
-        if (!button.querySelector('.loading-spinner')) {
-          const spinner = document.createElement('span');
-          spinner.className = 'loading-spinner';
-          button.prepend(spinner);
-        }
-      } else {
-        button.disabled = false;
-        button.classList.remove('btn-loading');
-
-        const spinner = button.querySelector('.loading-spinner');
-        if (spinner) spinner.remove();
-
-        if (textEl) {
-          textEl.textContent = defaultText;
-        } else {
-          button.textContent = defaultText;
-        }
-      }
-    }
-
-    function setAllButtonsLoading(loading, text = "Processing...") {
-      actionButtons.forEach(button => setButtonLoading(button, loading, text));
-    }
-
-    questionNames.forEach(name => {
-      prelimForm.querySelectorAll(`input[name="${name}"]`).forEach(input => {
-        input.addEventListener('change', () => {
-          updateSelectedStates();
-          updateProgress();
+        card.addEventListener('mouseleave', () => {
+          card.style.setProperty('--rotateX', '0deg');
+          card.style.setProperty('--rotateY', '0deg');
         });
       });
-    });
 
-    function scoreAnswer(name, map) {
-      const value = prelimForm.querySelector(`input[name="${name}"]:checked`)?.value;
-      return map[value] ?? 0;
-    }
+      const modal = document.getElementById('assessment-modal');
+      const panel = document.getElementById('assessment-panel');
+      const closeModalBtn = document.getElementById('close-assessment-modal');
 
-    function redirectToPayment() {
-      if (isRedirecting) return;
+      function openAssessmentModal() {
+        modal.classList.remove('invisible', 'opacity-0');
+        panel.classList.remove('opacity-0', 'translate-y-4');
+        document.body.style.overflow = 'hidden';
 
-      if (!prelimForm.checkValidity()) {
-        prelimForm.reportValidity();
-        return;
+        if (!mobileMenu.classList.contains('-translate-x-full')) {
+          toggleMenu();
+        }
       }
 
-      const s1 = scoreAnswer('q1', { global: 2, regional: 1, local: 0 });
-      const s2 = scoreAnswer('q2', { clear: 2, mixed: 1, chaos: 0 });
-      const s3 = scoreAnswer('q3', { yes: 2, sometimes: 1, no: 0 });
-      const s4 = scoreAnswer('q4', { ready: 2, partial: 1, none: 0 });
-      const total = s1 + s2 + s3 + s4;
+      function closeAssessmentModal() {
+        modal.classList.add('opacity-0');
+        panel.classList.add('opacity-0', 'translate-y-4');
 
-      if (total >= 7) {
-        prelimResult.textContent = "Strong signal: your business shows solid maturity momentum. Redirecting to payment to unlock your full VeriScore assessment.";
-      } else if (total >= 4) {
-        prelimResult.textContent = "Mixed signal: your business has potential with visible readiness gaps. Redirecting to payment to unlock your full VeriScore assessment.";
-      } else {
-        prelimResult.textContent = "Early-stage signal: structure, records, and compliance may be your first priority. Redirecting to payment to unlock your full VeriScore assessment.";
+        setTimeout(() => {
+          modal.classList.add('invisible');
+        }, 250);
+
+        document.body.style.overflow = '';
       }
 
-      const payload = {
-        q1: prelimForm.querySelector('input[name="q1"]:checked')?.value,
-        q2: prelimForm.querySelector('input[name="q2"]:checked')?.value,
-        q3: prelimForm.querySelector('input[name="q3"]:checked')?.value,
-        q4: prelimForm.querySelector('input[name="q4"]:checked')?.value,
-        score: total,
-        ts: Date.now()
-      };
+      ['nav-start-cta', 'mobile-start-cta', 'hero-start-cta', 'framework-start-cta', 'footer-start-cta']
+        .forEach(id => {
+          const btn = document.getElementById(id);
+          if (btn) btn.addEventListener('click', openAssessmentModal);
+        });
 
-      try {
-        localStorage.setItem('veriscore_prelim', JSON.stringify(payload));
-        localStorage.setItem('veriscore_jotform_url', JOTFORM_URL);
-      } catch (_) {}
+      closeModalBtn.addEventListener('click', closeAssessmentModal);
 
-      isRedirecting = true;
-      setAllButtonsLoading(true, "Redirecting...");
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeAssessmentModal();
+      });
 
-      setTimeout(() => {
-        window.location.href = PAYMENT_URL;
-      }, 650);
-    }
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && !modal.classList.contains('invisible')) {
+          closeAssessmentModal();
+        }
+      });
 
-    prelimForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      redirectToPayment();
+      const prelimForm = document.getElementById('prelimForm');
+      const prelimResult = document.getElementById('prelimResult');
+      const progressFill = document.getElementById('progress-fill');
+      const progressText = document.getElementById('progress-text');
+      const continuePaymentBtn = document.getElementById('continue-payment-btn');
+      const footerPaymentBtn = document.getElementById('footer-payment-btn');
+
+      const questionNames = ['q1', 'q2', 'q3', 'q4'];
+      const actionButtons = [continuePaymentBtn, footerPaymentBtn].filter(Boolean);
+      let isRedirecting = false;
+
+      function updateSelectedStates() {
+        document.querySelectorAll('.question-option').forEach(option => option.classList.remove('selected'));
+
+        questionNames.forEach(name => {
+          const checked = prelimForm.querySelector(`input[name="${name}"]:checked`);
+          if (checked) {
+            const label = checked.closest('.question-option');
+            if (label) label.classList.add('selected');
+          }
+        });
+      }
+
+      function updateProgress() {
+        let answered = 0;
+        questionNames.forEach(name => {
+          if (prelimForm.querySelector(`input[name="${name}"]:checked`)) answered += 1;
+        });
+
+        const percent = (answered / questionNames.length) * 100;
+        progressFill.style.width = `${percent}%`;
+        progressText.textContent = `${answered} of ${questionNames.length} answered`;
+
+        if (answered === questionNames.length) {
+          prelimResult.textContent = "All 4 questions completed. You can now continue to payment and unlock the full VeriScore assessment.";
+        } else if (answered > 0) {
+          prelimResult.textContent = "Good progress. Complete the remaining question(s) to continue to payment.";
+        } else {
+          prelimResult.textContent = "Complete the 4 questions to unlock the full VeriScore assessment.";
+        }
+      }
+
+      function setButtonLoading(button, loading, loadingText = "Processing...") {
+        if (!button) return;
+
+        const textEl = button.querySelector('.btn-text');
+        const defaultText = button.dataset.defaultText || (textEl ? textEl.textContent.trim() : button.textContent.trim());
+
+        button.dataset.defaultText = defaultText;
+
+        if (loading) {
+          button.disabled = true;
+          button.classList.add('btn-loading');
+
+          if (textEl) {
+            textEl.textContent = loadingText;
+          } else {
+            button.textContent = loadingText;
+          }
+
+          if (!button.querySelector('.loading-spinner')) {
+            const spinner = document.createElement('span');
+            spinner.className = 'loading-spinner';
+            button.prepend(spinner);
+          }
+        } else {
+          button.disabled = false;
+          button.classList.remove('btn-loading');
+
+          const spinner = button.querySelector('.loading-spinner');
+          if (spinner) spinner.remove();
+
+          if (textEl) {
+            textEl.textContent = defaultText;
+          } else {
+            button.textContent = defaultText;
+          }
+        }
+      }
+
+      function setAllButtonsLoading(loading, text = "Processing...") {
+        actionButtons.forEach(button => setButtonLoading(button, loading, text));
+      }
+
+      questionNames.forEach(name => {
+        prelimForm.querySelectorAll(`input[name="${name}"]`).forEach(input => {
+          input.addEventListener('change', () => {
+            updateSelectedStates();
+            updateProgress();
+          });
+        });
+      });
+
+      function scoreAnswer(name, map) {
+        const value = prelimForm.querySelector(`input[name="${name}"]:checked`)?.value;
+        return map[value] ?? 0;
+      }
+
+      function redirectToPayment() {
+        if (isRedirecting) return;
+
+        if (!prelimForm.checkValidity()) {
+          prelimForm.reportValidity();
+          return;
+        }
+
+        const s1 = scoreAnswer('q1', { global: 2, regional: 1, local: 0 });
+        const s2 = scoreAnswer('q2', { clear: 2, mixed: 1, chaos: 0 });
+        const s3 = scoreAnswer('q3', { yes: 2, sometimes: 1, no: 0 });
+        const s4 = scoreAnswer('q4', { ready: 2, partial: 1, none: 0 });
+        const total = s1 + s2 + s3 + s4;
+
+        if (total >= 7) {
+          prelimResult.textContent = "Strong signal: your business shows solid maturity momentum. Redirecting to payment to unlock your full VeriScore assessment.";
+        } else if (total >= 4) {
+          prelimResult.textContent = "Mixed signal: your business has potential with visible readiness gaps. Redirecting to payment to unlock your full VeriScore assessment.";
+        } else {
+          prelimResult.textContent = "Early-stage signal: structure, records, and compliance may be your first priority. Redirecting to payment to unlock your full VeriScore assessment.";
+        }
+
+        const payload = {
+          q1: prelimForm.querySelector('input[name="q1"]:checked')?.value,
+          q2: prelimForm.querySelector('input[name="q2"]:checked')?.value,
+          q3: prelimForm.querySelector('input[name="q3"]:checked')?.value,
+          q4: prelimForm.querySelector('input[name="q4"]:checked')?.value,
+          score: total,
+          ts: Date.now()
+        };
+
+        try {
+          localStorage.setItem('veriscore_prelim', JSON.stringify(payload));
+          localStorage.setItem('veriscore_jotform_url', JOTFORM_URL);
+        } catch (_) {}
+
+        isRedirecting = true;
+        setAllButtonsLoading(true, "Redirecting...");
+
+        setTimeout(() => {
+          window.location.href = PAYMENT_URL;
+        }, 650);
+      }
+
+      prelimForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        redirectToPayment();
+      });
+
+      footerPaymentBtn.addEventListener('click', redirectToPayment);
+
+      updateSelectedStates();
+      updateProgress();
+
+      // Configure Squad success/redirect URL to:
+      // https://form.jotform.com/260633600514043
     });
-
-    footerPaymentBtn.addEventListener('click', redirectToPayment);
-    mobileContinueBtn.addEventListener('click', redirectToPayment);
-
-    updateSelectedStates();
-    updateProgress();
-
-    // Configure Squad success/redirect URL to:
-    // https://form.jotform.com/260633600514043
-  });
-</script>
+  </script>
 </body>
 </html>
