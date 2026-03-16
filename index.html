@@ -103,6 +103,7 @@
 
     .question-option input[type="radio"] {
       accent-color: var(--primary);
+      flex-shrink: 0;
     }
 
     .question-option.selected {
@@ -197,61 +198,61 @@
 
 <body class="antialiased">
   <header class="fixed top-0 left-0 right-0 z-40 header-glass border-b border-slate-200">
-  <div class="container mx-auto px-6 py-4">
-    <div class="flex items-center justify-between">
-      <a href="#" class="text-2xl font-extrabold text-slate-900">
-        Nexxintel<span class="text-primary-accent">.</span>
-      </a>
+    <div class="container mx-auto px-6 py-4">
+      <div class="flex items-center justify-between">
+        <a href="#" class="text-2xl font-extrabold text-slate-900">
+          Nexxintel<span class="text-primary-accent">.</span>
+        </a>
 
-      <nav class="hidden lg:flex items-center space-x-8">
-        <a href="#frameworks" class="text-slate-700 hover:text-slate-950 transition duration-200 font-semibold">Frameworks</a>
+        <nav class="hidden lg:flex items-center space-x-8">
+          <a href="#frameworks" class="text-slate-700 hover:text-slate-950 transition duration-200 font-semibold">Frameworks</a>
+          <button
+            id="nav-start-cta"
+            type="button"
+            class="bg-primary-accent text-white px-5 py-2 rounded-full hover:opacity-90 transition duration-200 font-bold glow-effect"
+          >
+            Start Business Assessment
+          </button>
+        </nav>
+
+        <div class="lg:hidden">
+          <button id="mobile-menu-button" class="text-slate-900 focus:outline-none" aria-label="Open menu">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="border-t border-slate-200 bg-white/90 backdrop-blur-md">
+      <div class="rating-strip px-4 py-2">
+        <div class="rating-marquee text-[10px] sm:text-xs font-extrabold uppercase tracking-[0.14em] text-slate-700">
+          <span>VeriScore Rating • Business Maturity Scoring • VeriScore Rating • Business Maturity Scoring •</span>
+          <span>VeriScore Rating • Business Maturity Scoring • VeriScore Rating • Business Maturity Scoring •</span>
+        </div>
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="lg:hidden transform -translate-x-full fixed top-0 left-0 h-full w-72 z-50 border-r border-slate-200">
+      <div class="p-6">
+        <a href="#" class="block text-2xl font-extrabold text-slate-900 mb-8">
+          Nexxintel<span class="text-primary-accent">.</span>
+        </a>
+
+        <a href="#frameworks" class="block py-3 text-slate-800 hover:text-slate-950 font-semibold mobile-link">Frameworks</a>
+
         <button
-          id="nav-start-cta"
+          id="mobile-start-cta"
           type="button"
-          class="bg-primary-accent text-white px-5 py-2 rounded-full hover:opacity-90 transition duration-200 font-bold glow-effect"
+          class="block w-full mt-5 bg-primary-accent text-white px-5 py-3 rounded-full text-center font-bold glow-effect"
         >
           Start Business Assessment
         </button>
-      </nav>
-
-      <div class="lg:hidden">
-        <button id="mobile-menu-button" class="text-slate-900 focus:outline-none" aria-label="Open menu">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-          </svg>
-        </button>
       </div>
     </div>
-  </div>
-
-  <div class="border-t border-slate-200 bg-white/90 backdrop-blur-md">
-    <div class="rating-strip px-4 py-2">
-      <div class="rating-marquee text-[10px] sm:text-xs font-extrabold uppercase tracking-[0.14em] text-slate-700">
-        <span>VeriScore Rating • Business Maturity Scores • VeriScore Rating • Business Maturity Scores •</span>
-        <span>VeriScore Rating • Business Maturity Scores • VeriScore Rating • Business Maturity Scores •</span>
-      </div>
-    </div>
-  </div>
-
-  <div id="mobile-menu" class="lg:hidden transform -translate-x-full fixed top-0 left-0 h-full w-72 z-50 border-r border-slate-200">
-    <div class="p-6">
-      <a href="#" class="block text-2xl font-extrabold text-slate-900 mb-8">
-        Nexxintel<span class="text-primary-accent">.</span>
-      </a>
-
-      <a href="#frameworks" class="block py-3 text-slate-800 hover:text-slate-950 font-semibold mobile-link">Frameworks</a>
-
-      <button
-        id="mobile-start-cta"
-        type="button"
-        class="block w-full mt-5 bg-primary-accent text-white px-5 py-3 rounded-full text-center font-bold glow-effect"
-      >
-        Start Business Assessment
-      </button>
-    </div>
-  </div>
-  <div id="mobile-menu-overlay" class="fixed inset-0 bg-black/40 z-40 hidden"></div>
-</header>
+    <div id="mobile-menu-overlay" class="fixed inset-0 bg-black/40 z-40 hidden"></div>
+  </header>
 
   <main class="pt-32 sm:pt-36">
     <section class="relative overflow-hidden">
@@ -492,16 +493,16 @@
   </main>
 
   <div id="assessment-modal" class="assessment-modal fixed inset-0 z-[60] bg-slate-950/65 backdrop-blur-sm opacity-0 invisible">
-    <div class="min-h-screen overflow-y-auto modal-scroll px-3 py-3 sm:px-4 sm:py-6 lg:py-10">
+    <div class="min-h-screen overflow-y-auto modal-scroll px-2 sm:px-4 py-3 sm:py-6 lg:py-10">
       <div
         id="assessment-panel"
-        class="assessment-panel mx-auto w-full max-w-6xl bg-white rounded-2xl sm:rounded-3xl border border-slate-200 shadow-2xl opacity-0 translate-y-4 overflow-hidden"
+        class="assessment-panel mx-auto w-full max-w-6xl bg-white rounded-3xl border border-slate-200 shadow-2xl opacity-0 translate-y-4 overflow-hidden"
       >
         <div class="sticky top-0 z-20 bg-white/96 backdrop-blur-md border-b border-slate-200">
           <div class="px-4 sm:px-6 lg:px-8 py-4 sm:py-5 relative">
             <div class="watermark-office" style="opacity:0.05;"></div>
-            <div class="relative flex items-start justify-between gap-4">
-              <div class="max-w-3xl pr-2">
+            <div class="relative flex items-start justify-between gap-3">
+              <div class="max-w-4xl pr-2 min-w-0">
                 <p class="text-sm font-extrabold uppercase tracking-[0.16em] text-primary-accent">VeriScore Quick Screen</p>
                 <h2 class="mt-2 text-2xl md:text-3xl font-black text-slate-950">Start Business Assessment</h2>
                 <p class="mt-2 text-sm sm:text-base text-slate-700 leading-relaxed">
@@ -538,130 +539,130 @@
           </div>
         </div>
 
-        <div class="max-h-[calc(100vh-220px)] sm:max-h-[calc(100vh-250px)] overflow-y-auto modal-scroll">
-          <div class="p-4 sm:p-6 lg:p-8">
-            <form id="prelimForm" class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
-              <div class="bg-white rounded-2xl border border-slate-200 p-4 sm:p-6 shadow-sm">
+        <div class="max-h-[calc(100vh-250px)] overflow-y-auto modal-scroll">
+          <div class="p-6 lg:p-8">
+            <form id="prelimForm" class="grid grid-cols-2 gap-6">
+              <div class="bg-white rounded-2xl border border-slate-200 p-5 lg:p-6 shadow-sm min-w-0">
                 <p class="text-sm font-extrabold text-slate-500 mb-2">Question 1</p>
-                <h3 class="text-lg sm:text-xl font-black text-slate-950 leading-snug">
+                <h3 class="text-base lg:text-xl font-black text-slate-950 leading-snug">
                   What is the scale ambition of your business?
                 </h3>
 
                 <div class="mt-4 grid gap-3">
-                  <label class="question-option flex items-start gap-3 p-3 sm:p-4 rounded-xl border border-slate-200 cursor-pointer hover:bg-slate-50">
+                  <label class="question-option flex items-start gap-3 p-3 rounded-xl border border-slate-200 cursor-pointer hover:bg-slate-50">
                     <input type="radio" name="q1" value="global" class="mt-1 h-5 w-5" required />
-                    <span class="font-semibold text-slate-800 leading-snug">
+                    <span class="text-sm lg:text-base font-semibold text-slate-800 leading-snug">
                       Global or export-oriented growth ambition
                     </span>
                   </label>
 
-                  <label class="question-option flex items-start gap-3 p-3 sm:p-4 rounded-xl border border-slate-200 cursor-pointer hover:bg-slate-50">
+                  <label class="question-option flex items-start gap-3 p-3 rounded-xl border border-slate-200 cursor-pointer hover:bg-slate-50">
                     <input type="radio" name="q1" value="regional" class="mt-1 h-5 w-5" />
-                    <span class="font-semibold text-slate-800 leading-snug">
+                    <span class="text-sm lg:text-base font-semibold text-slate-800 leading-snug">
                       National or regional expansion within current markets
                     </span>
                   </label>
 
-                  <label class="question-option flex items-start gap-3 p-3 sm:p-4 rounded-xl border border-slate-200 cursor-pointer hover:bg-slate-50">
+                  <label class="question-option flex items-start gap-3 p-3 rounded-xl border border-slate-200 cursor-pointer hover:bg-slate-50">
                     <input type="radio" name="q1" value="local" class="mt-1 h-5 w-5" />
-                    <span class="font-semibold text-slate-800 leading-snug">
+                    <span class="text-sm lg:text-base font-semibold text-slate-800 leading-snug">
                       Local optimization first before broader scale
                     </span>
                   </label>
                 </div>
               </div>
 
-              <div class="bg-white rounded-2xl border border-slate-200 p-4 sm:p-6 shadow-sm">
+              <div class="bg-white rounded-2xl border border-slate-200 p-5 lg:p-6 shadow-sm min-w-0">
                 <p class="text-sm font-extrabold text-slate-500 mb-2">Question 2</p>
-                <h3 class="text-lg sm:text-xl font-black text-slate-950 leading-snug">
+                <h3 class="text-base lg:text-xl font-black text-slate-950 leading-snug">
                   Is your business structure clear — or mostly chaotic and owner-dependent?
                 </h3>
 
                 <div class="mt-4 grid gap-3">
-                  <label class="question-option flex items-start gap-3 p-3 sm:p-4 rounded-xl border border-slate-200 cursor-pointer hover:bg-slate-50">
+                  <label class="question-option flex items-start gap-3 p-3 rounded-xl border border-slate-200 cursor-pointer hover:bg-slate-50">
                     <input type="radio" name="q2" value="clear" class="mt-1 h-5 w-5" required />
-                    <span class="font-semibold text-slate-800 leading-snug">
+                    <span class="text-sm lg:text-base font-semibold text-slate-800 leading-snug">
                       Clear structure with defined roles, accountability, and decision flow
                     </span>
                   </label>
 
-                  <label class="question-option flex items-start gap-3 p-3 sm:p-4 rounded-xl border border-slate-200 cursor-pointer hover:bg-slate-50">
+                  <label class="question-option flex items-start gap-3 p-3 rounded-xl border border-slate-200 cursor-pointer hover:bg-slate-50">
                     <input type="radio" name="q2" value="mixed" class="mt-1 h-5 w-5" />
-                    <span class="font-semibold text-slate-800 leading-snug">
+                    <span class="text-sm lg:text-base font-semibold text-slate-800 leading-snug">
                       Some structure exists but with visible operational inconsistencies
                     </span>
                   </label>
 
-                  <label class="question-option flex items-start gap-3 p-3 sm:p-4 rounded-xl border border-slate-200 cursor-pointer hover:bg-slate-50">
+                  <label class="question-option flex items-start gap-3 p-3 rounded-xl border border-slate-200 cursor-pointer hover:bg-slate-50">
                     <input type="radio" name="q2" value="chaos" class="mt-1 h-5 w-5" />
-                    <span class="font-semibold text-slate-800 leading-snug">
+                    <span class="text-sm lg:text-base font-semibold text-slate-800 leading-snug">
                       Mostly founder-driven and operationally unstructured
                     </span>
                   </label>
                 </div>
               </div>
 
-              <div class="bg-white rounded-2xl border border-slate-200 p-4 sm:p-6 shadow-sm">
+              <div class="bg-white rounded-2xl border border-slate-200 p-5 lg:p-6 shadow-sm min-w-0">
                 <p class="text-sm font-extrabold text-slate-500 mb-2">Question 3</p>
-                <h3 class="text-lg sm:text-xl font-black text-slate-950 leading-snug">
+                <h3 class="text-base lg:text-xl font-black text-slate-950 leading-snug">
                   Do you track cashflow weekly and maintain proper business records?
                 </h3>
 
                 <div class="mt-4 grid gap-3">
-                  <label class="question-option flex items-start gap-3 p-3 sm:p-4 rounded-xl border border-slate-200 cursor-pointer hover:bg-slate-50">
+                  <label class="question-option flex items-start gap-3 p-3 rounded-xl border border-slate-200 cursor-pointer hover:bg-slate-50">
                     <input type="radio" name="q3" value="yes" class="mt-1 h-5 w-5" required />
-                    <span class="font-semibold text-slate-800 leading-snug">
+                    <span class="text-sm lg:text-base font-semibold text-slate-800 leading-snug">
                       Yes, consistently tracked and properly documented
                     </span>
                   </label>
 
-                  <label class="question-option flex items-start gap-3 p-3 sm:p-4 rounded-xl border border-slate-200 cursor-pointer hover:bg-slate-50">
+                  <label class="question-option flex items-start gap-3 p-3 rounded-xl border border-slate-200 cursor-pointer hover:bg-slate-50">
                     <input type="radio" name="q3" value="sometimes" class="mt-1 h-5 w-5" />
-                    <span class="font-semibold text-slate-800 leading-snug">
+                    <span class="text-sm lg:text-base font-semibold text-slate-800 leading-snug">
                       Sometimes, but not with reliable discipline
                     </span>
                   </label>
 
-                  <label class="question-option flex items-start gap-3 p-3 sm:p-4 rounded-xl border border-slate-200 cursor-pointer hover:bg-slate-50">
+                  <label class="question-option flex items-start gap-3 p-3 rounded-xl border border-slate-200 cursor-pointer hover:bg-slate-50">
                     <input type="radio" name="q3" value="no" class="mt-1 h-5 w-5" />
-                    <span class="font-semibold text-slate-800 leading-snug">
+                    <span class="text-sm lg:text-base font-semibold text-slate-800 leading-snug">
                       No, records and cashflow are still mostly informal
                     </span>
                   </label>
                 </div>
               </div>
 
-              <div class="bg-white rounded-2xl border border-slate-200 p-4 sm:p-6 shadow-sm">
+              <div class="bg-white rounded-2xl border border-slate-200 p-5 lg:p-6 shadow-sm min-w-0">
                 <p class="text-sm font-extrabold text-slate-500 mb-2">Question 4</p>
-                <h3 class="text-lg sm:text-xl font-black text-slate-950 leading-snug">
+                <h3 class="text-base lg:text-xl font-black text-slate-950 leading-snug">
                   Do you already have basic compliance and trust documents in place?
                 </h3>
 
                 <div class="mt-4 grid gap-3">
-                  <label class="question-option flex items-start gap-3 p-3 sm:p-4 rounded-xl border border-slate-200 cursor-pointer hover:bg-slate-50">
+                  <label class="question-option flex items-start gap-3 p-3 rounded-xl border border-slate-200 cursor-pointer hover:bg-slate-50">
                     <input type="radio" name="q4" value="ready" class="mt-1 h-5 w-5" required />
-                    <span class="font-semibold text-slate-800 leading-snug">
+                    <span class="text-sm lg:text-base font-semibold text-slate-800 leading-snug">
                       Yes, registration and business documentation are in place
                     </span>
                   </label>
 
-                  <label class="question-option flex items-start gap-3 p-3 sm:p-4 rounded-xl border border-slate-200 cursor-pointer hover:bg-slate-50">
+                  <label class="question-option flex items-start gap-3 p-3 rounded-xl border border-slate-200 cursor-pointer hover:bg-slate-50">
                     <input type="radio" name="q4" value="partial" class="mt-1 h-5 w-5" />
-                    <span class="font-semibold text-slate-800 leading-snug">
+                    <span class="text-sm lg:text-base font-semibold text-slate-800 leading-snug">
                       Partially, but there are visible documentation gaps
                     </span>
                   </label>
 
-                  <label class="question-option flex items-start gap-3 p-3 sm:p-4 rounded-xl border border-slate-200 cursor-pointer hover:bg-slate-50">
+                  <label class="question-option flex items-start gap-3 p-3 rounded-xl border border-slate-200 cursor-pointer hover:bg-slate-50">
                     <input type="radio" name="q4" value="none" class="mt-1 h-5 w-5" />
-                    <span class="font-semibold text-slate-800 leading-snug">
+                    <span class="text-sm lg:text-base font-semibold text-slate-800 leading-snug">
                       Not yet, compliance setup is still pending
                     </span>
                   </label>
                 </div>
               </div>
 
-              <div class="md:col-span-2 bg-slate-50 rounded-2xl border border-slate-200 p-4 sm:p-6">
+              <div class="col-span-2 bg-slate-50 rounded-2xl border border-slate-200 p-5 lg:p-6">
                 <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-5">
                   <div class="max-w-3xl">
                     <h4 class="text-lg sm:text-xl font-black text-slate-950">Your quick direction</h4>
@@ -958,9 +959,6 @@
 
       updateSelectedStates();
       updateProgress();
-
-      // Configure Squad success/redirect URL to:
-      // https://form.jotform.com/260633600514043
     });
   </script>
 </body>
