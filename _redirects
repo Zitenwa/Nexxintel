@@ -1,3 +1,6 @@
-/start-assessment   /start_assessment.html   200
-/report             /report/index.html       200
-/report/*           /report/index.html       200
+/pay/basic          https://pay.squadco.com/link/verri-basic    302
+/pay/pro            https://pay.squadco.com/link/verricanon     302
+/start-assessment   /start_assessment.html                      200
+/report             /report/index.html                          200
+/report/*           /report/index.html                          200
+/*                  /index.html                                 200
