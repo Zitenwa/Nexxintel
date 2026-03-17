@@ -675,7 +675,7 @@
                   </div>
                   <button
                     id="continue-payment-btn"
-                    type="submit"
+                    type="button"
                     class="w-full lg:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-primary-accent text-white font-extrabold text-base sm:text-lg hover:opacity-90 transition glow-effect disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     <span class="btn-text">Continue</span>
@@ -720,7 +720,7 @@
 
   <script>
   document.addEventListener('DOMContentLoaded', () => {
-    const PAYMENT_URL = 'https://pay.squadco.com/link/verricanon';
+    const HANDOFF_URL = '/payment-handoff.html';
     const JOTFORM_URL = 'https://form.jotform.com/260633600514043';
 
     const mobileMenuButton = document.getElementById('mobile-menu-button');
@@ -866,11 +866,11 @@
       progressText.textContent = `${answered} of ${questionNames.length} answered`;
 
       if (answered === questionNames.length) {
-        prelimResult.textContent = 'All 4 questions completed. You can now continue to payment and unlock the full VeriScore assessment.';
+        prelimResult.textContent = 'All 4 questions completed. You can now continue to choose your plan and unlock the full VeriScore assessment.';
       } else if (answered > 0) {
-        prelimResult.textContent = 'Good progress. Complete the remaining question(s) to continue to payment.';
+        prelimResult.textContent = 'Good progress. Complete the remaining question(s) to continue.';
       } else {
-        prelimResult.textContent = 'Complete the 4 questions to unlock the full VeriScore assessment.';
+        prelimResult.textContent = 'Complete the 4 questions to continue.';
       }
     }
 
@@ -945,11 +945,11 @@
       const total = s1 + s2 + s3 + s4;
 
       if (total >= 7) {
-        prelimResult.textContent = 'Strong signal: your business shows solid maturity momentum. Redirecting to payment to unlock your full VeriScore assessment.';
+        prelimResult.textContent = 'Strong signal: your business shows solid maturity momentum. Preparing your plan options...';
       } else if (total >= 4) {
-        prelimResult.textContent = 'Mixed signal: your business has potential with visible readiness gaps. Redirecting to payment to unlock your full VeriScore assessment.';
+        prelimResult.textContent = 'Mixed signal: your business has potential with visible readiness gaps. Preparing your plan options...';
       } else {
-        prelimResult.textContent = 'Early-stage signal: structure, records, and compliance may be your first priority. Redirecting to payment to unlock your full VeriScore assessment.';
+        prelimResult.textContent = 'Early-stage signal: structure, records, and compliance may be your first priority. Preparing your plan options...';
       }
 
       const payload = {
@@ -969,17 +969,10 @@
       }
 
       isRedirecting = true;
-      setAllButtonsLoading(true, 'Redirecting...');
+      setAllButtonsLoading(true, 'Continuing...');
 
-      setTimeout(() => {
-        window.location.assign(PAYMENT_URL);
-      }, 650);
+      window.location.assign(HANDOFF_URL);
     }
-
-    prelimForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      redirectToPayment();
-    });
 
     if (continuePaymentBtn) {
       continuePaymentBtn.addEventListener('click', (e) => {

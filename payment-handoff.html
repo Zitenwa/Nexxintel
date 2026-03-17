@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Choose Your VeriScore Plan</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #FDE68A;
+      color: #0F172A;
+    }
+
+    .glow-effect {
+      box-shadow: 0 18px 40px rgba(6, 182, 212, 0.24), 0 8px 20px rgba(2, 132, 199, 0.12);
+    }
+  </style>
+</head>
+<body class="antialiased min-h-screen">
+  <main class="min-h-screen flex items-center justify-center px-6 py-10">
+    <div class="w-full max-w-5xl">
+      <div class="bg-white border border-slate-200 rounded-3xl shadow-xl overflow-hidden">
+        <div class="px-6 sm:px-8 lg:px-10 py-8 border-b border-slate-200">
+          <p class="text-sm font-extrabold uppercase tracking-[0.16em] text-cyan-600">VeriScore Payment Handoff</p>
+          <h1 class="mt-2 text-3xl sm:text-4xl font-black text-slate-950">
+            Choose your assessment plan
+          </h1>
+          <p class="mt-3 text-base sm:text-lg text-slate-700 max-w-2xl">
+            Your quick screen has been recorded. Select the plan you want to unlock and continue to secure payment.
+          </p>
+        </div>
+
+        <div class="px-6 sm:px-8 lg:px-10 py-8">
+          <div id="quick-summary" class="mb-8 rounded-2xl border border-slate-200 bg-slate-50 p-5">
+            <p class="text-sm font-extrabold text-slate-500 uppercase tracking-[0.12em]">Quick Screen Summary</p>
+            <p id="summary-text" class="mt-2 text-slate-700 font-semibold">
+              Loading your assessment summary...
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+              <p class="text-sm font-extrabold uppercase tracking-[0.12em] text-slate-500">Verri Basic</p>
+              <h2 class="mt-2 text-2xl font-black text-slate-950">Quick diagnostic access</h2>
+              <p class="mt-3 text-slate-700 leading-relaxed">
+                Ideal for businesses seeking structured visibility into foundational maturity and readiness signals.
+              </p>
+
+              <div class="mt-5 space-y-2 text-slate-700 font-semibold">
+                <p>• Full assessment unlock</p>
+                <p>• Foundational maturity insight</p>
+                <p>• Entry-level readiness direction</p>
+              </div>
+
+              <a
+                id="basic-plan-link"
+                href="https://pay.squadco.com/link/verri-basic"
+                class="mt-6 inline-flex w-full items-center justify-center rounded-full bg-cyan-500 px-6 py-4 text-white font-extrabold hover:opacity-90 transition glow-effect"
+              >
+                Continue with Verri Basic
+              </a>
+            </div>
+
+            <div class="rounded-3xl border border-slate-200 bg-slate-950 p-6 shadow-sm text-white">
+              <p class="text-sm font-extrabold uppercase tracking-[0.12em] text-cyan-300">Verri Pro</p>
+              <h2 class="mt-2 text-2xl font-black">Advanced business intelligence</h2>
+              <p class="mt-3 text-slate-200 leading-relaxed">
+                Better for businesses that want deeper structural visibility, stronger scoring context, and broader growth intelligence.
+              </p>
+
+              <div class="mt-5 space-y-2 text-slate-200 font-semibold">
+                <p>• Full assessment unlock</p>
+                <p>• Deeper maturity interpretation</p>
+                <p>• Stronger strategic visibility</p>
+              </div>
+
+              <a
+                id="pro-plan-link"
+                href="https://pay.squadco.com/link/verricanon"
+                class="mt-6 inline-flex w-full items-center justify-center rounded-full bg-white px-6 py-4 text-slate-950 font-extrabold hover:bg-slate-100 transition"
+              >
+                Continue with Verri Pro
+              </a>
+            </div>
+          </div>
+
+          <div class="mt-8 flex flex-col sm:flex-row gap-4">
+            <a
+              href="/"
+              class="inline-flex items-center justify-center rounded-full border border-slate-300 bg-white px-6 py-3 font-bold text-slate-900 hover:bg-slate-50 transition"
+            >
+              Return to Home
+            </a>
+
+            <button
+              id="clear-session-btn"
+              type="button"
+              class="inline-flex items-center justify-center rounded-full border border-slate-300 bg-white px-6 py-3 font-bold text-slate-900 hover:bg-slate-50 transition"
+            >
+              Reset Quick Screen
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const summaryText = document.getElementById('summary-text');
+      const clearSessionBtn = document.getElementById('clear-session-btn');
+
+      let prelim = null;
+
+      try {
+        prelim = JSON.parse(localStorage.getItem('veriscore_prelim') || 'null');
+      } catch (error) {
+        prelim = null;
+      }
+
+      if (!prelim) {
+        summaryText.textContent = 'No quick-screen data was found. You can still choose a plan below, or return and complete the quick screen again.';
+      } else {
+        let message = '';
+
+        if (prelim.score >= 7) {
+          message = 'Strong signal detected. Your business shows encouraging maturity momentum and may benefit from deeper assessment visibility.';
+        } else if (prelim.score >= 4) {
+          message = 'Mixed signal detected. Your business shows potential, with visible readiness and structure gaps worth clarifying.';
+        } else {
+          message = 'Early-stage signal detected. Your business may need stronger structural, documentation, and compliance reinforcement.';
+        }
+
+        summaryText.textContent = message;
+      }
+
+      if (clearSessionBtn) {
+        clearSessionBtn.addEventListener('click', () => {
+          try {
+            localStorage.removeItem('veriscore_prelim');
+            localStorage.removeItem('veriscore_jotform_url');
+          } catch (error) {}
+
+          window.location.href = '/';
+        });
+      }
+    });
+  </script>
+</body>
+</html>
