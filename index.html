@@ -720,8 +720,8 @@
 
   <script>
   document.addEventListener('DOMContentLoaded', () => {
-    const PAYMENT_URL = "https://pay.squadco.com/link/verri-basic";
-    const JOTFORM_URL = "https://form.jotform.com/260633600514043";
+    const PAYMENT_URL = 'https://pay.squadco.com/link/verri-basic';
+    const JOTFORM_URL = 'https://form.jotform.com/260633600514043';
 
     const mobileMenuButton = document.getElementById('mobile-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
@@ -729,23 +729,32 @@
     const mobileLinks = document.querySelectorAll('.mobile-link');
 
     function toggleMenu() {
+      if (!mobileMenu || !mobileMenuOverlay) return;
       mobileMenu.classList.toggle('-translate-x-full');
       mobileMenuOverlay.classList.toggle('hidden');
     }
 
-    mobileMenuButton.addEventListener('click', toggleMenu);
-    mobileMenuOverlay.addEventListener('click', toggleMenu);
-    mobileLinks.forEach(link => link.addEventListener('click', toggleMenu));
+    if (mobileMenuButton) mobileMenuButton.addEventListener('click', toggleMenu);
+    if (mobileMenuOverlay) mobileMenuOverlay.addEventListener('click', toggleMenu);
+    if (mobileLinks.length) {
+      mobileLinks.forEach(link => link.addEventListener('click', toggleMenu));
+    }
 
     const revealElements = document.querySelectorAll('.reveal');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add('active');
-      });
-    }, { threshold: 0.12 });
-    revealElements.forEach(el => observer.observe(el));
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) entry.target.classList.add('active');
+        });
+      }, { threshold: 0.12 });
 
-    document.getElementById('year').textContent = new Date().getFullYear();
+      revealElements.forEach(el => observer.observe(el));
+    } else {
+      revealElements.forEach(el => el.classList.add('active'));
+    }
+
+    const yearEl = document.getElementById('year');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
 
     const cards = document.querySelectorAll('.interactive-card');
     cards.forEach(card => {
@@ -770,16 +779,20 @@
     const closeModalBtn = document.getElementById('close-assessment-modal');
 
     function openAssessmentModal() {
+      if (!modal || !panel) return;
+
       modal.classList.remove('invisible', 'opacity-0');
       panel.classList.remove('opacity-0', 'translate-y-4');
       document.body.style.overflow = 'hidden';
 
-      if (!mobileMenu.classList.contains('-translate-x-full')) {
+      if (mobileMenu && !mobileMenu.classList.contains('-translate-x-full')) {
         toggleMenu();
       }
     }
 
     function closeAssessmentModal() {
+      if (!modal || !panel) return;
+
       modal.classList.add('opacity-0');
       panel.classList.add('opacity-0', 'translate-y-4');
 
@@ -796,14 +809,18 @@
         if (btn) btn.addEventListener('click', openAssessmentModal);
       });
 
-    closeModalBtn.addEventListener('click', closeAssessmentModal);
+    if (closeModalBtn) {
+      closeModalBtn.addEventListener('click', closeAssessmentModal);
+    }
 
-    modal.addEventListener('click', (e) => {
-      if (e.target === modal) closeAssessmentModal();
-    });
+    if (modal) {
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeAssessmentModal();
+      });
+    }
 
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && !modal.classList.contains('invisible')) {
+      if (e.key === 'Escape' && modal && !modal.classList.contains('invisible')) {
         closeAssessmentModal();
       }
     });
@@ -815,12 +832,16 @@
     const continuePaymentBtn = document.getElementById('continue-payment-btn');
     const footerPaymentBtn = document.getElementById('footer-payment-btn');
 
+    if (!prelimForm || !prelimResult || !progressFill || !progressText) return;
+
     const questionNames = ['q1', 'q2', 'q3', 'q4'];
     const actionButtons = [continuePaymentBtn, footerPaymentBtn].filter(Boolean);
     let isRedirecting = false;
 
     function updateSelectedStates() {
-      document.querySelectorAll('.question-option').forEach(option => option.classList.remove('selected'));
+      document.querySelectorAll('.question-option').forEach(option => {
+        option.classList.remove('selected');
+      });
 
       questionNames.forEach(name => {
         const checked = prelimForm.querySelector(`input[name="${name}"]:checked`);
@@ -833,8 +854,11 @@
 
     function updateProgress() {
       let answered = 0;
+
       questionNames.forEach(name => {
-        if (prelimForm.querySelector(`input[name="${name}"]:checked`)) answered += 1;
+        if (prelimForm.querySelector(`input[name="${name}"]:checked`)) {
+          answered += 1;
+        }
       });
 
       const percent = (answered / questionNames.length) * 100;
@@ -842,15 +866,15 @@
       progressText.textContent = `${answered} of ${questionNames.length} answered`;
 
       if (answered === questionNames.length) {
-        prelimResult.textContent = "All 4 questions completed. You can now continue to payment and unlock the full VeriScore assessment.";
+        prelimResult.textContent = 'All 4 questions completed. You can now continue to payment and unlock the full VeriScore assessment.';
       } else if (answered > 0) {
-        prelimResult.textContent = "Good progress. Complete the remaining question(s) to continue to payment.";
+        prelimResult.textContent = 'Good progress. Complete the remaining question(s) to continue to payment.';
       } else {
-        prelimResult.textContent = "Complete the 4 questions to unlock the full VeriScore assessment.";
+        prelimResult.textContent = 'Complete the 4 questions to unlock the full VeriScore assessment.';
       }
     }
 
-    function setButtonLoading(button, loading, loadingText = "Processing...") {
+    function setButtonLoading(button, loading, loadingText = 'Processing...') {
       if (!button) return;
 
       const textEl = button.querySelector('.btn-text');
@@ -888,7 +912,7 @@
       }
     }
 
-    function setAllButtonsLoading(loading, text = "Processing...") {
+    function setAllButtonsLoading(loading, text = 'Processing...') {
       actionButtons.forEach(button => setButtonLoading(button, loading, text));
     }
 
@@ -921,18 +945,18 @@
       const total = s1 + s2 + s3 + s4;
 
       if (total >= 7) {
-        prelimResult.textContent = "Strong signal: your business shows solid maturity momentum. Redirecting to payment to unlock your full VeriScore assessment.";
+        prelimResult.textContent = 'Strong signal: your business shows solid maturity momentum. Redirecting to payment to unlock your full VeriScore assessment.';
       } else if (total >= 4) {
-        prelimResult.textContent = "Mixed signal: your business has potential with visible readiness gaps. Redirecting to payment to unlock your full VeriScore assessment.";
+        prelimResult.textContent = 'Mixed signal: your business has potential with visible readiness gaps. Redirecting to payment to unlock your full VeriScore assessment.';
       } else {
-        prelimResult.textContent = "Early-stage signal: structure, records, and compliance may be your first priority. Redirecting to payment to unlock your full VeriScore assessment.";
+        prelimResult.textContent = 'Early-stage signal: structure, records, and compliance may be your first priority. Redirecting to payment to unlock your full VeriScore assessment.';
       }
 
       const payload = {
-        q1: prelimForm.querySelector('input[name="q1"]:checked')?.value,
-        q2: prelimForm.querySelector('input[name="q2"]:checked')?.value,
-        q3: prelimForm.querySelector('input[name="q3"]:checked')?.value,
-        q4: prelimForm.querySelector('input[name="q4"]:checked')?.value,
+        q1: prelimForm.querySelector('input[name="q1"]:checked')?.value || '',
+        q2: prelimForm.querySelector('input[name="q2"]:checked')?.value || '',
+        q3: prelimForm.querySelector('input[name="q3"]:checked')?.value || '',
+        q4: prelimForm.querySelector('input[name="q4"]:checked')?.value || '',
         score: total,
         ts: Date.now()
       };
@@ -940,13 +964,15 @@
       try {
         localStorage.setItem('veriscore_prelim', JSON.stringify(payload));
         localStorage.setItem('veriscore_jotform_url', JOTFORM_URL);
-      } catch (_) {}
+      } catch (error) {
+        console.warn('Local storage unavailable:', error);
+      }
 
       isRedirecting = true;
-      setAllButtonsLoading(true, "Redirecting...");
+      setAllButtonsLoading(true, 'Redirecting...');
 
       setTimeout(() => {
-        window.location.href = PAYMENT_URL;
+        window.location.assign(PAYMENT_URL);
       }, 650);
     }
 
@@ -955,8 +981,19 @@
       redirectToPayment();
     });
 
-    continuePaymentBtn.addEventListener('click', redirectToPayment);
-    footerPaymentBtn.addEventListener('click', redirectToPayment);
+    if (continuePaymentBtn) {
+      continuePaymentBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        redirectToPayment();
+      });
+    }
+
+    if (footerPaymentBtn) {
+      footerPaymentBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        redirectToPayment();
+      });
+    }
 
     updateSelectedStates();
     updateProgress();
